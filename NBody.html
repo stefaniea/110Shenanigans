@@ -1,137 +1,232 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=1024, user-scalable=no">
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=1024, user-scalable=no">
 
-  <title>The Body of N</title>
+    <title>The Body of N</title>
 
-  <!-- Required stylesheet -->
-  <link rel="stylesheet" media="screen" href="core/deck.core.css">
+    <!-- Required stylesheet -->
+    <link rel="stylesheet" media="screen" href="core/deck.core.css">
 
-  <!-- Extension CSS files go here. Remove or add as needed. -->
-  <link rel="stylesheet" media="screen" href="extensions/goto/deck.goto.css">
-  <link rel="stylesheet" media="screen" href="extensions/menu/deck.menu.css">
-  <link rel="stylesheet" media="screen" href="extensions/navigation/deck.navigation.css">
-  <link rel="stylesheet" media="screen" href="extensions/status/deck.status.css">
-  <link rel="stylesheet" media="screen" href="extensions/scale/deck.scale.css">
+    <!-- Extension CSS files go here. Remove or add as needed. -->
+    <link rel="stylesheet" media="screen" href="extensions/goto/deck.goto.css">
+    <link rel="stylesheet" media="screen" href="extensions/menu/deck.menu.css">
+    <link rel="stylesheet" media="screen" href="extensions/navigation/deck.navigation.css">
+    <link rel="stylesheet" media="screen" href="extensions/status/deck.status.css">
+    <link rel="stylesheet" media="screen" href="extensions/scale/deck.scale.css">
 
-  <!-- Style theme. More available in /themes/style/ or create your own. -->
-  <link rel="stylesheet" media="screen" href="themes/style/web-2.0.css">
+    <!-- Style theme. More available in /themes/style/ or create your own. -->
+    <link rel="stylesheet" media="screen" href="themes/style/web-2.0.css">
 
-  <!-- Transition theme. More available in /themes/transition/ or create your own. -->
-  <link rel="stylesheet" media="screen" href="themes/transition/horizontal-slide.css">
+    <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+    <link rel="stylesheet" media="screen" href="themes/transition/horizontal-slide.css">
 
-  <!-- Basic black and white print styles -->
-  <link rel="stylesheet" media="print" href="core/print.css">
+    <!-- Basic black and white print styles -->
+    <link rel="stylesheet" media="print" href="core/print.css">
 
-  <!-- Required Modernizr file -->
-  <script src="modernizr.custom.js"></script>
-</head>
-<body>
-  <div class="deck-container">
+    <!-- Required Modernizr file -->
+    <script src="modernizr.custom.js"></script>
+  </head>
+  <body>
+    <div class="deck-container">
 
-    <!-- Begin slides. Just make elements with a class of slide. -->
+      <!-- Begin slides. Just make elements with a class of slide. -->
 
-    <section class="slide" id="Goals">
+      <section class="slide" id="Goals">
 
-      <h2>Goals</h2>
+        <h2>Goals</h2>
+        <ul>
+          <li class="slide" >
+           Learn about a scientific computing application.
+         </li>
+
+         <li class="slide" >
+           Learn about reading input from files using the In.java library.
+         </li>
+
+         <li class="slide" >
+           Learn to build up complex results using a sequence of simple statements.
+
+         </li>
+
+         <li class="slide" >
+          Reinforce understanding of animations in the Processing environment.
+        </li>
+
+        <li class="slide" >
+          Use nested loops.
+        </li>
+        <li class="slide" >
+          Use arrays.
+        </li>
+      </ul>
+    </section>
+
+    
+
+    <!-- Submission -->
+    <section class="slide" id="Submission">
+      <h2>Submission</h2>
+      <p>Submit NBody.java and a completed&nbsp;<a href="http://www.cis.upenn.edu/~cis110/14sp/hw/hw02/readme_nbody.txt/">readme_nbody.txt</a> file using the submission link in the sidebar.</p>
+    </section>
+
+    <section class="slide" id="Background">
+
+      <h2>Background</h2>
+
       <ul>
         <li class="slide" >
-         Learn about a scientific computing application.
+         Warning... a lot of text coming...
        </li>
-
        <li class="slide" >
-         Learn about reading input from files using the In.java library.
-       </li>
-
-       <li class="slide" >
-         Learn to build up complex results using a sequence of simple statements.
-
-       </li>
-
-       <li class="slide" >
-        Reinforce understanding of animations in the Processing environment.
-      </li>
-
-      <li class="slide" >
-        Use nested loops.
+        <p>In 1687 Sir Isaac Newton formulated the principles governing the the motion of two particles under the influence of their mutual gravitational attraction in his famous <strong>Principia</strong>. However, Newton was unable to solve the problem for three particles. Indeed, in general, systems of three or more particles can only be solved numerically. </p>
       </li>
       <li class="slide" >
-        Use arrays.
-      </li>
-    </ul>
-  </section>
-
-  
-
-
-  <section class="slide" id="Submission">
-    <h2>Submission</h2>
-    <p>Submit NBody.java and a completed&nbsp;<a href="http://www.cis.upenn.edu/~cis110/14sp/hw/hw02/readme_nbody.txt/">readme_nbody.txt</a> file using the submission link in the sidebar.</p>
-  </section>
-
-  <section class="slide" id="Background">
-
-    <h2>Background</h2>
-
-    <ul>
-      <li class="slide" >
-       Warning... a lot of text coming...
+       ... and there is more ...
      </li>
      <li class="slide" >
-      <p>In 1687 Sir Isaac Newton formulated the principles governing the the motion of two particles under the influence of their mutual gravitational attraction in his famous Principia. However, Newton was unable to solve the problem for three particles. Indeed, in general, systems of three or more particles can only be solved numerically. </p>
+      <p>Your challenge in this assignment is to write a program to simulate the motion of <strong>N </strong>particles in the plane, mutually affected by gravitational forces, and animate the results. Such methods are widely used in cosmology, semiconductors, and fluid dynamics to study complex physical systems. Scientists also apply the same techniques to other pairwise interactions including Coulombic, Biot-Savart, and van der Waals.</p>
     </li>
+
     <li class="slide" >
-     ... and there is more ...
-   </li>
-   <li class="slide" >
-    <p>Your challenge in this assignment is to write a program to simulate the motion of N particles in the plane, mutually affected by gravitational forces, and animate the results. Such methods are widely used in cosmology, semiconductors, and fluid dynamics to study complex physical systems. Scientists also apply the same techniques to other pairwise interactions including Coulombic, Biot-Savart, and van der Waals.</p>
-  </li>
+      ...just read it... it will take less than a minute and is semi useful? 
+    </li>
 
-  <li class="slide" >
-    ...just read it... it will take less than a minute and is semi useful? 
-  </li>
-
-  <li class="slide" >
-
-    <p>We provide all the formulas you need in the assignment. Don't worry if you don't fully understand them---this is neither a physics nor a math course. Instead, focus on the computer science task: building up a complicated result through a series of simple statements.</p>
-  </li>
-</section>
-
-<section class="slide" id="Requirements">
-  <h2>Requirements</h2>
-  <p>When finished this assignment, you should have a program NBody.java that:</p>  
-  <ul>
     <li class="slide" >
-      Reads three command-line arguments:
-      <ul>
+
+      <p>We provide all the formulas you need in the assignment. Don't worry if you don't fully understand them---this is neither a physics nor a math course. Instead, focus on the computer science task: building up a complicated result through a series of simple statements.</p>
+    </li>
+  </section>
+
+  <!-- Requirements -->
+
+
+  <section class="slide" id="Requirements">
+    <h2>Requirements</h2>
+    <p>When finished this assignment, you should have a program NBody.java that:</p>  
+    <ul>
+      <li class="slide" >
+        Reads three <strong>command-line arguments</strong>:
+        <ul>
+          <li class="slide" >
+           <strong>T</strong>, a double value that represents how long to run the simulation,  
+         </li>
+         <li class="slide" >
+          <strong>Δt</strong>, a double value that indicates the amount of time that elapses between simulation steps, and
+        </li>
         <li class="slide" >
-         T, a double value that represents how long to run the simulation,  
-       </li>
-       <li class="slide" >
-        Δt, a double value that indicates the amount of time that elapses between simulation steps, and
-       </li>
-       <li class="slide" >
-        filename, the filename for the data file that holds information about the universe.
-       </li>
+          <strong>filename</strong>, the filename for the data file that holds information about the universe.
+        </li>
       </ul>
     </li>
-<li class="slide" >
-
-
-
-
-  Reads in the universe from the file filename using In.java.
-  Simulates the universe, starting at time t = 0.0, and continuing as long as t < T, using the procedure describe below.
-  Animates the results using Processing.
-  Prints the state of the universe at the end of the simulation (in the same format as the input file) to standard output using System.out.println().
-  Your program will maintain several parallel arrays to store the data. To make the computer simulation, we will use a loop that repeatedly updates the position and velocity of the particles at each time step t.
+    <li class="slide" >
+      Reads in the universe from the file <strong>filename</strong> using In.java.
+    </li>
+    <li class="slide" >
+      Simulates the universe, starting at time <strong>t</strong> = 0.0, and continuing as long as <strong>t < T</strong>, using the procedure describe below.
+    </li>
+    <li class="slide" >
+     Animates the results using Processing.
    </li>
+   <li class="slide" >
+    Prints the state of the universe at the end of the simulation (in the same format as the input file) to <strong>standard output</strong> using System.out.println().
+  </li>
+  <li class="slide" >
+    Your program will maintain several parallel arrays to store the data. To make the computer simulation, we will use a loop that repeatedly updates the position and velocity of the particles at each time step <strong>t</strong>.
+  </li>
 </ul>
 </section>
 
+<!-- Example -->
+
+
+<section class="slide" id="Example">
+  <h2>The end result of your program should like like the following:</h2>
+
+  <iframe width="420" height="315" src="//www.youtube.com/embed/pj2ZaOimGvc?rel=0" frameborder="0" allowfullscreen></iframe>   
+
+</section>
+
+<section class="slide" id="Command Line Arguments">
+  <h2>A Review of Command-Line Arguments</h2>
+  <p class = "slide">Yes. you need to review it.  </p>
+  <ul> 
+    <li>For this homework and beyond, you will often have to use
+      command-line arguments, which you will have to type in every
+      time you run the program.</li>
+      <li>Remember that command-line arguments are just an array of
+        Strings that are read in automatically to your <code>main()</code>
+        function. <br></br>
+      </li>
+      <ul>
+        <li>Once <tt>PApplet.main()</tt> is called in your <tt>main()</tt>
+          function, the program will not go back to <tt>main()</tt>, so
+          any command-line arguments will need to be processed within <tt>main()</tt>
+          but before you call <tt>PApplet.main()</tt>.
+        </li>
+      </ul>
+      <ul>
+        <li>Since the arguments are read in as Strings, remember also to
+          use <tt>Integer.parseInt()</tt> or <tt>Double.parseDouble()</tt>
+          to convert numeric arguments to whatever type you need.
+        </li>
+      </ul>
+    </ul>
+  </section>
+
+  <section class="slide" id="Command Line Arguments part 2">
+    <h2>A Review of Command-Line Arguments: 
+      Take 2</h2>
+      <p class = "slide">Yes. read it.  </p>
+      <p class = "slide">Read it. But where is this OnionAdder? -> NOW PRESS THE ARROW!  </p>
+      <li>Try out the program <tt>OnionAdder</tt> to see how
+        command-line arguments work. <br>
+      </li>
+      <ul>
+        <li>In order to pass command line arguments into your program,
+          you must use Dr. Java's interactions pane to run the
+          program.&nbsp; You can run the program by going to the
+          interactions pane and typing the following command: <tt>java
+          OnionAdder 300 55.532</tt><br>
+        </li>
+        <li>Let's take a look at the code in the <tt>OnionAdder.java</tt>
+          program. Notice that putting a "+" sign between <tt>args[0]</tt>
+          and <tt>args[1]</tt> concatenates the strings; the program
+          needs to convert the inputs to integers or doubles before it
+          can perform calculations with them.</li>
+        </ul>
+
+      </section>
+
+      <section class="slide" id="OnionAdder">
+       <pre>      
+        <code>
+         
+          /* 
+          * Run this program by typing:  java OnionAdder 300 55.532
+          * 
+          * Expected output with the above example:
+          * 30055.532 &lt;---Strings concatenated 
+          * 355.532 &lt;---numbers added 
+          * Shrek has 355.532 onions. 
+          * 
+          */
+
+          public class OnionAdder { 
+          public static void main(String[] args) {
+          int a = Integer.parseInt(args[0]);
+          double b = Double.parseDouble(args[1]);
+          System.out.println(args[0] + args[1] + " &lt;---Strings concatenated");
+          System.out.println(a + b + " &lt;---numbers added");
+          System.out.println("Shrek has " + (a + b) + " onions.");
+        }
+      }
+      <br>            
+    </code>
+  </pre>
+</section>
 
 
 <!-- End slides. -->
