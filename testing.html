@@ -31,59 +31,11 @@
   <script src="modernizr.custom.js"></script>
 </head>
 <body>
-  <div class="deck-container">
+  <div class="outer">
 
     <!-- Begin slides. Just make elements with a class of slide. -->
 
-    <section class="slide">
-      <h1>Hello There</h1>
-    </section>
-
-    <section class="slide">
-       <section class="slide">
-      <h2>Elmos are scary</h2>
-              <ul>
-          <li>What's up, broski</li>
-          <li>woooo</li>
-          <li>lalala</li>
-        </ul>
-      </section>
-    </section>
-
-    <section class="slide">
-      <h1>Here</h1>
-    </section>
-     <section class="slide">
-      <h1>Here again</h1>
-    </section>
-
-    <!-- End slides. -->
-
-    <!-- Begin extension snippets. Add or remove as needed. -->
-
-    <!-- deck.navigation snippet -->
-    <div aria-role="navigation">
-      <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
-      <a href="#" class="deck-next-link" title="Next">&#8594;</a>
-    </div>
-
-    <!-- deck.status snippet -->
-    <p class="deck-status" aria-role="status">
-      <span class="deck-status-current"></span>
-      /
-      <span class="deck-status-total"></span>
-    </p>
-
-    <!-- deck.goto snippet -->
-    <form action="." method="get" class="goto-form">
-      <label for="goto-slide">Go to slide:</label>
-      <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
-      <datalist id="goto-datalist"></datalist>
-      <input type="submit" value="Go">
-    </form>
-
-    <!-- End extension snippets. -->
-  </div>
+   <iframe src="boilerplate.html" frameborder="0" class="deck-frame></frame>
 
 <!-- Required JS files. -->
 <script src="jquery.min.js"></script>
