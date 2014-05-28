@@ -135,12 +135,12 @@ the deck container.
       gotoForm: '.goto-form',
       gotoInput: '#goto-slide'
     },
+    countNested: true,
 
     keys: {
       goto: 71 // g
-    },
+    }
 
-    countNested: true
   });
 
   /*

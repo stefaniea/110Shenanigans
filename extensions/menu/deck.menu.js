@@ -122,6 +122,7 @@ on the deck container.
     touch: {
       doubletapWindow: 400
     }
+
   });
 
   /*
