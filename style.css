@@ -106,7 +106,6 @@ body {
 }
 
 .jPanelMenu-panel {
-
 }
 #menu {
 	display: inline-block;
@@ -121,18 +120,9 @@ body {
 	color: white;
 
 }
-
-
-.dropdown_menu li:hover {
-	/*background-color: rgb(250, 200, 200);*/
-	color: rgb(100, 255, 240);
+section {
+	margin-left: 50px;
 }
-
-.dropdown_menu a:hover {
-	text-decoration: none; /*why this no work*/
-}
-
-
 #hw_button {
 	display: inline-block;
 	position:relative;
