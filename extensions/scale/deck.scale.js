@@ -26,7 +26,7 @@ works fine.
   var scaleDeck = function() {
     var options = $.deck('getOptions');
     var $container = $.deck('getContainer');
-    var baseHeight = options.baseHeight;
+    var baseHeight = options.baseHeight; //changed this to account for navbar
 
     if (!baseHeight) {
       baseHeight = $container.height();

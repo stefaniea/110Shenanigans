@@ -4,8 +4,8 @@
 .csstransforms .deck-container.deck-scale:not(.deck-menu) > .slide {
   -moz-box-sizing: padding-box;
   box-sizing: padding-box;
-  width: 100%;
-  padding-bottom: 20px;
+  width: 90%;
+  padding-bottom: 100px;
 }
 .csstransforms .deck-container.deck-scale:not(.deck-menu) > .slide > .deck-slide-scaler {
   -webkit-transform-origin: 50% 0;

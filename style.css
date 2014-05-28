@@ -120,9 +120,7 @@ body {
 	color: white;
 
 }
-section {
-	margin-left: 50px;
-}
+
 #hw_button {
 	display: inline-block;
 	position:relative;
@@ -180,10 +178,12 @@ section {
 }
 .deck-container {
 	position: absolute;
-	top:0px;
-	margin-top: 0px;
+	width: 100%;
+	
+}
+
+.deck-wrapper {
 	width:100%;
-	background-color: black;
 }
 
 
