@@ -30,6 +30,7 @@ works fine.
 
     if (!baseHeight) {
       baseHeight = $container.height();
+      baseHeight = baseHeight - 100;
     }
 
     // Scale each slide down if necessary (but don't scale up)

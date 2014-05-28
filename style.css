@@ -178,6 +178,7 @@ body {
 }
 .deck-container {
 	position: absolute;
+	padding-right: 100px;
 	width: 100%;
 	
 }
