@@ -130,40 +130,40 @@
   <!-- Requirements -->
 
 
-  <section class="slide" id="Requirements">
-    <h2>Requirements</h2>
-    <p>When finished this assignment, you should have a program NBody.java that:</p>  
-    <ul>
-      <li class="slide" >
-        Reads three <strong>command-line arguments</strong>:
-        <ul>
-          <li class="slide" >
-           <strong>T</strong>, a double value that represents how long to run the simulation,  
-         </li>
-         <li class="slide" >
-          <strong>Δt</strong>, a double value that indicates the amount of time that elapses between simulation steps, and
-        </li>
+    <section class="slide" id="Requirements">
+      <h2>Requirements</h2>
+      <p>When finished this assignment, you should have a program NBody.java that:</p>  
+      <ul>
         <li class="slide" >
-          <strong>filename</strong>, the filename for the data file that holds information about the universe.
-        </li>
-      </ul>
+          Reads three <strong>command-line arguments</strong>:
+          <ul>
+            <li class="slide" >
+             <strong>T</strong>, a double value that represents how long to run the simulation,  
+           </li>
+           <li class="slide" >
+            <strong>Δt</strong>, a double value that indicates the amount of time that elapses between simulation steps, and
+          </li>
+          <li class="slide" >
+            <strong>filename</strong>, the filename for the data file that holds information about the universe.
+          </li>
+        </ul>
+      </li>
+      <li class="slide" >
+        Reads in the universe from the file <strong>filename</strong> using In.java.
+      </li>
+      <li class="slide" >
+        Simulates the universe, starting at time <strong>t</strong> = 0.0, and continuing as long as <strong>t < T</strong>, using the procedure describe below.
+      </li>
+      <li class="slide" >
+       Animates the results using Processing.
+     </li>
+     <li class="slide" >
+      Prints the state of the universe at the end of the simulation (in the same format as the input file) to <strong>standard output</strong> using System.out.println().
     </li>
     <li class="slide" >
-      Reads in the universe from the file <strong>filename</strong> using In.java.
+      Your program will maintain several parallel arrays to store the data. To make the computer simulation, we will use a loop that repeatedly updates the position and velocity of the particles at each time step <strong>t</strong>.
     </li>
-    <li class="slide" >
-      Simulates the universe, starting at time <strong>t</strong> = 0.0, and continuing as long as <strong>t < T</strong>, using the procedure describe below.
-    </li>
-    <li class="slide" >
-     Animates the results using Processing.
-   </li>
-   <li class="slide" >
-    Prints the state of the universe at the end of the simulation (in the same format as the input file) to <strong>standard output</strong> using System.out.println().
-  </li>
-  <li class="slide" >
-    Your program will maintain several parallel arrays to store the data. To make the computer simulation, we will use a loop that repeatedly updates the position and velocity of the particles at each time step <strong>t</strong>.
-  </li>
-</ul>
+  </ul>
 </section>
 
 <!-- Example -->
@@ -185,7 +185,7 @@
       time you run the program.</li>
       <li>Remember that command-line arguments are just an array of
         Strings that are read in automatically to your <code>main()</code>
-        function. <br></br>
+        function. 
       </li>
       <ul>
         <li>Once <tt>PApplet.main()</tt> is called in your <tt>main()</tt>
@@ -209,14 +209,14 @@
       <p class = "slide">Yes. read it.  </p>
       
       <li>Try out the program <tt>OnionAdder</tt> to see how
-        command-line arguments work. <br>
+        command-line arguments work. 
       </li>
       <ul>
         <li>In order to pass command line arguments into your program,
           you must use Dr. Java's interactions pane to run the
           program.&nbsp; You can run the program by going to the
           interactions pane and typing the following command: <tt>java
-          OnionAdder 300 55.532</tt><br>
+          OnionAdder 300 55.532</tt>
         </li>
         <li>Let's take a look at the code in the <tt>OnionAdder.java</tt>
           program. Notice that putting a "+" sign between <tt>args[0]</tt>
@@ -250,200 +250,213 @@
           System.out.println("Shrek has " + (a + b) + " onions.");
         }
       }
-      <br>            
+
     </code>
   </pre>
 </section>
 
-<section class="slide" id="Command Line Arguments part 2">
+<section class="slide" id="General Structure">
 
-  <section class="slide" id="General Structure">
-
-    <h3 class = "slide"> General Structure of the N-Body Program </h3>
-    <p> 
-      We will be building up the program in several steps.&nbsp; Be
-      certain to debug and test your program as you go.&nbsp; Even if you
-      have not yet gotten to steps with graphical output, you can test
-      your program easily by adding in temporary println()
-      statements.&nbsp; If you read in a variable, print its value out to
-      check it.&nbsp; If you do a computation, print out the result and
-      check it.&nbsp; Once you're certain it is correct, you can remove
-      these temporary println() statements.<br>
-      <br>
-      The general structure of the program will be as shown below.&nbsp;
-      The comments that are in <font color="#ff0000">RED</font> denote
-      parts of the program that you will need to fill in.&nbsp; The
-      purpose of this outline is to show you where each of the parts of
-      the program will go:<br><br>
-    </p>
-    <code>
-      <pre>
-        import processing.core.*; <br> <br>public class NBody extends PApplet { <br> <br>    public static void main(String[] args) { <br>  <br>        <font color="#ff0000">// process command line arguments and initialize variables (Part I)</font><br><br>        <font color="#ff0000">// read in the universe file (Part I)</font><br><br>        // start running the simulation<br>        PApplet.main(new String[]{"NBody"});  <br>    } <br><br><br>    <font color="#ff0000">// class-level variables</font><br><br>    public void setup() {<br>        <font color="#ff0000">// setup your sketch (Part II)</font><br><br>        <font color="#ff0000">// load in all images used in your simulation</font><font color="#ff0000"> (Part II)</font><code></code><br>    }<br>    <br>    public void draw() {<br>        <font color="#ff0000">// simulate one time step of the simulation (Part III)<br></font>    }<br>
-      }</pre>
-    </code><br>
+  <h3> General Structure of the N-Body Program </h3>
+  <p class = "slide"> 
+    We will be building up the program in several steps.&nbsp; Be
+    certain to debug and test your program as you go.&nbsp; Even if you
+    have not yet gotten to steps with graphical output, you can test
+    your program easily by adding in temporary println()
+    statements.&nbsp; If you read in a variable, print its value out to
+    check it.&nbsp; If you do a computation, print out the result and
+    check it.&nbsp; Once you're certain it is correct, you can remove
+    these temporary println() statements.<br>
     <br>
-    <h3>Part I: Reading Input</h3>
-    <ul>
-    </ul>
-    <ol>
-      <li> Create a file <tt>NBody.java</tt> that will be your
-        submission for this assignment. Copy the template for using the
-        Processing library into the file.<br>
-      </li>
-      <li>Download <a
-        href="nbody_data.zip">nbody_data.zip</a>
-        and unzip it into the same folder as <tt>NBody.java</tt>. If
-        your computer puts the contents in an nbody_data folder, move
-        all the unzipped files back into the same folder as your <tt>NBody.java</tt>.&nbsp;</li>
-        <li>Read Section 1.5. Review <code>StudentsFileProcessor.java</code>
-          included in the zip file for help with reading from a file and
-          parallel arrays. Compile and execute this program to make sure
-          your system is configured properly. You can use the included
-          file <code>students.txt</code> as input:
-          <pre><b>% java StudentsFileProcessor students.txt</b></pre>
-          If you have trouble compiling <code>StudentsFileProcessor.java</code>,
-          check the Common Problems section below. The booksite's standard
-          library may not be correctly configured on your computer.
+    The general structure of the program will be as shown below.&nbsp;
+    The comments that are in <font color="#ff0000">RED</font> denote
+    parts of the program that you will need to fill in.&nbsp; The
+    purpose of this outline is to show you where each of the parts of
+    the program will go:
+  </p>
+</section> 
+
+<section class="slide" id="General Structure Code">
+  <code>
+    <pre>
+      import processing.core.*; <br> <br>public class NBody extends PApplet { <br> <br>    public static void main(String[] args) { <br>  <br>        <font color="#ff0000">// process command line arguments and initialize variables (Part I)</font><br><br>        <font color="#ff0000">// read in the universe file (Part I)</font><br><br>        // start running the simulation<br>        PApplet.main(new String[]{"NBody"});  <br>    } <br><br><br>    <font color="#ff0000">// class-level variables</font><br><br>    public void setup() {<br>        <font color="#ff0000">// setup your sketch (Part II)</font><br><br>        <font color="#ff0000">// load in all images used in your simulation</font><font color="#ff0000"> (Part II)</font><code></code><br>    }<br>    <br>    public void draw() {<br>        <font color="#ff0000">// simulate one time step of the simulation (Part III)<br></font>    }<br>
+    }</pre>
+  </code>
+  <br>
+</section>
+
+<section class="slide" id="Part I: Reading Input">
+  <h3>Part I: Reading Input</h3>
+  <ul>
+  </ul>
+  <class="slide" ol>
+  <li class="slide" > Create a file <tt>NBody.java</tt> that will be your
+    submission for this assignment. Copy the template for using the
+    Processing library into the file.
+  </li>
+  <li class="slide" >Download <a
+    href="nbody_data.zip">nbody_data.zip</a>
+    and unzip it into the same folder as <tt>NBody.java</tt>. If
+    your computer puts the contents in an nbody_data folder, move
+    all the unzipped files back into the same folder as your <tt>NBody.java</tt>.&nbsp;</li>
+    <li class="slide" >Read Section 1.5. Review <code>StudentsFileProcessor.java</code>
+      included in the zip file for help with reading from a file and
+      parallel arrays. Compile and execute this program to make sure
+      your system is configured properly. You can use the included
+      file <code >students.txt</code> as input:
+      <pre class="slide" ><b>% java StudentsFileProcessor students.txt</b></pre>
+      If you have trouble compiling <code>StudentsFileProcessor.java</code>,
+      check the Common Problems section below. The booksite's standard
+      library may not be correctly configured on your computer.
+    </li>
+  </ol>
+  <ul>
+  </ul>
+</section>
+<section class="slide" id="Part I: Reading Input 2">
+
+  <ol start="4">
+    Reading command line arguments
+  </ol>
+
+  <ul class="slide">
+    <li >The first step is to declare a class-level variable for the
+      filename (remember that class-level variables go outside of <code>setup()</code>,
+      <code>draw()</code>, <code>main()</code>, etc. so that they
+      are available in all of these functions):<br>
+      <code>&nbsp;&nbsp;&nbsp;&nbsp;static String filename;</code><br>
+      In this case, we also need to make the variable
+      "static".&nbsp; Although we'll go over the details about <code>static</code>
+      in a few more weeks, essentially static methods (like <code>main()</code>)
+      can only access static variables.&nbsp; Since <code>main()</code>
+      is static and we'll be setting the variable <code>filename</code>
+      in <code>main()</code>, we have to make the variable <code>filename
+    </code>static too.</li>
+  </ul>
+
+  
+  <ul class="slide">
+    <li>Add code to the beginning of<code> main()</code> that will
+      initialize <code>filename</code> using the 3rd command line
+      argument (<code>args[2]</code>).</li>
+      <li>As a test, temporarily print out the value of <code>filename
+      </code>immediately after you initialize it to make certain
+      that it was read in correctly.</li>
+      <li>Make certain that the call to <code>PApplet.main() </code>is
+        the very last command in <code>main()</code>.&nbsp; This will
+        start your simulation, and so any code after this in <code>main()</code>
+        will not be called.</li>
+        <li>Run your program to test it from the interactions pane in
+          Dr. Java.&nbsp; Note that we're ignoring the two numbers
+          passed into the program for now.&nbsp; To run your program,
+          type:
+          <p> <b><tt>% java NBody 15778000.0 25000.0 planets.txt</tt></b>
+          </p>
         </li>
-      </ol>
-      <ul>
-      </ul>
-      <ol start="4">
-        <li><b>Reading command line arguments</b></li>
-      </ol>
-      <ul>
-        <ul>
-          <li>The first step is to declare a class-level variable for the
-            filename (remember that class-level variables go outside of <code>setup()</code>,
-            <code>draw()</code>, <code>main()</code>, etc. so that they
-            are available in all of these functions):<br>
-            <code>&nbsp;&nbsp;&nbsp;&nbsp;static String filename;</code><br>
-            In this case, we also need to make the variable
-            "static".&nbsp; Although we'll go over the details about <code>static</code>
-            in a few more weeks, essentially static methods (like <code>main()</code>)
-            can only access static variables.&nbsp; Since <code>main()</code>
-            is static and we'll be setting the variable <code>filename</code>
-            in <code>main()</code>, we have to make the variable <code>filename
-          </code>static too.</li>
+        <li>Check that it read in the filename correctly and printed it
+          out.<br>
+        </li>
+        <li><font color="red"><b>Do not continue until you have tested
+          and debugged this part.</b></font></li>
         </ul>
-      </ul>
-      <ul>
+
+        <ol start="5" class="slide">
+          <li><b>Reading from a file:&nbsp; </b>The next step is to read in
+            the file describing the universe we will simulate.&nbsp; We will
+            store this information into variables for use in our program. <br>
+            The booksite's standard library provides the file <code>In.java</code>
+            to support reading from a file.&nbsp; For a detailed example of
+            reading from a file, you should consult <code>StudentsFileProcessor.java</code>.&nbsp;
+
+            However, this section provides an overview of the necessary steps:
+          </li>
+        </ol>
+      </section>
+      <section class="slide" id="Part I: Reading Input 3">
+
         <ul>
-          <li>Add code to the beginning of<code> main()</code> that will
-            initialize <code>filename</code> using the 3rd command line
-            argument (<code>args[2]</code>).</li>
-            <li>As a test, temporarily print out the value of <code>filename
-            </code>immediately after you initialize it to make certain
-            that it was read in correctly.</li>
-            <li>Make certain that the call to <code>PApplet.main() </code>is
-              the very last command in <code>main()</code>.&nbsp; This will
-              start your simulation, and so any code after this in <code>main()</code>
-              will not be called.</li>
-              <li>Run your program to test it from the interactions pane in
-                Dr. Java.&nbsp; Note that we're ignoring the two numbers
-                passed into the program for now.&nbsp; To run your program,
-                type:
-                <p> <b><tt>% java NBody 15778000.0 25000.0 planets.txt</tt></b>
-                </p>
-              </li>
-              <li>Check that it read in the filename correctly and printed it
-                out.<br>
-              </li>
-              <li><font color="red"><b>Do not continue until you have tested
-                and debugged this part.</b></font></li>
-              </ul>
-            </ul>
-            <ol start="5">
-              <li><b>Reading from a file:&nbsp; </b>The next step is to read in
-                the file describing the universe we will simulate.&nbsp; We will
-                store this information into variables for use in our program. <br>
-                The booksite's standard library provides the file <code>In.java</code>
-                to support reading from a file.&nbsp; For a detailed example of
-                reading from a file, you should consult <code>StudentsFileProcessor.java</code>.&nbsp;
+          <ul>
+            <li>Declare and initialize a variable in <code>main()</code>
+              (we'll call it
+              <code> inStream</code> in this example) to read from the file:<br>
+              <code>&nbsp;&nbsp;&nbsp;&nbsp;In inStream = new
+                In(filename);&nbsp; // creates a variable inStream that we
+                can use to read from the file</code></li>
+                <li class="slide" >Once the input stream is initialized, you can read from it
+                  using the following commands, just as with <code>StdIn</code>
+                  (see Section 1.5 of the textbook):</li>
+                  <ul class="slide">
+                    <li><code>boolean b =
+                      inStream.isEmpty();&nbsp;&nbsp;&nbsp;&nbsp; // boolean
+                      value that is true if there are no more values, false
+                      otherwise</code></li>
+                      <li><code>int i&nbsp;&nbsp;&nbsp;&nbsp; =
+                        inStream.readInt();&nbsp;&nbsp;&nbsp;&nbsp; // reads in an
+                        int from inStream</code><code><br>
+                      </code></li>
+                      <li><code>double d&nbsp; = inStream.readDouble();&nbsp; //
+                        reads in a double</code><code> from inStream</code></li>
+                        <li><code>boolean b = inStream.readBoolean(); // reads in a
+                          boolean </code><code>from inStream</code></li>
+                          <li><code>String s&nbsp; = inStream.readString();&nbsp; //
+                            reads in a string from inStream</code></li>
+                            <li><code>String s&nbsp; =
+                              inStream.readLine();&nbsp;&nbsp;&nbsp; // reads in an
+                              entire line from inStream</code></li>
+                              <li><code>String s&nbsp; =
+                                inStream.readAll();&nbsp;&nbsp;&nbsp;&nbsp; // reads in
+                                the entire file from inStream</code></li>
+                              </ul>
 
-                However, this section provides an overview of the necessary steps:
-              </li>
-            </ol>
-            <ul>
-              <ul>
-                <li>Declare and initialize a variable in <code>main()</code>
-                  (we'll call it
-                  <code> inStream</code> in this example) to read from the file:<br>
-                  <code>&nbsp;&nbsp;&nbsp;&nbsp;In inStream = new
-                    In(filename);&nbsp; // creates a variable inStream that we
-                    can use to read from the file</code></li>
-                    <li>Once the input stream is initialized, you can read from it
-                      using the following commands, just as with <code>StdIn</code>
-                      (see Section 1.5 of the textbook):</li>
-                      <ul>
-                        <li><code>boolean b =
-                          inStream.isEmpty();&nbsp;&nbsp;&nbsp;&nbsp; // boolean
-                          value that is true if there are no more values, false
-                          otherwise</code></li>
-                          <li><code>int i&nbsp;&nbsp;&nbsp;&nbsp; =
-                            inStream.readInt();&nbsp;&nbsp;&nbsp;&nbsp; // reads in an
-                            int from inStream</code><code><br>
-                          </code></li>
-                          <li><code>double d&nbsp; = inStream.readDouble();&nbsp; //
-                            reads in a double</code><code> from inStream</code></li>
-                            <li><code>boolean b = inStream.readBoolean(); // reads in a
-                              boolean </code><code>from inStream</code></li>
-                              <li><code>String s&nbsp; = inStream.readString();&nbsp; //
-                                reads in a string from inStream</code></li>
-                                <li><code>String s&nbsp; =
-                                  inStream.readLine();&nbsp;&nbsp;&nbsp; // reads in an
-                                  entire line from inStream</code></li>
-                                  <li><code>String s&nbsp; =
-                                    inStream.readAll();&nbsp;&nbsp;&nbsp;&nbsp; // reads in
-                                    the entire file from inStream</code></li>
-                                  </ul>
-                                  <li>
-                                    The next step is to actually read in the file.&nbsp; To do
-                                    this, we'll need to understand the format of the file's
-                                    contents:<br>
-                                    <b>Input format.</b> The information for the universe is
-                                    contained in a text file with the following format:
-                                    <ol>
-                                      <li> The first value is an integer <font color="blue"><b>N</b></font>
-                                        that represents the number of particles. </li>
-                                        <li> The second value is a real number <font color="blue"><b>R</b></font>
-                                          that represents the <em>radius</em> of the universe: assume
-                                          all particles will have <em>x</em>- and <em>y</em>-coordinates
+                            </section>
+                            <section class="slide" id="Part I: Reading Input 4">
+                              <li>
+                                The next step is to actually read in the file.&nbsp; To do
+                                this, we'll need to understand the format of the file's
+                                contents:<br>
+                                <b>Input format.</b> The information for the universe is
+                                contained in a text file with the following format:
+                                <ol>
+                                  <li> The first value is an integer <font color="blue"><b>N</b></font>
+                                    that represents the number of particles. </li>
+                                    <li> The second value is a real number <font color="blue"><b>R</b></font>
+                                      that represents the <em>radius</em> of the universe: assume
+                                      all particles will have <em>x</em>- and <em>y</em>-coordinates
 
 
 
 
 
-                                          that remain between -<em>R</em> and <em>R</em>. </li>
-                                          <li> The remaining <em>N</em> rows, each contain 6 values.
-                                            The first two are the <em>x</em>- and <em>y</em>-coordinates
+                                      that remain between -<em>R</em> and <em>R</em>. </li>
+                                      <li> The remaining <em>N</em> rows, each contain 6 values.
+                                        The first two are the <em>x</em>- and <em>y</em>-coordinates
 
 
 
 
 
-                                            of the initial position (<font color="blue"><b>px[]</b></font>
-                                            and <font color="blue"><b>py[]</b></font>); the second two
-                                            are the <em>x</em>- and <em>y</em>-components of the
-                                            initial velocity (<font color="blue"><b>vx[]</b></font> and
-                                            <font color="blue"><b>vy[]</b></font>); the fifth is the
-                                            mass (<font color="blue"><b>m[]</b></font>); the last is a <tt>String</tt>
-                                            that is the name of an image file used to display the
-                                            particle (<font color="blue"><b>imgNames[]</b></font>). As
-                                            an example, <tt>planets.txt</tt> contains data for our
-                                            solar system (in SI units). </li>
-                                            <blockquote>
-                                              <pre>  % <b>more planets.txt</b>
-                                                <font color="blue"><b>N</b></font> 5
-                                                <font color="blue"><b>R</b></font> 2.50e+11
-                                                1.4960e+11  0.0000e+00  0.0000e+00  2.9800e+04  5.9740e+24   earth.gif
-                                                2.2790e+11  0.0000e+00  0.0000e+00  2.4100e+04  6.4190e+23   mars.gif
-                                                5.7900e+10  0.0000e+00  0.0000e+00  4.7900e+04  3.3020e+23   mercury.gif
-                                                0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  1.9890e+30   sun.gif
-                                                1.0820e+11  0.0000e+00  0.0000e+00  3.5000e+04  4.8690e+24   venus.gif
-                                                <font color="blue"><b>px[]        py[]        vx[]        vy[]        m[]       imgNames[]</b></font>
-                                              </pre>
-                                            </blockquote>
+                                        of the initial position (<font color="blue"><b>px[]</b></font>
+                                        and <font color="blue"><b>py[]</b></font>); the second two
+                                        are the <em>x</em>- and <em>y</em>-components of the
+                                        initial velocity (<font color="blue"><b>vx[]</b></font> and
+                                        <font color="blue"><b>vy[]</b></font>); the fifth is the
+                                        mass (<font color="blue"><b>m[]</b></font>); the last is a <tt>String</tt>
+                                        that is the name of an image file used to display the
+                                        particle (<font color="blue"><b>imgNames[]</b></font>). As
+                                        an example, <tt>planets.txt</tt> contains data for our
+                                        solar system (in SI units). </li>
+                                        <blockquote>
+                                          <pre>  % <b>more planets.txt</b>
+                                            <font color="blue"><b>N</b></font> 5
+                                            <font color="blue"><b>R</b></font> 2.50e+11
+                                            1.4960e+11  0.0000e+00  0.0000e+00  2.9800e+04  5.9740e+24   earth.gif
+                                            2.2790e+11  0.0000e+00  0.0000e+00  2.4100e+04  6.4190e+23   mars.gif
+                                            5.7900e+10  0.0000e+00  0.0000e+00  4.7900e+04  3.3020e+23   mercury.gif
+                                            0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  1.9890e+30   sun.gif
+                                            1.0820e+11  0.0000e+00  0.0000e+00  3.5000e+04  4.8690e+24   venus.gif
+                                            <font color="blue"><b>px[]        py[]        vx[]        vy[]        m[]       imgNames[]</b></font>
+                                          </pre>
+                                        </blockquote>
           <!-- <li>
        Note: On Windows, you should use the command "<tt>type
         planets.txt</tt>" to print out the contents of the
@@ -451,6 +464,8 @@
       </li> -->
     </ol>
   </li>
+</section>
+<section class="slide" id="Part I: Reading Input 3">
   <li> Read in the data file <tt>planets.txt</tt> as described
     above using the methods from <code>StdIn</code>. Declare your
     fields as class-level variables, and initialize them in <code>main()</code>,
@@ -1036,6 +1051,7 @@
  boundary conditions since it's not possible to simulate nearly that many
  atoms.--> </li>
 </ul>
+</section>
 </section>
 
 
