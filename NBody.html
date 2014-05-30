@@ -286,7 +286,7 @@
 </section>
 
 <section class="slide" id="Part I: Reading Input">
-  <h3>Part I: Reading Input</h3>
+  <h2>Part I: Reading Input</h2>
   <ul>
   </ul>
   <class="slide" ol>
@@ -316,7 +316,7 @@
 <section class="slide" id="Part I: Reading Input 2">
 
   <ol start="4">
-    Reading command line arguments
+  <li> <h3> Reading command line arguments </h3></li>
   </ol>
 
   <ul class="slide">
@@ -356,12 +356,15 @@
         <li>Check that it read in the filename correctly and printed it
           out.<br>
         </li>
-        <li><font color="red"><b>Do not continue until you have tested
+        <li class="slide"><font color="red"><b>Do not continue until you have tested
           and debugged this part.</b></font></li>
         </ul>
 
-        <ol start="5" class="slide">
-          <li><b>Reading from a file:&nbsp; </b>The next step is to read in
+ </section>
+      <section class="slide" id="Part I: Reading Input 3">
+        <ol start="5">
+          <h3>Reading from a file:&nbsp;</h3> 
+          <li>The next step is to read in
             the file describing the universe we will simulate.&nbsp; We will
             store this information into variables for use in our program. <br>
             The booksite's standard library provides the file <code>In.java</code>
@@ -371,11 +374,8 @@
             However, this section provides an overview of the necessary steps:
           </li>
         </ol>
-      </section>
-      <section class="slide" id="Part I: Reading Input 3">
-
-        <ul>
-          <ul>
+     
+          <ul class="slide">
             <li>Declare and initialize a variable in <code>main()</code>
               (we'll call it
               <code> inStream</code> in this example) to read from the file:<br>
@@ -407,19 +407,20 @@
                                 inStream.readAll();&nbsp;&nbsp;&nbsp;&nbsp; // reads in
                                 the entire file from inStream</code></li>
                               </ul>
-
+                            </ul>
                             </section>
+
                             <section class="slide" id="Part I: Reading Input 4">
                               <li>
                                 The next step is to actually read in the file.&nbsp; To do
                                 this, we'll need to understand the format of the file's
                                 contents:<br>
                                 <b>Input format.</b> The information for the universe is
-                                contained in a text file with the following format:
+                                contained in a text file with the following format:</li>
                                 <ol>
-                                  <li> The first value is an integer <font color="blue"><b>N</b></font>
+                                   <li class="slide"> The first value is an integer <font color="blue"><b>N</b></font>
                                     that represents the number of particles. </li>
-                                    <li> The second value is a real number <font color="blue"><b>R</b></font>
+                                    <li class="slide"> The second value is a real number <font color="blue"><b>R</b></font>
                                       that represents the <em>radius</em> of the universe: assume
                                       all particles will have <em>x</em>- and <em>y</em>-coordinates
 
@@ -428,7 +429,7 @@
 
 
                                       that remain between -<em>R</em> and <em>R</em>. </li>
-                                      <li> The remaining <em>N</em> rows, each contain 6 values.
+                                      <li class="slide"> The remaining <em>N</em> rows, each contain 6 values.
                                         The first two are the <em>x</em>- and <em>y</em>-coordinates
 
 
@@ -444,8 +445,9 @@
                                         that is the name of an image file used to display the
                                         particle (<font color="blue"><b>imgNames[]</b></font>). As
                                         an example, <tt>planets.txt</tt> contains data for our
-                                        solar system (in SI units). </li>
-                                        <blockquote>
+                                        solar system (in SI units). </li></ol>
+                                       
+                                       <li class="slide"> <blockquote>
                                           <pre>  % <b>more planets.txt</b>
                                             <font color="blue"><b>N</b></font> 5
                                             <font color="blue"><b>R</b></font> 2.50e+11
@@ -456,7 +458,7 @@
                                             1.0820e+11  0.0000e+00  0.0000e+00  3.5000e+04  4.8690e+24   venus.gif
                                             <font color="blue"><b>px[]        py[]        vx[]        vy[]        m[]       imgNames[]</b></font>
                                           </pre>
-                                        </blockquote>
+                                        </blockquote></li>
           <!-- <li>
        Note: On Windows, you should use the command "<tt>type
         planets.txt</tt>" to print out the contents of the
@@ -465,7 +467,7 @@
     </ol>
   </li>
 </section>
-<section class="slide" id="Part I: Reading Input 3">
+<section class="slide" id="Part I: Reading Input 5">
   <li> Read in the data file <tt>planets.txt</tt> as described
     above using the methods from <code>StdIn</code>. Declare your
     fields as class-level variables, and initialize them in <code>main()</code>,
@@ -476,7 +478,7 @@
       information to aid in debugging; later, you will use this code
       to print out the state of the universe at the end of the
       simulation.
-      <blockquote>
+      <li class="slide"><blockquote>
         <pre>System.out.printf("%d\n", N);
           System.out.printf("%.2e\n", R);
           for (int i = 0; i &lt; N; i++) {
@@ -484,27 +486,31 @@
           px[i], py[i], vx[i], vy[i], m[i], imgNames[i]);
         }
       </pre>
-    </blockquote>
-  </li>
+    </blockquote></li>
+</section>
+<section class="slide" id="Part I: Reading Input 5">
+<ul>
   <li> Run your program:
     <p> <b><tt>% java NBody 15778000.0 25000.0 planets.txt</tt></b>
     </p>
-    <p>Your program should print out the contents of <tt>planets.txt</tt>
+    <p class="slide">Your program should print out the contents of <tt>planets.txt</tt>
       just as they appear above. You can ignore the two numeric
       command-line arguments for now, which control the time
       simulation, and focus on the reading <tt>planets.txt</tt>. </p>
     </li>
-    <li> <font color="red"><b>Do not even think of continuing until
+    <li class="slide"> <font color="red"><b>Do not even think of continuing until
       you have tested and debugged this part.</b></font> </li>
     </ul>
     <p> </p>
-    <h3>Part II: Draw the Planets<br>
-    </h3>
-    For this part, you will work entirely in the <code>setup()</code>
-    function, declaring class-level variables as needed.
+  </section>
+
+  <section class="slide" id="Part II: Draw the Planets">
+    <h2>Part II: Draw the Planets </h2><br/>
+   <p> For this part, you will work entirely in the <code>setup()</code>
+    function, declaring class-level variables as needed.</p>
     <ul>
-      <li> Set the size of the window to 500 by 500 pixels. </li>
-      <li> Write code to declare a class-level variable of type <code>PImage</code>
+      <li class="slide"> Set the size of the window to 500 by 500 pixels. </li>
+      <li class="slide"> Write code to declare a class-level variable of type <code>PImage</code>
         called <tt>backdrop</tt> for the background and initialize it
         to <code>starfield.jpg</code> included in the zip:<br>
         <code>&nbsp;&nbsp;&nbsp;&nbsp;backdrop =
@@ -515,12 +521,15 @@
           height); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// get() crops the
           background image to be the same size as the canvas<br>
         </code> </li>
-        <li> Write code to draw the background.&nbsp; Run your program to
+        <li class="slide"> Write code to draw the background.&nbsp; Run your program to
           test it.</li>
+        </section>
+
+            <section class="slide" id="Part II: Draw the Planets 2">
           <li>Add a class-level array of <code>PImage</code> variables to
             hold the images for the planets via the following code:  <code>PImage[] images;</code>&nbsp; <br>
           </li>
-          <ul>
+          <ul class="slide">
             <li>We will need to load all these images in <code>setup()</code>
               and use them in <code>draw()</code>.&nbsp; The alternative
               --- loading the images each iteration of the draw loop ---
@@ -533,6 +542,8 @@
               </ul>
               <li>Write a loop to display images of the <tt>N</tt> bodies. <br>
               </li>
+                </section>
+                <section class="slide" id="Part II: Draw the Planets 3">
               <ul>
                 <li>The universe is represented in a much larger coordinate system than we can display, so we must transform 
                   all universe coordinates (e.g., <code>px[i]</code>, <code>py[i]</code>) to coordinates that we can display 
@@ -547,9 +558,9 @@
                       // computes the display x coordinate for the universe px coordinate<br>
                       &nbsp;&nbsp;&nbsp;&nbsp;(-py[i] + R) * height / (2.0 * R) //
                       computes the display y coordinate for the universe py coordinate </code></li>
-                      <li>Note that you should use these formulas ONLY for computing the display coordinates of the images from <code>px[i]</code>, <code>py[i]</code>.  
+                      <li class="slide">Note that you should use these formulas ONLY for computing the display coordinates of the images from <code>px[i]</code>, <code>py[i]</code>.  
                         All calculations to update the body positions should use <code>px[i]</code>, <code>py[i]</code> -- never these formulas.
-                        <li>Be sure to use <code>imageMode(CENTER)</code> so that your bodies are centered at the correct coordinates.
+                        <li class="slide">Be sure to use <code>imageMode(CENTER)</code> so that your bodies are centered at the correct coordinates.
                         </ul>
                         <li>If all goes correctly, you should see the four stationary
                           planets and the sun.
@@ -559,8 +570,11 @@
                           </li>
                         </ul>
                         <p> </p>
-                        <h3>Part III: Making the Planets Move</h3>
-                        <p> <b>Background:</b> The motion of particles is governed by a set
+                      </section>
+                       <section class="slide" id="Part III: Make the Planets Move">
+                        <h2>Part III: Making the Planets Move</h2>
+                        <p > <h3>Background:</h3> 
+                          <p class="slide">The motion of particles is governed by a set
                           of equations known as Newton's laws of motion and gravitation. (At
                           the scale of the galaxy, we can treat planets as particles.) The
                           equations contain two basic parts: <i>velocity</i>, which is the
@@ -570,8 +584,8 @@
                           (e.g. friction, gravity, or a push) creates an acceleration that
                           changes the speed or direction. In our simulations, the only force
                           will be gravity. First, however, we suggest implementing a
-                          universe without gravity and testing to make sure this works. </p>
-                          <p> Although we think of time as advancing continuously and of
+                          universe without gravity and testing to make sure this works. </p></p>
+                          <p class="slide"> Although we think of time as advancing continuously and of
                             objects as moving continuously, computers are not good at
                             simulating constant change. Instead, we settle for letting time
                             jump forward in discrete time steps of Δ<i>t</i>, measured in
@@ -586,11 +600,13 @@
                             integrate Newton's equations (don't worry if that statement is
                             meaningless to you), and is the basis for most astrophysical
                             simulations of gravitational systems. </p>
+                          </section>
+                          <section class="slide" id="Part III: The Time Loop">
                             <ol>
                               <li>
                                 <h4>The Time Loop</h4>
                                 <ul>
-                                  <li> Create two class-level variables, <b><tt><font
+                                  <li class="slide"> Create two class-level variables, <b><tt><font
                                     color="blue">T</font></tt></b> and <b><tt><font
                                     color="blue">dt</font></tt></b>. <tt>T</tt> is the
                                     time at which your simulation should end (the end of the
@@ -598,19 +614,19 @@
                                     time that should pass in each step of your simulation.<br>
                                     (The latter is normally written "Δt" in formulas, but
                                     variable names are limited to the Roman alphabet.) </li>
-                                    <li> In <code>main()</code>, use <tt>Double.parseDouble()</tt>
+                                    <li class="slide"> In <code>main()</code>, use <tt>Double.parseDouble()</tt>
                                       to read the two numeric command-line arguments from <tt>args[0]</tt>
                                       and <tt>args[1]</tt> into the above variables <b><tt><font
                                       color="blue">T</font></tt></b> and <b><tt><font
                                       color="blue">dt</font></tt></b>.&nbsp; <br>
                                     </li>
-                                    <ul>
+                                    <ul class="slide">
                                       <li>Add temporary print statements for these variables, then
                                         run your program and test that it works.&nbsp; Remove the
                                         temporary print statements.<br>
                                       </li>
                                     </ul>
-                                    <li> Create a class-level variable <code>t</code>. In <code>draw()</code>,
+                                    <li class="slide"> Create a class-level variable <code>t</code>. In <code>draw()</code>,
                                       increment this variable after checking it for whether the
                                       universe should be stopped; if it is time for the universe
                                       to stop, you can freeze the animation using <code>noLoop()</code>.
@@ -618,27 +634,29 @@
                                       arguments, rather than part of the input file, you can
                                       simulate the same universe at different speeds and for
                                       different lengths of time. </li>
-                                      <li>Remove the print statements from <code>setup()</code> and
+                                      <li class="slide">Remove the print statements from <code>setup()</code> and
                                         use them to print out the state of the universe after it
                                         stops.</li>
-                                        <li> In <code>setup()</code>, set the frame rate to 30 by
+                                        <li class="slide"> In <code>setup()</code>, set the frame rate to 30 by
                                           adding the command <tt>frameRate(30)</tt> to your code. The
                                           argument "30" controls the speed of the animation; you can
                                           increase it to speed up the animation or decrease it to slow
                                           the animation down. Without it, your animation may flicker,
                                           and if it is too short you animation may not run smoothly. </li>
-                                          <li> Make sure your program compiles. There should be no
+                                          <li class="slide"> Make sure your program compiles. There should be no
                                             change yet when you run it. </li>
                                           </ul>
                                         </li>
-                                        <li>
-                                          <h4>Calculate the new position for every planet</h4>
+                                       
+                                        </section>
+                                        <section class="slide" id="Part III: Redraw the Planets">
+                                          <h3>Calculate the new position for every planet</h3>
                                           <ul>
-                                            <li>Move the loop that draws the planets from <code>setup()</code>
+                                            <li class="slide">Move the loop that draws the planets from <code>setup()</code>
                                               to <code>draw()</code>.&nbsp; Test your program; again
                                               there should be no change when you run it.<code></code><code></code><code></code>
                                             </li>
-                                            <li>Inside <code>draw()</code>, before you redraw the
+                                            <li class="slide">Inside <code>draw()</code>, before you redraw the
                                               planets, update the position (<i>p<sub>x</sub></i>,&nbsp;<i>p<sub>y</sub></i>)
                                               for every planet to (<i>p<sub>x</sub></i>&nbsp;+&nbsp;Δ<i>t</i>&nbsp;<i>v<sub>x</sub></i>,&nbsp;&nbsp;<i>p<sub>y</sub></i>&nbsp;+&nbsp;Δ<i>t</i>&nbsp;<i>v<sub>y</sub></i>).
 
@@ -650,20 +668,22 @@
                                               Remember that the positions and velocities of your planets
                                               are stored in the <tt>px</tt>, <tt>py</tt>, <tt>vx</tt>,
                                               and <tt>vy</tt> arrays.</li>
-                                              <li> Compile and run your program. For the <tt>planets.txt</tt>
+                                              <li class="slide"> Compile and run your program. For the <tt>planets.txt</tt>
                                                 input, the sun should stay put in the center of the window,
                                                 and the four planets should move straight up and off the
                                                 screen. This is because their initial velocities specified
                                                 in <tt>planets.txt</tt> all point straight up and we have
                                                 not yet incorporated acceleration. </li>
-                                                <li> If your animation flickers or smears, check the Common
+                                                <li class="slide"> If your animation flickers or smears, check the Common
                                                   Problems section below. </li>
                                                 </ul>
                                               </li>
-                                              <li>
-                                                <h4>Calculate the new velocity for every planet</h4>
+                                              
+                                              </section>
+                                              <section class="slide" id="Part III: Gravitational Forces">
+                                                <h3>Calculate the new velocity for every planet</h3>
                                                 <ul>
-                                                  <li> <b>Gravitational Forces (Background):</b> To update the
+                                                  <li class="slide"> <b>Gravitational Forces (Background):</b> To update the
                                                     particle velocities at each time step, you need to to
                                                     compute the gravitational forces. Since the force depends on
                                                     the relative positions of particles, it changes constantly
@@ -676,7 +696,7 @@
                                                     each planet, you will need a loop over all other planets to
                                                     sum up the force they exert on it. You will need to do this
                                                     for all planets. </li>
-                                                    <li> <b>Gravitational Forces (Scaffolding Code):</b> For now,
+                                                    <li class="slide"> <b>Gravitational Forces (Scaffolding Code):</b> For now,
                                                       assume the force that any planet exerts on any other planet
                                                       is 0. (You will update this in the following steps.) Write
                                                       code to compute the total force on each planet by summing up
@@ -685,7 +705,7 @@
                                                       let you focus on the pairwise forces in the next step. <font
                                                       color="red"><b>Make sure your code compiles at the end of
                                                       this and every step.</b></font> </li>
-                                                      <li> <b>Pairwise Gravitational Forces:</b> The formula for
+                                                      <li class="slide"> <b>Pairwise Gravitational Forces:</b> The formula for
                                                         the pairwise force <b>F</b> that one particle exerts on
                                                         another is known as <i>Newton's law of universal
                                                         gravitation</i>. It is the gravitational constant
@@ -697,7 +717,7 @@
                                                         <center> <img src="nbody_formulas.png" alt="force diagram">
                                                         </center>
                                                       </li>
-                                                      <li> <b><i>x</i>- and <i>y</i>- Force Components:</b> Since
+                                                      <li class="slide"> <b><i>x</i>- and <i>y</i>- Force Components:</b> Since
                                                         the velocity is broken down into x- and y- components, the
                                                         force needs to be too. Write code to compute the pairwise
                                                         forces <i>F<sub>x</sub></i> and <i>F<sub>y</sub></i> using
@@ -706,31 +726,33 @@
                                                         just as it is on the figure. <b>Don't worry if you don't
                                                         fully understand the formulas. That's the computer's job.</b>
                                                       </li>
-                                                      <li> <b>Style and Readability Improvement:</b> Define a
+                                                    </section>
+                                                      <section class="slide" id="Part III: Gravity, Acceleration, and Velocity">
+                                                      <li class="slide"> <b>Style and Readability Improvement:</b> Define a
                                                         class-level variable <b><tt><font color="blue">G</font></tt></b>
                                                         for the gravitational constant so the formulas will be
                                                         easier to read. Initialize it to the value <tt>6.67e-11</tt>.
                                                         This is Java-speak for 6.67&nbsp;×&nbsp;10<sup>-11</sup>. </li>
-                                                        <li> <b>Δ<i>x</i> and Δ<i>y</i>:</b> Be careful computing Δ<i>x</i>
+                                                        <li class="slide"> <b>Δ<i>x</i> and Δ<i>y</i>:</b> Be careful computing Δ<i>x</i>
                                                           and Δ<i>y</i>. These are the distances in the x- and y-
                                                           directions from the first planet to the second one, and can
                                                           be negative. You should <b>not</b> take the absolute value
                                                           of the differences between their x- and y- positions. </li>
-                                                          <li> <b>Acceleration:</b> Compute the acceleration on each
+                                                          <li class="slide"> <b>Acceleration:</b> Compute the acceleration on each
                                                             particle using the formulas <i>a<sub>x</sub>&nbsp;= F<sub>x</sub>&nbsp;/&nbsp;m</i>
                                                             and <i>a<sub>y</sub>&nbsp;= F<sub>y</sub>&nbsp;/&nbsp;m</i>
                                                             where <i>m</i> is the mass of the particle, and <i>F<sub>x</sub></i>
                                                             and <i>F<sub>y</sub></i> are the sum of all pairwise forces
                                                             exerted on the particle.<br>
                                                             This is <i>Newton's second law of motion</i>. </li>
-                                                            <li> <b>Velocity:</b> Using the acceleration you just
+                                                            <li class="slide"> <b>Velocity:</b> Using the acceleration you just
                                                               computed, update the velocity (<i>v<sub>x</sub></i>, <i>v<sub>y</sub></i>)
                                                               to (<i>v<sub>x</sub></i> + Δ<i>t</i> <i>a<sub>x</sub></i>,
                                                               <i>v<sub>y</sub></i> + Δ<i>t</i> <i>a<sub>y</sub></i>).
                                                               This gives you the direction and speed each particle should
                                                               move at the current time, taking into account the
                                                               gravitational pull of every other particle. </li>
-                                                              <li> <b>Order of computation:</b> Remember that you must
+                                                              <li class="slide"> <b>Order of computation:</b> Remember that you must
                                                                 update the velocity of <b>every</b> particle before you can
                                                                 update any positions. Even though your program computes
                                                                 these velocities one after the other, you have to maintain
@@ -739,6 +761,8 @@
                                                                 before computing Mars's velocity, then you will end up
                                                                 computing Mars's velocity based on Earth's <i>future</i>
                                                                 position, rather than its current position. </li>
+                                                              </section>
+                                                              <section class="slide" id="Part III: Testing">
                                                                 <li> <b>Testing:</b> Compile and run your program. The
                                                                   planets should now orbit the sun. When testing, you should
                                                                   start with a single time step, making sure that it is
@@ -749,7 +773,7 @@
                                                                 </ul>
                                                               </li>
                                                             </ol>
-                                                            <p> After completing this section, review the requirements in <b>Your
+                                                            <p class="slide"> After completing this section, review the requirements in <b>Your
 
 
 
@@ -760,15 +784,16 @@
                                                               fulfilling the requirements exactly. Continue testing with other
                                                               input files. </p>
                                                               <p> </p>
-                                                              <h3>Sound</h3>
-                                                              For an optional finishing touch, play the theme to <em>2001: A
+                                                              <h3 class="slide">Sound</h3>
+                                                             <p class="slide"> For an optional finishing touch, play the theme to <em>2001: A
                                                               Space Odyssey</em> using StdAudio and the file <tt>2001.mid</tt>.
                                                               You only need to add one line of code to the end of <tt>setup()</tt>
                                                               to play the music: <br>
                                                               <tt>StdAudio.play("2001.mid")</tt><br>
                                                               On some computers, this adds a delay when the program starts up. For
                                                               this reason, we recommended adding sound only when everything else
-                                                              works. It's entirely optional and not worth any points.
+                                                              works. It's entirely optional and not worth any points.</p>
+                                                            </section>
     <!--
     For an optional finishing touch, play the theme to <em>2001: A
       Space Odyssey</em> using <tt>Minim</tt> and the file <tt>2001.aif</tt>.
@@ -786,6 +811,7 @@
  player.play();</pre> </li>
       </ul>
     -->
+    <section class="slide" id="Common Problems">
     <h3>Common Problems</h3>
     <ul>
       <li><b>Standard Libraries Missing</b> For this assignment, you
@@ -857,6 +883,8 @@
             drawing the planets at their new positions, the old planets are
             still there, causing the smearing effect.</li>
           </ul>
+        </section>
+        <section class="slide" id="More Precise Testing">
           <h3>More Precise Testing</h3>
           <p> Below are the outputs your program should print after running on
             the <tt>planets.txt</tt> for various lengths of time. <b>Make
@@ -930,6 +958,8 @@
               </pre>
             </blockquote>
             <p> </p>
+          </section>
+          <section class="slide" id="Extra Credit">
             <h3>Extra Credit</h3>
             <p> Submit a zip file containing an alternate universe (in our input
               format) along with the necessary image files. If its behavior is
@@ -958,6 +988,8 @@
                 challenge, have it rotate around some center point.<br>
               </p>
               <p> </p>
+            </section>
+            <section class="slide" id="Enrichment">
               <h3>Enrichment</h3>
               <ul>
                 <li><b>What is the music in <tt>2001.mid</tt>?</b> It's the

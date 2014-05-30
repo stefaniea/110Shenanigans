@@ -360,8 +360,8 @@ code {
 
 blockquote {
   font-family: "Hoefler Text", Constantia, Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
-  font-size: 2em;
-  padding: 1em 2em .5em 2em;
+  font-size: .5em; /*made this smaller*/
+  padding: .5em .5em .25em .5em; /*and this as well*/
   color: #000;
   background: #E0E4CC;
   position: relative;
