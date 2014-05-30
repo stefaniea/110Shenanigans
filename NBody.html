@@ -540,7 +540,7 @@
                 looping the index <tt>i </tt>over all entries in <tt>imgNames.</tt>  To 
                 initialize a single element of the array, you can use the following code: <code>images[i] = loadImage(sketchPath(imgNames[i]));</code></li>
               </ul>
-              <li>Write a loop to display images of the <tt>N</tt> bodies. <br>
+              <li class="slide">Write a loop to display images of the <tt>N</tt> bodies. <br>
               </li>
                 </section>
                 <section class="slide" id="Part II: Draw the Planets 3">
@@ -548,7 +548,7 @@
                 <li>The universe is represented in a much larger coordinate system than we can display, so we must transform 
                   all universe coordinates (e.g., <code>px[i]</code>, <code>py[i]</code>) to coordinates that we can display 
                   in the limited Processing sketch window.
-                  <li>To transform between the universe coordinates and Processing window coordinates for the display, use the formulas below. The universe coordinates  
+                  <li class="slide">To transform between the universe coordinates and Processing window coordinates for the display, use the formulas below. The universe coordinates  
                     are specified on a scale of <font color="blue"><b>-R</b></font> to <font color="blue"><b>R</b></font>.
                     We have to shift this scale right by <font color="blue"><b>R</b></font>
                     because Processing's canvas has positive coordinates. You will
@@ -562,7 +562,7 @@
                         All calculations to update the body positions should use <code>px[i]</code>, <code>py[i]</code> -- never these formulas.
                         <li class="slide">Be sure to use <code>imageMode(CENTER)</code> so that your bodies are centered at the correct coordinates.
                         </ul>
-                        <li>If all goes correctly, you should see the four stationary
+                        <li class="slide">If all goes correctly, you should see the four stationary
                           planets and the sun.
                           <center> <img src="nbody-stationary.jpg" alt="N-body
                             simulation" height="256" width="256"> </center>
@@ -602,9 +602,9 @@
                             simulations of gravitational systems. </p>
                           </section>
                           <section class="slide" id="Part III: The Time Loop">
-                            <ol>
-                              <li>
-                                <h4>The Time Loop</h4>
+                            <ul>
+                              
+                                <h3>The Time Loop</h3>
                                 <ul>
                                   <li class="slide"> Create two class-level variables, <b><tt><font
                                     color="blue">T</font></tt></b> and <b><tt><font
@@ -728,7 +728,7 @@
                                                       </li>
                                                     </section>
                                                       <section class="slide" id="Part III: Gravity, Acceleration, and Velocity">
-                                                      <li class="slide"> <b>Style and Readability Improvement:</b> Define a
+                                                      <li> <b>Style and Readability Improvement:</b> Define a
                                                         class-level variable <b><tt><font color="blue">G</font></tt></b>
                                                         for the gravitational constant so the formulas will be
                                                         easier to read. Initialize it to the value <tt>6.67e-11</tt>.
@@ -812,15 +812,15 @@
       </ul>
     -->
     <section class="slide" id="Common Problems">
-    <h3>Common Problems</h3>
+    <h2>Common Problems</h2>
     <ul>
-      <li><b>Standard Libraries Missing</b> For this assignment, you
+      <li><h5>Standard Libraries Missing</h5> For this assignment, you
         need to use the booksite's standard libraries. If you ran the
         introcs installer, these should be set up for you, and
         everything should "just work." If not, you may need to download
         <a href="http://introcs.cs.princeton.edu/java/stdlib/In.java">In.java</a>
         into the same folder as your NBody.java.</li>
-        <li><b>My planets fly off the top right corner of the screen.</b>
+        <li><h5>My planets fly off the top right corner of the screen.</h5>
           You have probably flipped the order of particles when computing
           Δ<i>x</i> and Δ<i>y</i>. As a result, the signs on all your
           distances are all reversed, and gravity is repelling planets
@@ -831,8 +831,8 @@
             allowfullscreen="" frameborder="0" height="315" width="420"></iframe>
           </p>
         </li>
-        <li><b>My planets all disappear or jump to the top left corner as
-          soon as I start running the program.</b> Check your loop for
+        <li><h5>My planets all disappear or jump to the top left corner as
+          soon as I start running the program.</h5> Check your loop for
           computing the pairwise forces between particles. Are you
           computing the force exerted by a particle on itself (e.g.
           Earth's gravitational pull on itself)? If you are, do the
@@ -845,8 +845,8 @@
             allowfullscreen="" frameborder="0" height="315" width="420"></iframe>
           </p>
         </li>
-        <li><b>My planets go around the sun, then zoom off the lower left
-          corner.</b> You are not summing up the pairwise forces
+        <li><h5>My planets go around the sun, then zoom off the lower left
+          corner.</h5> You are not summing up the pairwise forces
           correctly. Run your program with a small value of <tt>T</tt>
           (e.g. 51000) so it runs for only two or three time steps. Print
           out the value of every variable before and after you change its
@@ -868,12 +868,12 @@
             allowfullscreen="" frameborder="0" height="315" width="420"></iframe>
           </p>
         </li>
-        <li><b>My planets are flickering.</b> You are not calling <tt>frameRate()</tt>.</li>
-        <li><b>My planets are flickering, and I only see one of them at a
-          time.</b> You are redrawing the background before drawing each
+        <li><h5>My planets are flickering.</h5> You are not calling <tt>frameRate()</tt>.</li>
+        <li><h5>My planets are flickering, and I only see one of them at a
+          time.</h5> You are redrawing the background before drawing each
           planet, instead of redrawing it once per timestep. As a result,
           you keep covering up each planet as soon as you draw it.</li>
-          <li><b>My planets "smear" accross the screen.</b> You are drawing
+          <li><h5>My planets "smear" accross the screen.</h5> You are drawing
             the background once at the beginning of the programming instead
             of once each time step. Processing does not erase the window
             automatically. In this program, we're never erasing it at all.
@@ -908,9 +908,9 @@
             to 2.5&nbsp;×&nbsp;10<sup>11</sup>. Even if the leading digit of
             the sun's position is off by one, the error is on the order of
             10000, which is far less than one pixel in the window!</p>
-            <p> Here are our results for a few sample inputs. </p>
-            <blockquote>
-              <pre>% <b>java NBody 0.0 25000.0 planets.txt</b>           // zero steps (Note: Nothing will show up on screen for this case)
+            <p class="slide"> Here are our results for a few sample inputs. </p>
+            <blockquote class="slide">
+              <pre >% <b>java NBody 0.0 25000.0 planets.txt</b>           // zero steps (Note: Nothing will show up on screen for this case)
                 5
                 2.50e+11
                 1.4960e+11  0.0000e+00  0.0000e+00  2.9800e+04  5.9740e+24    earth.gif
@@ -961,7 +961,7 @@
           </section>
           <section class="slide" id="Extra Credit">
             <h3>Extra Credit</h3>
-            <p> Submit a zip file containing an alternate universe (in our input
+            <p class="slide"> Submit a zip file containing an alternate universe (in our input
               format) along with the necessary image files. If its behavior is
               sufficiently interesting, we'll award extra credit. Your
               submission <b>must</b> be in a zip file, even if there are no
@@ -969,7 +969,7 @@
               <p> </p>
               <p> </p>
               <h3>Challenges</h3>
-              <p> There are limitless opportunities for additional excitement and
+              <p class="slide"> There are limitless opportunities for additional excitement and
                 discovery here. Try adding other features, such as supporting
                 elastic or inelastic collisions. Or, make the simulation
                 three-dimensional by doing calculations for <em>x</em>-, <em>y</em>-,
@@ -983,7 +983,7 @@
                 from one planet and has to land on another. Allow the rocket ship
                 to exert force with the consumption of fuel.<br>
               </p>
-              <p>Another idea is to generate a random starfield, and then have
+              <p class="slide">Another idea is to generate a random starfield, and then have
                 that starfield slowly move behind the planets.&nbsp; For an extra
                 challenge, have it rotate around some center point.<br>
               </p>
@@ -992,7 +992,7 @@
             <section class="slide" id="Enrichment">
               <h3>Enrichment</h3>
               <ul>
-                <li><b>What is the music in <tt>2001.mid</tt>?</b> It's the
+                <li class="slide"><h5>What is the music in <tt>2001.mid</tt>?</h5> It's the
                   fanfare to <a
                   href="http://en.wikipedia.org/wiki/Also_sprach_Zarathustra_%28Richard_Strauss%29">
                   Also sprach Zarathustra</a> by Richard Strauss. It was
@@ -1005,11 +1005,11 @@
 
 
                   A Space Odyssey</a>. </li>
-                  <li> <b>I'm a physicist. Why should I use the leapfrog method
+                  <li class="slide"> <h5>I'm a physicist. Why should I use the leapfrog method
                     instead of the formula I derived in high school? In other
                     words, why does the position update formula use the velocity
                     at the <em>updated</em> time step rather than the previous
-                    one? Why not use the 1/2 a t^2 formula? </b> The leapfrog
+                    one? Why not use the 1/2 a t^2 formula? </h5> The leapfrog
                     method is more stable for integrating Hamiltonian systems than
                     conventional numerical methods like Euler's method or
                     Runge-Kutta. The leapfrog method is <em>symplectic</em>, which
@@ -1022,7 +1022,7 @@
                     away from) the sun. For these reasons, symplectic methods are
                     extremely popular for N-body calculations in practice. (Yeah,
                     it's a bit complex.&nbsp; Hey, you asked!)
-                    <p> Here's a more complete explanation of how you should
+                    <p class="slide"> Here's a more complete explanation of how you should
                       interpret the variables. The classic <em>Euler method</em>
                       updates the position uses the velocity at time <em>t</em>
                       instead of using the updated velocity at time <em>t</em> + Δ<em>t</em>.
@@ -1045,19 +1045,21 @@
                       we update the velocity, we are using the acceleration at the
                       midpoint of the interval under consideration. </p>
                     </li>
-                    <li>Here are some interesting <a
+                    <li class="slide">Here are some interesting <a
                       href="http://en.wikipedia.org/wiki/Barycentric_coordinates_%28astronomy%29">
                       two-body systems</a>, perhaps relevant to the extra credit.
                       Here is beautiful <a
                       href="http://cosmicvariance.com/2006/07/23/n-bodies/">21-body
                       system</a> in a figure-8 - reproducing this one will
                       definitely earn you extra credit. </li>
-                      <li>Here is a <a
+                      <li class="slide">Here is a <a
                         href="http://www.art.net/%7Esimran/GenerativeMusic/Kepler.html">website</a>
                         that generates music using an N-body simulator!
         <!-- <p><li>Here's a wealth of information on
  <a href = "http://www.midwestcs.com/xstar/n-body.pdf">
    N-body simulation</a> [pdf]. --> </li>
+ </section>
+   <section class="slide" id="Enrichment 2">
    <li>N-body simulations play a crucial role in our understanding of
     the universe. Astrophysicists use it to study stellar dynamics
     at the galactic center, stellar dynamics in a globular cluster,
@@ -1070,7 +1072,7 @@
     needed.
     <!-- We will revisit one such approach in the final project. -->
   </li>
-  <li>The same methods are also widely used in molecular dynamics,
+  <li class="slide">The same methods are also widely used in molecular dynamics,
     except that the heavenly bodies are replaced by atoms, gravity
     is replaced by some other force, and the leapfrog method is
     called <em>Verlet's method</em>. With van der Waals forces, the
