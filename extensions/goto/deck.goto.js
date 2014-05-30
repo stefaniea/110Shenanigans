@@ -33,6 +33,7 @@ the deck container.
     $.each($.deck('getSlides'), function(i, $slide) {
       var id = $slide.attr('id');
       if (id) {
+        if(id.indexOf("slide") == -1) //***added this b/c countNested wasn't working.  Instead, checking if slide id has the word slide in it
         $datalist.append('<option value="' + id + '">');
       }
     });

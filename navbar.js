@@ -13,6 +13,23 @@ $(document).ready(function(){
 
 	$('.slide').css("margin-top", "80px");
 
+	$.extend(true, $.deck.defaults, {
+   classes: {
+      goto: 'deck-goto'
+   },
+
+   selectors: {
+      gotoForm: '.goto-form',
+      gotoInput: '#goto-slide'
+   },
+
+   keys: {
+      goto: 71 // 'g'
+   },
+
+   countNested: true
+});
+
 
 	/*var jPM = $.jPanelMenu({
     menu: '#custom-menu-selector',
