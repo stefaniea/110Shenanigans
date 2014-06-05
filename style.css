@@ -60,9 +60,9 @@ body {
 	display: inline-block;
 	list-style-type: none;
 	position:relative;
-	border-radius: 0px 10px 10px 10px; 
-	-moz-border-radius: 0px 10px 10px 10px; 
-	-webkit-border-radius: 0px 10px 10px 10px; 
+	border-radius: 0px 5px 5px 5px; 
+	-moz-border-radius: 0px 5px 5px 5px; 
+	-webkit-border-radius: 0px 5px 5px 5px; 
 	border: 0px solid #800000;
 	margin-left: -5%;
 }
@@ -96,10 +96,10 @@ body {
 #jPanelMenu-menu li {
 	list-style-type: none;
 	text-decoration: none;
-	padding:10px;
-	margin-left:0px;
+	padding:5px;
+	margin-left:5px;
 	display: list-item;
-	line-height:2em;
+	line-height:1em;
 	color: white;
 }
 
