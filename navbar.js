@@ -27,7 +27,7 @@ $(document).ready(function(){
       goto: 71 // 'g'
    },
 
-   countNested: true
+   countNested: false
 });
 
 
