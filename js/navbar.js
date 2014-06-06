@@ -31,16 +31,10 @@ $(document).ready(function(){
 });
 
 
-	/*var jPM = $.jPanelMenu({
-    menu: '#custom-menu-selector',
-    trigger: '.custom-menu-trigger-selector'
-});*/
+$(".answer").hide();
 
-
-
-
-	/*$(".dropdown_menu ul").hide();
-	$(".menu_wrapper").click(function(){
-		$(this).find(".dropdown_menu ul").get.slideToggle();
-	});*/
+//collapsable question/answers
+$(".question").click(function() {
+  $(this).children().find(".answer").toggle();
+});
 });
