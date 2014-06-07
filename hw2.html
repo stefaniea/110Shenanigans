@@ -34,29 +34,29 @@
 
   <!-- Begin slides. Just make elements with a class of slide. -->
 
-<section class="slide" id="Goals">
+  <section class="slide" id="Goals">
 
-  <h2>Goals</h2>
-  <ul>
-    <li class="slide">
-     Learn about a scientific computing application.
-   </li>
-   <li class="slide">
-     Learn about reading input from files using the In.java library.
-   </li>
-   <li class="slide" >
-     Learn to build up complex results using a sequence of simple statements.
-   </li>
-   <li class="slide" >
-    Reinforce understanding of animations in the Processing environment.
-  </li>
-  <li class="slide" >
-    Use nested loops.
-  </li>
-  <li class="slide" >
-    Use arrays.
-  </li>
-</ul>
+    <h2>Goals</h2>
+    <ul>
+      <li class="slide">
+       Learn about a scientific computing application.
+     </li>
+     <li class="slide">
+       Learn about reading input from files using the In.java library.
+     </li>
+     <li class="slide" >
+       Learn to build up complex results using a sequence of simple statements.
+     </li>
+     <li class="slide" >
+      Reinforce understanding of animations in the Processing environment.
+    </li>
+    <li class="slide" >
+      Use nested loops.
+    </li>
+    <li class="slide" >
+      Use arrays.
+    </li>
+  </ul>
 </section>
 
 <section class="slide" id="Example">
@@ -667,7 +667,7 @@
                                                               for all planets. </li>
 
                                                             </section>
-                                                              <section class="slide" id="Part III: Gravitation Forces 2">
+                                                            <section class="slide" id="Part III: Gravitation Forces 2">
                                                               <li> <h5>Gravitational Forces (Scaffolding Code):</h5> For now,
                                                                 assume the force that any planet exerts on any other planet
                                                                 is 0. (You will update this in the following steps.) Write
@@ -679,7 +679,7 @@
                                                                 this and every step.</b></font> </li>
                                                               </section>
 
-                                                               <section class="slide" id="Part II: Gravitational Forces 3">
+                                                              <section class="slide" id="Part II: Gravitational Forces 3">
                                                                 <li> <h5>Pairwise Gravitational Forces:</h5> The formula for
                                                                   the pairwise force <b>F</b> that one particle exerts on
                                                                   another is known as <i>Newton's law of universal
@@ -692,8 +692,8 @@
                                                                   <center> <img src="http://www.cis.upenn.edu/~cis110/14sp/hw/hw02/nbody_formulas.png" alt="force diagram">
                                                                   </center>
                                                                 </li>
-                                                               
-                                                                  <li> <h5><i>x</i>- and <i>y</i>- Force Components:</h5> Since
+
+                                                                <li> <h5><i>x</i>- and <i>y</i>- Force Components:</h5> Since
                                                                   the velocity is broken down into x- and y- components, the
                                                                   force needs to be too. Write code to compute the pairwise
                                                                   forces <i>F<sub>x</sub></i> and <i>F<sub>y</sub></i> using
@@ -799,260 +799,260 @@
       <ul class="QA">
         <li class="question"><h5>Standard Libraries Missing</h5> 
           <li class="answer">For this assignment, you
-          need to use the booksite's standard libraries. If you ran the
-          introcs installer, these should be set up for you, and
-          everything should "just work." If not, you may need to download
-          <a href="http://introcs.cs.princeton.edu/java/stdlib/In.java">In.java</a>
-          into the same folder as your NBody.java.</li>
-          <li class="question"><h5>My planets fly off the top right corner of the screen.</h5>
-            You have probably flipped the order of particles when computing
-            Δ<i>x</i> and Δ<i>y</i>. As a result, the signs on all your
-            distances are all reversed, and gravity is repelling planets
-            from each other instead of attracting them. (Video is slowed for
-            illustration.)
-            <p> <iframe
-              src="http://www.youtube.com/embed/Bi6scfHWLu4?rel=0"
-              allowfullscreen="" frameborder="0" height="315" width="420"></iframe>
-            </p></li>
-          </li>
-          <li class="question">
-           
+            need to use the booksite's standard libraries. If you ran the
+            introcs installer, these should be set up for you, and
+            everything should "just work." If not, you may need to download
+            <a href="http://introcs.cs.princeton.edu/java/stdlib/In.java">In.java</a>
+            into the same folder as your NBody.java.</li>
+            <li class="question"><h5>My planets fly off the top right corner of the screen.</h5>
+              You have probably flipped the order of particles when computing
+              Δ<i>x</i> and Δ<i>y</i>. As a result, the signs on all your
+              distances are all reversed, and gravity is repelling planets
+              from each other instead of attracting them. (Video is slowed for
+              illustration.)
+              <p> <iframe
+                src="http://www.youtube.com/embed/Bi6scfHWLu4?rel=0"
+                allowfullscreen="" frameborder="0" height="315" width="420"></iframe>
+              </p></li>
+            </li>
+            <li class="question">
+
               <h5>My planets all disappear or jump to the top left corner as
-            soon as I start running the program.</h5> 
- <li class="answer">
-            Check your loop for
-            computing the pairwise forces between particles. Are you
-            computing the force exerted by a particle on itself (e.g.
-            Earth's gravitational pull on itself)? If you are, do the
-            computation by hand to see exactly what it would give you. That
-            should help you understand why this is a bad idea, and why the
-            planets jump the way they do. (Video is slowed for
-            illustration.)
-            <p> <iframe
-              src="http://www.youtube.com/embed/j73bytX-dzo?rel=0"
-              allowfullscreen="" frameborder="0" height="315" width="420"></iframe>
-            </p>
-          </li>
-          </li>
-          <li class="question"><h5>My planets go around the sun, then zoom off the lower left
-            corner.</h5> 
-            <li class="answer">You are not summing up the pairwise forces
-            correctly. Run your program with a small value of <tt>T</tt>
-            (e.g. 51000) so it runs for only two or three time steps. Print
-            out the value of every variable before and after you change its
-            value (or right after you first initialize it). Include enough
-            information in the print statement so you can tell which
-            variable you are printing out. Make sure to print all loop
-            variables as well so you can tell from the output exactly when
-            each print statement occured. Run the program, and examine the
-            output. Ask yourself each time a variable changes whether its
-            starting and new values make sense. (You don't need to work out
-            the exact values of the variables to figure out if they make
-            sense in this case.) Once you've found the problem, you may want
-            to move the declarations of some variables farther inside your
-            loops to the first point you need them. Declaring variables as
-            late as possible is one strategy to avoid the type of bug you
-            are encountering. (Video is slowed for illustration.)
-            <p> <iframe
-              src="http://www.youtube.com/embed/i26ur1cJRjU?rel=0"
-              allowfullscreen="" frameborder="0" height="315" width="420"></iframe>
-            </p>
-          </li>
-        </li>
-          <li class="question"><h5>My planets are flickering.</h5> 
-            <li class="answer">You are not calling <tt>frameRate()</tt>.</li></li>
-          <li class="question"><h5>My planets are flickering, and I only see one of them at a
-            time.</h5> 
-            <li class="answer">
-              You are redrawing the background before drawing each
-            planet, instead of redrawing it once per timestep. As a result,
-            you keep covering up each planet as soon as you draw it.</li> </li>
-            <li class="question"><h5>My planets "smear" accross the screen.</h5> 
-              <li class="answer"> 
-                You are drawing
-              the background once at the beginning of the programming instead
-              of once each time step. Processing does not erase the window
-              automatically. In this program, we're never erasing it at all.
-              Instead, we keep covering the old planet positions up with the
-              starfield image, which happens to be exactly the same size as
-              the window. If you don't keep redrawing the background before
-              drawing the planets at their new positions, the old planets are
-              still there, causing the smearing effect.</li></li>
-            </ul>
-          </section>
-          <section class="slide" id="More Precise Testing">
-            <h3>More Precise Testing</h3>
-            <p> On the next slide there are the outputs your program should print after running on
-              the <tt>planets.txt</tt> for various lengths of time. <b>Make
-              sure you are printing your output at the very end of the program
-              before comparing to these.</b> The exact numbers you get may be
-              slightly different than the ones below if you do your computations
-              in a slightly different order than our solution. <b>This is fine</b>,
-              and is caused by rounding errors that affect the results
-              differently depending on the precise order of statements. Also
-              check to make sure that you are incrementing t after checking
-              whether the universe should stop. <b>The biggest errors will
-              appear to be in the sun's position.</b> Don't worry; all the
-              values are printed in scientific notation. The planets' positions
-              all end in <tt>e+10</tt> or <tt>e+11</tt>, meaning you should
-              multiple the numbers by 10<sup>10</sup> or 10<sup>11</sup>. The
-              exponents on the sun's position are on the scale of 10<sup>5</sup>.
-              An error in the leading digit of the sun's position is therefore
-              miniscule compared to the planet positions. Another way to think
-              about this is that the window is 500&nbsp;×&nbsp;500 pixels,
-              representing coordinates ranging from -2.5&nbsp;×&nbsp;10<sup>11</sup>
-              to 2.5&nbsp;×&nbsp;10<sup>11</sup>. Even if the leading digit of
-              the sun's position is off by one, the error is on the order of
-              10000, which is far less than one pixel in the window!</p>
-</section>
-              <section class="slide" id="Testing Sample Results">
-              <h3> Here are our results for a few sample inputs. </h3>
-              <blockquote>
-                <pre >% <b>java NBody 0.0 25000.0 planets.txt</b>           // zero steps (Note: Nothing will show up on screen for this case)
-                  5
-                  2.50e+11
-                  1.4960e+11  0.0000e+00  0.0000e+00  2.9800e+04  5.9740e+24    earth.gif
-                  2.2790e+11  0.0000e+00  0.0000e+00  2.4100e+04  6.4190e+23     mars.gif
-                  5.7900e+10  0.0000e+00  0.0000e+00  4.7900e+04  3.3020e+23  mercury.gif
-                  0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  1.9890e+30      sun.gif
-                  1.0820e+11  0.0000e+00  0.0000e+00  3.5000e+04  4.8690e+24    venus.gif
+                soon as I start running the program.</h5> 
+                <li class="answer">
+                  Check your loop for
+                  computing the pairwise forces between particles. Are you
+                  computing the force exerted by a particle on itself (e.g.
+                  Earth's gravitational pull on itself)? If you are, do the
+                  computation by hand to see exactly what it would give you. That
+                  should help you understand why this is a bad idea, and why the
+                  planets jump the way they do. (Video is slowed for
+                  illustration.)
+                  <p> <iframe
+                    src="http://www.youtube.com/embed/j73bytX-dzo?rel=0"
+                    allowfullscreen="" frameborder="0" height="315" width="420"></iframe>
+                  </p>
+                </li>
+              </li>
+              <li class="question"><h5>My planets go around the sun, then zoom off the lower left
+                corner.</h5> 
+                <li class="answer">You are not summing up the pairwise forces
+                  correctly. Run your program with a small value of <tt>T</tt>
+                  (e.g. 51000) so it runs for only two or three time steps. Print
+                  out the value of every variable before and after you change its
+                  value (or right after you first initialize it). Include enough
+                  information in the print statement so you can tell which
+                  variable you are printing out. Make sure to print all loop
+                  variables as well so you can tell from the output exactly when
+                  each print statement occured. Run the program, and examine the
+                  output. Ask yourself each time a variable changes whether its
+                  starting and new values make sense. (You don't need to work out
+                  the exact values of the variables to figure out if they make
+                  sense in this case.) Once you've found the problem, you may want
+                  to move the declarations of some variables farther inside your
+                  loops to the first point you need them. Declaring variables as
+                  late as possible is one strategy to avoid the type of bug you
+                  are encountering. (Video is slowed for illustration.)
+                  <p> <iframe
+                    src="http://www.youtube.com/embed/i26ur1cJRjU?rel=0"
+                    allowfullscreen="" frameborder="0" height="315" width="420"></iframe>
+                  </p>
+                </li>
+              </li>
+              <li class="question"><h5>My planets are flickering.</h5> 
+                <li class="answer">You are not calling <tt>frameRate()</tt>.</li></li>
+                <li class="question"><h5>My planets are flickering, and I only see one of them at a
+                  time.</h5> 
+                  <li class="answer">
+                    You are redrawing the background before drawing each
+                    planet, instead of redrawing it once per timestep. As a result,
+                    you keep covering up each planet as soon as you draw it.</li> </li>
+                    <li class="question"><h5>My planets "smear" accross the screen.</h5> 
+                      <li class="answer"> 
+                        You are drawing
+                        the background once at the beginning of the programming instead
+                        of once each time step. Processing does not erase the window
+                        automatically. In this program, we're never erasing it at all.
+                        Instead, we keep covering the old planet positions up with the
+                        starfield image, which happens to be exactly the same size as
+                        the window. If you don't keep redrawing the background before
+                        drawing the planets at their new positions, the old planets are
+                        still there, causing the smearing effect.</li></li>
+                      </ul>
+                    </section>
+                    <section class="slide" id="More Precise Testing">
+                      <h3>More Precise Testing</h3>
+                      <p> On the next slide there are the outputs your program should print after running on
+                        the <tt>planets.txt</tt> for various lengths of time. <b>Make
+                        sure you are printing your output at the very end of the program
+                        before comparing to these.</b> The exact numbers you get may be
+                        slightly different than the ones below if you do your computations
+                        in a slightly different order than our solution. <b>This is fine</b>,
+                        and is caused by rounding errors that affect the results
+                        differently depending on the precise order of statements. Also
+                        check to make sure that you are incrementing t after checking
+                        whether the universe should stop. <b>The biggest errors will
+                        appear to be in the sun's position.</b> Don't worry; all the
+                        values are printed in scientific notation. The planets' positions
+                        all end in <tt>e+10</tt> or <tt>e+11</tt>, meaning you should
+                        multiple the numbers by 10<sup>10</sup> or 10<sup>11</sup>. The
+                        exponents on the sun's position are on the scale of 10<sup>5</sup>.
+                        An error in the leading digit of the sun's position is therefore
+                        miniscule compared to the planet positions. Another way to think
+                        about this is that the window is 500&nbsp;×&nbsp;500 pixels,
+                        representing coordinates ranging from -2.5&nbsp;×&nbsp;10<sup>11</sup>
+                        to 2.5&nbsp;×&nbsp;10<sup>11</sup>. Even if the leading digit of
+                        the sun's position is off by one, the error is on the order of
+                        10000, which is far less than one pixel in the window!</p>
+                      </section>
+                      <section class="slide" id="Testing Sample Results">
+                        <h3> Here are our results for a few sample inputs. </h3>
+                        <blockquote>
+                          <pre >% <b>java NBody 0.0 25000.0 planets.txt</b>           // zero steps (Note: Nothing will show up on screen for this case)
+                            5
+                            2.50e+11
+                            1.4960e+11  0.0000e+00  0.0000e+00  2.9800e+04  5.9740e+24    earth.gif
+                            2.2790e+11  0.0000e+00  0.0000e+00  2.4100e+04  6.4190e+23     mars.gif
+                            5.7900e+10  0.0000e+00  0.0000e+00  4.7900e+04  3.3020e+23  mercury.gif
+                            0.0000e+00  0.0000e+00  0.0000e+00  0.0000e+00  1.9890e+30      sun.gif
+                            1.0820e+11  0.0000e+00  0.0000e+00  3.5000e+04  4.8690e+24    venus.gif
 
-                  % <b>java NBody 25000.0 25000.0 planets.txt</b>       // one step
-                  5
-                  2.50e+11
-                  1.4960e+11  7.4500e+08 -1.4820e+02  2.9800e+04  5.9740e+24    earth.gif
-                  2.2790e+11  6.0250e+08 -6.3860e+01  2.4100e+04  6.4190e+23     mars.gif
-                  5.7875e+10  1.1975e+09 -9.8933e+02  4.7900e+04  3.3020e+23  mercury.gif
-                  3.3087e+01  0.0000e+00  1.3235e-03  0.0000e+00  1.9890e+30      sun.gif
-                  1.0819e+11  8.7500e+08 -2.8329e+02  3.5000e+04  4.8690e+24    venus.gif
+                            % <b>java NBody 25000.0 25000.0 planets.txt</b>       // one step
+                            5
+                            2.50e+11
+                            1.4960e+11  7.4500e+08 -1.4820e+02  2.9800e+04  5.9740e+24    earth.gif
+                            2.2790e+11  6.0250e+08 -6.3860e+01  2.4100e+04  6.4190e+23     mars.gif
+                            5.7875e+10  1.1975e+09 -9.8933e+02  4.7900e+04  3.3020e+23  mercury.gif
+                            3.3087e+01  0.0000e+00  1.3235e-03  0.0000e+00  1.9890e+30      sun.gif
+                            1.0819e+11  8.7500e+08 -2.8329e+02  3.5000e+04  4.8690e+24    venus.gif
 
-                  % <b>java NBody 50000.0 25000.0 planets.txt</b>       // two steps
-                  5
-                  2.50e+11
-                  1.4959e+11  1.4900e+09 -2.9640e+02  2.9799e+04  5.9740e+24    earth.gif
-                  2.2790e+11  1.2050e+09 -1.2772e+02  2.4100e+04  6.4190e+23     mars.gif
-                  5.7826e+10  2.3945e+09 -1.9789e+03  4.7880e+04  3.3020e+23  mercury.gif
-                  9.9262e+01  2.8198e-01  2.6470e-03  1.1279e-05  1.9890e+30      sun.gif
-                  1.0818e+11  1.7499e+09 -5.6660e+02  3.4998e+04  4.8690e+24    venus.gif
+                            % <b>java NBody 50000.0 25000.0 planets.txt</b>       // two steps
+                            5
+                            2.50e+11
+                            1.4959e+11  1.4900e+09 -2.9640e+02  2.9799e+04  5.9740e+24    earth.gif
+                            2.2790e+11  1.2050e+09 -1.2772e+02  2.4100e+04  6.4190e+23     mars.gif
+                            5.7826e+10  2.3945e+09 -1.9789e+03  4.7880e+04  3.3020e+23  mercury.gif
+                            9.9262e+01  2.8198e-01  2.6470e-03  1.1279e-05  1.9890e+30      sun.gif
+                            1.0818e+11  1.7499e+09 -5.6660e+02  3.4998e+04  4.8690e+24    venus.gif
 
-                  % <b>java NBody 60000.0 25000.0 planets.txt</b>       // three steps
-                  5
-                  2.50e+11
-                  1.4958e+11  2.2349e+09 -4.4460e+02  2.9798e+04  5.9740e+24    earth.gif
-                  2.2789e+11  1.8075e+09 -1.9158e+02  2.4099e+04  6.4190e+23     mars.gif
-                  5.7752e+10  3.5905e+09 -2.9682e+03  4.7839e+04  3.3020e+23  mercury.gif
-                  1.9852e+02  1.1280e+00  3.9705e-03  3.3841e-05  1.9890e+30      sun.gif
-                  1.0816e+11  2.6248e+09 -8.4989e+02  3.4993e+04  4.8690e+24    venus.gif
-
-
-                  % <b>java NBody 31557600.0 25000.0 planets.txt</b>    // one year
-                  5
-                  2.50e+11
-                  1.4959e+11 -1.6531e+09  3.2949e+02  2.9798e+04  5.9740e+24    earth.gif
-                  -2.2153e+11 -4.9263e+10  5.1805e+03 -2.3640e+04  6.4190e+23     mars.gif
-                  3.4771e+10  4.5752e+10 -3.8269e+04  2.9415e+04  3.3020e+23  mercury.gif
-                  5.9426e+05  6.2357e+06 -5.8569e-02  1.6285e-01  1.9890e+30      sun.gif
-                  -7.3731e+10 -7.9391e+10  2.5433e+04 -2.3973e+04  4.8690e+24    venus.gif
-                </pre>
-              </blockquote>
-              <p> </p>
-            </section>
-            <section class="slide" id="Extra Credit">
-              <h3>Extra Credit</h3>
-              <p class="slide"> Submit a zip file containing an alternate universe (in our input
-                format) along with the necessary image files. If its behavior is
-                sufficiently interesting, we'll award extra credit. Your
-                submission <b>must</b> be in a zip file, even if there are no
-                images, so that our grading scripts can handle it correctly. </p>
-                <p> </p>
-                <p> </p>
-                <h3>Challenges</h3>
-                <p class="slide"> There are limitless opportunities for additional excitement and
-                  discovery here. Try adding other features, such as supporting
-                  elastic or inelastic collisions. Or, make the simulation
-                  three-dimensional by doing calculations for <em>x</em>-, <em>y</em>-,
-
-                  and <em>z</em>-coordinates, then using the <em>z</em>-coordinate
-                  to vary the sizes of the planets. Add a rocket ship that launches
-                  from one planet and has to land on another. Allow the rocket ship
-                  to exert force with the consumption of fuel.<br>
-                </p>
-                <p class="slide">Another idea is to generate a random starfield, and then have
-                  that starfield slowly move behind the planets.&nbsp; For an extra
-                  challenge, have it rotate around some center point.<br>
-                </p>
-                <p> </p>
-              </section>
-              <section class="slide" id="Enrichment">
-                <h3>Enrichment</h3>
-                <ul class="QA">
-                  <li class="question"><h5>What is the music in <tt>2001.mid</tt>?</h5> 
-                    <li class="answer">It's the
-                    fanfare to <a
-                    href="http://en.wikipedia.org/wiki/Also_sprach_Zarathustra_%28Richard_Strauss%29">
-                    Also sprach Zarathustra</a> by Richard Strauss. It was
-                    popularized as the key musical motif in Stanley Kubrick's 1968
-                    film <a
-                    href="http://www.rottentomatoes.com/m/1000085-2001_a_space_odyssey/">2001:
+                            % <b>java NBody 60000.0 25000.0 planets.txt</b>       // three steps
+                            5
+                            2.50e+11
+                            1.4958e+11  2.2349e+09 -4.4460e+02  2.9798e+04  5.9740e+24    earth.gif
+                            2.2789e+11  1.8075e+09 -1.9158e+02  2.4099e+04  6.4190e+23     mars.gif
+                            5.7752e+10  3.5905e+09 -2.9682e+03  4.7839e+04  3.3020e+23  mercury.gif
+                            1.9852e+02  1.1280e+00  3.9705e-03  3.3841e-05  1.9890e+30      sun.gif
+                            1.0816e+11  2.6248e+09 -8.4989e+02  3.4993e+04  4.8690e+24    venus.gif
 
 
+                            % <b>java NBody 31557600.0 25000.0 planets.txt</b>    // one year
+                            5
+                            2.50e+11
+                            1.4959e+11 -1.6531e+09  3.2949e+02  2.9798e+04  5.9740e+24    earth.gif
+                            -2.2153e+11 -4.9263e+10  5.1805e+03 -2.3640e+04  6.4190e+23     mars.gif
+                            3.4771e+10  4.5752e+10 -3.8269e+04  2.9415e+04  3.3020e+23  mercury.gif
+                            5.9426e+05  6.2357e+06 -5.8569e-02  1.6285e-01  1.9890e+30      sun.gif
+                            -7.3731e+10 -7.9391e+10  2.5433e+04 -2.3973e+04  4.8690e+24    venus.gif
+                          </pre>
+                        </blockquote>
+                        <p> </p>
+                      </section>
+                      <section class="slide" id="Extra Credit">
+                        <h3>Extra Credit</h3>
+                        <p class="slide"> Submit a zip file containing an alternate universe (in our input
+                          format) along with the necessary image files. If its behavior is
+                          sufficiently interesting, we'll award extra credit. Your
+                          submission <b>must</b> be in a zip file, even if there are no
+                          images, so that our grading scripts can handle it correctly. </p>
+                          <p> </p>
+                          <p> </p>
+                          <h3>Challenges</h3>
+                          <p class="slide"> There are limitless opportunities for additional excitement and
+                            discovery here. Try adding other features, such as supporting
+                            elastic or inelastic collisions. Or, make the simulation
+                            three-dimensional by doing calculations for <em>x</em>-, <em>y</em>-,
+
+                            and <em>z</em>-coordinates, then using the <em>z</em>-coordinate
+                            to vary the sizes of the planets. Add a rocket ship that launches
+                            from one planet and has to land on another. Allow the rocket ship
+                            to exert force with the consumption of fuel.<br>
+                          </p>
+                          <p class="slide">Another idea is to generate a random starfield, and then have
+                            that starfield slowly move behind the planets.&nbsp; For an extra
+                            challenge, have it rotate around some center point.<br>
+                          </p>
+                          <p> </p>
+                        </section>
+                        <section class="slide" id="Enrichment">
+                          <h3>Enrichment</h3>
+                          <ul class="QA">
+                            <li class="question"><h5>What is the music in <tt>2001.mid</tt>?</h5> 
+                              <li class="answer">It's the
+                                fanfare to <a
+                                href="http://en.wikipedia.org/wiki/Also_sprach_Zarathustra_%28Richard_Strauss%29">
+                                Also sprach Zarathustra</a> by Richard Strauss. It was
+                                popularized as the key musical motif in Stanley Kubrick's 1968
+                                film <a
+                                href="http://www.rottentomatoes.com/m/1000085-2001_a_space_odyssey/">2001:
 
 
 
-                    A Space Odyssey</a>. </li></li>
 
-                    <li class="question"> <h5>I'm a physicist. Why should I use the leapfrog method
-                      instead of the formula I derived in high school? In other
-                      words, why does the position update formula use the velocity
-                      at the <em>updated</em> time step rather than the previous
-                      one? Why not use the 1/2 a t^2 formula? 
 
-                      <li class="answer"></h5> The leapfrog
-                      method is more stable for integrating Hamiltonian systems than
-                      conventional numerical methods like Euler's method or
-                      Runge-Kutta. The leapfrog method is <em>symplectic</em>, which
-                      means it preserves properties specific to Hamiltonian systems
-                      (conservation of linear and angular momentum,
-                      time-reversibility, and conservation of energy of the discrete
-                      Hamiltonian). In contrast, ordinary numerical methods become
-                      dissipative and exhibit qualitatively different long-term
-                      behavior. For example, the earth would slowly spiral into (or
-                      away from) the sun. For these reasons, symplectic methods are
-                      extremely popular for N-body calculations in practice. (Yeah,
-                      it's a bit complex.&nbsp; Hey, you asked!)
-                      <p> Here's a more complete explanation of how you should
-                        interpret the variables. The classic <em>Euler method</em>
-                        updates the position uses the velocity at time <em>t</em>
-                        instead of using the updated velocity at time <em>t</em> + Δ<em>t</em>.
-                        A better idea is to use the velocity at the midpoint <em>t</em>
-                        + Δ<em>t</em> / 2. The leapfrog method does this in a clever
-                        way. It maintains the position and velocity one-half time step
-                        out of phase: At the beginning of an iteration, (<em>p<sub>x</sub></em>,
-                        <em>p<sub>y</sub></em>) represents the position at time <em>t</em>
-                        and (<em>v<sub>x</sub></em>, <em>v<sub>y</sub></em>)
-                        represents the velocity at time <em>t</em> - Δt / 2.
-                        Interpreting the position and velocity in this way, the
-                        updated position (<em>p<sub>x</sub></em> + Δ<em>t</em> <em>v<sub>x</sub></em>,
-                        <em>p<sub>y</sub></em> + Δ<em>t</em> <em>v<sub>y</sub></em>).
-                        uses the velocity at time <em>t</em> + Δt / 2. Almost
-                        magically, the only special care needed to deal with the half
-                        time-steps is to initialize the system's velocity at time <em>t</em>
-                        = -Δ<em>t</em> / 2 (instead of <em>t</em> = 0.0), and you can
-                        assume that we have already done this for you. Note also that
-                        the acceleration is computed at time <em>t</em> so that when
-                        we update the velocity, we are using the acceleration at the
-                        midpoint of the interval under consideration. </p>
-                      </li></li>
-                      <li>Here are some interesting <a
-                        href="http://en.wikipedia.org/wiki/Barycentric_coordinates_%28astronomy%29">
-                        two-body systems</a>, perhaps relevant to the extra credit.
-                        Here is beautiful <a
-                        href="http://cosmicvariance.com/2006/07/23/n-bodies/">21-body
-                        system</a> in a figure-8 - reproducing this one will
-                        definitely earn you extra credit. </li>
-                        <li>Here is a <a
-                          href="http://www.art.net/%7Esimran/GenerativeMusic/Kepler.html">website</a>
-                          that generates music using an N-body simulator!
+                                A Space Odyssey</a>. </li></li>
+
+                                <li class="question"> <h5>I'm a physicist. Why should I use the leapfrog method
+                                  instead of the formula I derived in high school? In other
+                                  words, why does the position update formula use the velocity
+                                  at the <em>updated</em> time step rather than the previous
+                                  one? Why not use the 1/2 a t^2 formula? 
+
+                                  <li class="answer"></h5> The leapfrog
+                                    method is more stable for integrating Hamiltonian systems than
+                                    conventional numerical methods like Euler's method or
+                                    Runge-Kutta. The leapfrog method is <em>symplectic</em>, which
+                                    means it preserves properties specific to Hamiltonian systems
+                                    (conservation of linear and angular momentum,
+                                    time-reversibility, and conservation of energy of the discrete
+                                    Hamiltonian). In contrast, ordinary numerical methods become
+                                    dissipative and exhibit qualitatively different long-term
+                                    behavior. For example, the earth would slowly spiral into (or
+                                    away from) the sun. For these reasons, symplectic methods are
+                                    extremely popular for N-body calculations in practice. (Yeah,
+                                    it's a bit complex.&nbsp; Hey, you asked!)
+                                    <p> Here's a more complete explanation of how you should
+                                      interpret the variables. The classic <em>Euler method</em>
+                                      updates the position uses the velocity at time <em>t</em>
+                                      instead of using the updated velocity at time <em>t</em> + Δ<em>t</em>.
+                                      A better idea is to use the velocity at the midpoint <em>t</em>
+                                      + Δ<em>t</em> / 2. The leapfrog method does this in a clever
+                                      way. It maintains the position and velocity one-half time step
+                                      out of phase: At the beginning of an iteration, (<em>p<sub>x</sub></em>,
+                                      <em>p<sub>y</sub></em>) represents the position at time <em>t</em>
+                                      and (<em>v<sub>x</sub></em>, <em>v<sub>y</sub></em>)
+                                      represents the velocity at time <em>t</em> - Δt / 2.
+                                      Interpreting the position and velocity in this way, the
+                                      updated position (<em>p<sub>x</sub></em> + Δ<em>t</em> <em>v<sub>x</sub></em>,
+                                      <em>p<sub>y</sub></em> + Δ<em>t</em> <em>v<sub>y</sub></em>).
+                                      uses the velocity at time <em>t</em> + Δt / 2. Almost
+                                      magically, the only special care needed to deal with the half
+                                      time-steps is to initialize the system's velocity at time <em>t</em>
+                                      = -Δ<em>t</em> / 2 (instead of <em>t</em> = 0.0), and you can
+                                      assume that we have already done this for you. Note also that
+                                      the acceleration is computed at time <em>t</em> so that when
+                                      we update the velocity, we are using the acceleration at the
+                                      midpoint of the interval under consideration. </p>
+                                    </li></li>
+                                    <li>Here are some interesting <a
+                                      href="http://en.wikipedia.org/wiki/Barycentric_coordinates_%28astronomy%29">
+                                      two-body systems</a>, perhaps relevant to the extra credit.
+                                      Here is beautiful <a
+                                      href="http://cosmicvariance.com/2006/07/23/n-bodies/">21-body
+                                      system</a> in a figure-8 - reproducing this one will
+                                      definitely earn you extra credit. </li>
+                                      <li>Here is a <a
+                                        href="http://www.art.net/%7Esimran/GenerativeMusic/Kepler.html">website</a>
+                                        that generates music using an N-body simulator!
         <!-- <p><li>Here's a wealth of information on
  <a href = "http://www.midwestcs.com/xstar/n-body.pdf">
    N-body simulation</a> [pdf]. --> </li>
@@ -1130,83 +1130,15 @@
 <script src="extensions/status/deck.status.js"></script>
 <script src="extensions/navigation/deck.navigation.js"></script>
 <script src="extensions/scale/deck.scale.js"></script>
- <script src="js/script.js"></script>
+<script src="js/script.js"></script>
 
 <!-- Initialize the deck. You can put this in an external file if desired. -->
 <script>
-$(function() {
-  $.deck('.slide');
 
-var menu_ul;
-var menu_children;
-var clicked;
-//var submenu;
-
-  try {
-    menu_ul = top.$(".hw-menu");
-   // menu_children = menu_ul.getElementsByTagName("*");
-
-  }
-  catch(e) {
-    alert("error :/ " + e);
-  }
-
-$(parent.top).ready(function() {
-
-
-top.$(".hw-menu a li").mouseenter(function(){
-
-clicked = $(this);
-submenu = document.createElement("div");
-
- //menu_ul.empty();
- //menu_ul.hide();
-
-  $.each($.deck('getSlides'), function(i, $slide) {
-    console.log("another slide");
-    var id = $slide.attr('id');
-
-      //create link for section using the id
-      var slide_a = document.createElement("a");
-      var slide_li = document.createElement("li");
-      slide_li.style.height = "10px";
-      slide_a.style.height="10px";
-      var slide_header = document.createElement("h6");
-      slide_header.innerHTML = id;
-      slide_a.appendChild(slide_li);
-      slide_li.appendChild(slide_header);
-
-     if (id) {
-        if(id.indexOf("slide") == -1) /*added this b/c countNested wasn't working.  Instead, checking if slide id has the word slide in it */
-          clicked.append(slide_a);
-          submenu.append(slide_a);
-        return;
-      }
-
-    });
-
-  //clicked.append(submenu);
-
-  });
-
-clicked.mouseleave(function(){
- // menu_ul.append(menu_children);
- //alert("mouseleave")
-  //document.reload();
-  clicked.remove();
-
-  
+$(parent.top).ready(function(){
 });
 
 
-
-});
-
- 
-   
-
-
-});
 </script>
 </body>
 </html>

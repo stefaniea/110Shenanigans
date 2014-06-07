@@ -1,77 +1,91 @@
-$(document).ready(function(){
+$(function() {
+  $.deck('.slide');
 
+  //homework 2 active:
+ // top.$("#hw2").style.color = "orange";
 
- /*console.log("document ready");
-
-//submenus:
-var menu_ul = $("#menu ul");
-
-//menu items (homework 1, homework 2, etc.)
- // $("#menu ul a li").click(function() {
-  console.log("mouse entered");
-  //if (this.attr('id').equals("hw2")) {
-
-  //remove all current children of menu
-    console.log("about to empty");
-    menu_ul.empty(); 
-    console.log("empty");
-
-var menu_ul = $(".hw-menu");
-$(".hw-menu").hide();
-
-$("#jPanelMenu-menu ul").hide();
-menu_ul.hide();*/
-
- // $.each($.deck('getSlides'), function(i, $slide) {
-   // console.log("another slide");
-   /*  var id = $slide.attr('id');
-      //create link for section using the id
-     var slide_a = document.createElement("a");
-      var slide_li = document.createElement("li");
-      var slide_header = document.createElement("h4");
-      slide_header.innerHTML = id;
-      slide_a.appendChild(slide_li);
-      slide_li.appendChild(slide_header);*/
-  
-//
-//}
-    //  });
-});
+  var menu_ul;
+  var menu_children;
+  var clicked;
+  var submenu;
+  var open = false;
 
 
 
-  var getSlides = function() {
-$.each($.deck('getSlides'), function(i, $slide) {
-   
-    console.log("another slide");
-    var id = $slide.attr('id');
+
+  try {
+    menu_ul = top.$(".hw-menu");
+   // menu_children = menu_ul.getElementsByTagName("*");
+ }
+ catch(e) {
+  alert("error :/ " + e);
+}
+
+$(parent.top).ready(function() {
+
+
+  top.$(".hw-menu .active li").click(function() {
+
+    
+
+  //remove all submenus
+ // top.$(".hw-menu a li").remove("div");
+  if(open) {
+    submenu.remove();
+    open = false;
+  } 
+
+else {
+  open = true;
+    clicked = $(this);
+    submenu = document.createElement("div");
+
+ //menu_ul.empty();
+ //menu_ul.hide();
+
+ $.each($.deck('getSlides'), function(i, $slide) {
+  var id = $slide.attr('id');
+
       //create link for section using the id
       var slide_a = document.createElement("a");
       var slide_li = document.createElement("li");
-      var slide_header = document.createElement("h4");
-      slide_header.html(id);
-      slide_a.append(slide_li);
-      slide_li.append(slide_header);
+      slide_li.style.height = "10px";
+      slide_a.style.height="10px";
+      var slide_header = document.createElement("h6");
+      slide_header.innerHTML = id;
+      slide_a.appendChild(slide_li);
+      slide_li.appendChild(slide_header);
 
       if (id) {
-        if(id.indexOf("slide") == -1) /*added this b/c countNested wasn't working.  Instead, checking if slide id has the word slide in it */
-          $menu_ul.append(slide_a);
-      }
+        if(id.indexOf("slide") == -1) { /*added this b/c countNested wasn't working.  Instead, checking if slide id has the word slide in it */
+          //clicked.appendChild(slide_a);
+          submenu.appendChild(slide_a);
+         return;
+       }
+     }
 
+   });
 
-    });
-};
+    clicked.append(submenu);
+  }
 
-
-
-  //$.deck('go', isNaN(index) ? indexOrId : index - 1);
-
-/*
-//collapsable question/answers
-$(".answer").hide();
-
-
-$(".question").click(function() {
-  $(this).children().find(".answer").toggle();
 });
-*/
+
+   top.$(".hw-menu a li").mouseleave(function(){
+ // menu_ul.append(menu_children);
+ //alert("mouseleave")
+  //document.reload();
+  if(submenu) submenu.remove();
+
+  
+});
+
+
+
+});
+
+
+
+
+
+});
