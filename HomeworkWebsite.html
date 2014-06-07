@@ -19,10 +19,10 @@
       <div class="menu-trigger" id="hw_button">HW</div>
     </header>
     <div id="menu">
-      <ul>
+      <ul class="hw-menu">
         <h5>Current Homework Title</h5>
-        <a href="#"><li><h4>Homework 1</h4></li></a>
-        <a href="#"><li><h4>Homework 2</h4></li></a>
+        <a href="#" id="hw1"><li><h4>Homework 1</h4></li></a>
+        <a href="#" id="hw2"><li><h4>Homework 2</h4></li></a>
         <a href="#"><li><h4>Homework 3</h4></li></a>
         <a href="#"><li><h4>Homework 4</h4></li></a>
         <a href="#"><li><h4>Homework 5</h4></li></a>
@@ -35,6 +35,7 @@
         <p>_________________</p>
       </ul>
     </div>
+
 
     <div class = "frame" align = "middle">
       <iframe src="hw2.html" frameborder="0" class="deck-frame" align = "middle" width = "800" height = "600"></iframe>
@@ -57,18 +58,15 @@
 <!--navbar-->
 <script src="jquery.jpanelmenu.min.js"></script>
 <script src="js/navbar.js"></script>
+<script src="js/script.js"></script>
 
 <!-- Initialize the deck. You can put this in an external file if desired. -->
 <script>
 $(function() {
-  $.deck('.slide');
+ // $.deck('.slide');
 
 
 });
-
-
-
-
 
 </script>
 </body>

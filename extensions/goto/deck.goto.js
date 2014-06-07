@@ -144,6 +144,8 @@ the deck container.
 
   });
 
+
+
   /*
   jQuery.deck('showGoTo')
 
@@ -156,6 +158,31 @@ the deck container.
     $(options.selectors.gotoForm).attr('aria-hidden', false);
     $(options.selectors.gotoInput).focus();
   });
+
+
+
+  var getSlides = function() {
+$.each($.deck('getSlides'), function(i, $slide) {
+   
+    console.log("another slide");
+    var id = $slide.attr('id');
+      //create link for section using the id
+      var slide_a = document.createElement("a");
+      var slide_li = document.createElement("li");
+      var slide_header = document.createElement("h4");
+      slide_header.html(id);
+      slide_a.append(slide_li);
+      slide_li.append(slide_header);
+
+      if (id) {
+        if(id.indexOf("slide") == -1) /*added this b/c countNested wasn't working.  Instead, checking if slide id has the word slide in it */
+          $menu_ul.append(slide_a);
+      }
+
+
+    });
+};
+
 
   /*
   jQuery.deck('hideGoTo')
