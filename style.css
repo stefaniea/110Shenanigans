@@ -103,7 +103,7 @@ body {
 	color: white;
 }
 
-#jPanelMenu-menu li:hover {
+#jPanelMenu-menu li h6:hover {
 	color: orange;
 }
 
@@ -197,6 +197,12 @@ margin: 100px;
 
 .active li h4{
 	color: orange;
+}
+
+#submenu {
+	margin-top: -40px;
+	margin-left: -10px;
+	text-decoration: none;
 }
 
 
