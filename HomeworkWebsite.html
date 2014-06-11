@@ -40,34 +40,53 @@
     <div class = "frame" align = "middle">
       <iframe id="hw2-frame" src="hw2.html" frameborder="0" class="deck-frame" align = "middle" width = "800" height = "600"></iframe>
       
-<!-- End slides. -->
+      <!-- End slides. -->
 
-</div> <!--//deck wrapper-->
+    </div> <!--//deck wrapper-->
 
-<!-- Required JS files. -->
-<script src="jquery.min.js"></script>
-<script src="core/deck.core.js"></script>
+    <!-- Required JS files. -->
+    <script src="jquery.min.js"></script>
+    <script src="core/deck.core.js"></script>
 
-<!-- Extension JS files. Add or remove as needed. -->
-<script src="extensions/menu/deck.menu.js"></script>
-<script src="extensions/goto/deck.goto.js"></script>
-<script src="extensions/status/deck.status.js"></script>
-<script src="extensions/navigation/deck.navigation.js"></script>
-<script src="extensions/scale/deck.scale.js"></script>
+    <!-- Extension JS files. Add or remove as needed. -->
+    <script src="extensions/menu/deck.menu.js"></script>
+    <script src="extensions/goto/deck.goto.js"></script>
+    <script src="extensions/status/deck.status.js"></script>
+    <script src="extensions/navigation/deck.navigation.js"></script>
+    <script src="extensions/scale/deck.scale.js"></script>
 
-<!--navbar-->
-<script src="jquery.jpanelmenu.min.js"></script>
-<script src="js/navbar.js"></script>
+    <!--navbar-->
+    <script src="jquery.jpanelmenu.min.js"></script>
+    <script src="js/navbar.js"></script>
 <!--<script src="js/script.js"></script>
 
-<!-- Initialize the deck. You can put this in an external file if desired. -->
-<script>
-$(function() {
+  <!-- Initialize the deck. You can put this in an external file if desired. -->
+  <script>
+  $(function() {
  // $.deck('.slide');
-var iframeid = document.getElementsByClassName("deck-frame")[0].id;
-var current = $(".hw-menu #current");
+ var iframe = document.getElementsByClassName("deck-frame")[0];
 
-console.log(iframeid) + "";
+
+ function resizeIFrame() {
+   //size iframe:
+   var width = (.7*$(window).width());
+   iframe.style.width =  (width)+'px';
+   iframe.style.height =  (width*.75)+'px';
+
+   if(width < 400) {
+    width = 400;
+    iframe.style.width =  (width)+'px';
+    iframe.style.height =  (width*.75)+'px';
+  }
+}
+
+ resizeIFrame();
+
+
+  var iframeid = iframe.id;
+  var current = $(".hw-menu #current");
+
+  console.log(iframeid) + "";
 
 
 //make the current page active
@@ -117,8 +136,13 @@ else if(iframeid === "hw9-frame") {
   current.text("Homework 9")
 }
 
+//adds an arrow to active--this isn't working now idk why
+var active = document.getElementsByClassName("active")[0].firstChild.firstChild;
+var text = active.innerHTML;
+active.innerHTML = text + "  &#10095;"; 
+
 });
 
-</script>
+  </script>
 </body>
 </html>
