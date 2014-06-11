@@ -88,6 +88,10 @@ body {
 	color: orange;
 }
 
+#jPanelMenu-menu a {
+	list-style-type: none;
+	text-decoration: none;
+}
 #jPanelMenu-menu a:hover {
 	list-style-type: none;
 	text-decoration: none;
@@ -103,10 +107,12 @@ body {
 	color: white;
 }
 
-#jPanelMenu-menu li h6:hover {
-	color: orange;
+#jPanelMenu-menu a li h4:hover {
+	color: gray;
 }
-
+6:hover {
+	color: gray;
+}
 .jPanelMenu-panel {
 }
 #menu {
@@ -195,7 +201,7 @@ padding: 0px;
 margin: 100px;
 }
 
-.active li h4{
+.active li h4 {
 	color: orange;
 }
 
@@ -204,5 +210,13 @@ margin: 100px;
 	margin-left: -10px;
 	text-decoration: none;
 }
+
+#submenu:hover {
+	text-decoration: none;
+	color: orange
+}
+
+
+
 
 
