@@ -58,6 +58,26 @@ function resizeIFrame() {
 
   }
 
+      function goToSlide(id) {
+        var src = iframe.getAttribute("src");
+        iframe.setAttribute("src", src + "#"+id);
+        console.log("go to slide:" + id);
+
+    }
+
+    console.log("about to make onclick");
+
+    //var sublink = document.getElementsByClassName("submenu-li");
+    $(".submenu-li").click(function(){
+      console.log("submenu li was clicked");
+      var slide = $(this).getFirstChild().innerHTML; //<li><h6>title of slide</h6><li>
+      goToSlide(slide);
+
+    });
+
+    console.log("about to call onclick");
+        $(".submenu-li").click();
+
 
 });
 
