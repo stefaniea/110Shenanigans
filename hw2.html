@@ -60,6 +60,12 @@
     <li class="slide" >
       Use arrays.
     </li>
+      <!-- demotoshow shows a message (specific to this page) -->
+        <div class="demotoshow1 slide"></div> <!-- any "slide" receives a notification when the toplevel gets shown -->
+        <div class="demotoshow2 onshowtoplevel"></div> <!-- "onshowtoplevel" is a second default class that gets inited -->
+        <!-- the first of these two is a "slide", so it will get activated when "right arrow" is pressed, and the previous part will get gray -->
+        <!-- the second one is not a "slide", so it won't influence the navigation at all -->
+    </ul>
   </ul>
 </section>
 
@@ -1107,11 +1113,8 @@
 </div>
 
 <!-- deck.status snippet -->
-<p class="deck-status" aria-role="status">
-  <span class="deck-status-current"></span>
-  /
-  <span class="deck-status-total"></span>
-</p>
+<p class="deck-status deck-progress-10"> <span class="deck-status-current"></span> / <span class="deck-status-total"></span> </p>
+
 
 <!-- deck.goto snippet -->
 <form action="." method="get" class="goto-form">
@@ -1140,11 +1143,21 @@
 
 <!-- Initialize the deck. You can put this in an external file if desired. -->
 <script>
-
-$(parent.top).ready(function(){
-});
-
-
+            includedeck("profile-3 theme:x:goldfishTheme", {
+               PREFIX: "", // deck.js is in the parent folder for this presentation
+               AFTERINIT: function() {
+                  // we register the listeners before call the deck init
+                  $('.demotoshow1').bind('deck.toplevelBecameCurrent', function() {
+                     $(".demo").html($(".demo").html()+"1");
+                  });
+                  $('.demotoshow2').bind('deck.toplevelBecameCurrent', function() {
+                     $(".demo").html($(".demo").html()+"2");
+                  });
+               }
+            });
 </script>
+
+
+
 </body>
 </html>
