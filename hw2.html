@@ -16,6 +16,7 @@
   <link rel="stylesheet" media="screen" href="extensions/navigation/deck.navigation.css">
   <link rel="stylesheet" media="screen" href="extensions/status/deck.status.css">
   <link rel="stylesheet" media="screen" href="extensions/scale/deck.scale.css">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
   
 
   <!-- Style theme. More available in /themes/style/ or create your own. -->
@@ -280,7 +281,7 @@
       file <code >students.txt</code> as input:
       <pre class="slide" ><b>% java StudentsFileProcessor students.txt</b></pre>
       If you have trouble compiling <code>StudentsFileProcessor.java</code>,
-      check the Common Problems section. The booksite's standard
+      check the <a href="#Common Problems">Common Problems</a> section. The booksite's standard
       library may not be correctly configured on your computer.
     </li>
   </ol>
@@ -806,7 +807,172 @@
     -->
     <section class="slide" id="Common Problems">
       <h2>Common Problems</h2>
-      <ul class="QA">
+  <div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+          Standard Libraries Missing
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in">
+      <div class="panel-body">
+              For this assignment, you
+            need to use the booksite's standard libraries. If you ran the
+            introcs installer, these should be set up for you, and
+            everything should "just work." If not, you may need to download
+            <a href="http://introcs.cs.princeton.edu/java/stdlib/In.java">In.java</a>
+            into the same folder as your NBody.java.
+            </li>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+          <h5>My planets fly off the top right corner of the screen.</h5>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse">
+      <div class="panel-body">
+       You have probably flipped the order of particles when computing
+              Δ<i>x</i> and Δ<i>y</i>. As a result, the signs on all your
+              distances are all reversed, and gravity is repelling planets
+              from each other instead of attracting them. (Video is slowed for
+              illustration.)
+              <p> <iframe
+                src="http://www.youtube.com/embed/Bi6scfHWLu4?rel=0"
+                allowfullscreen="" frameborder="0" height="315" width="420"></iframe>
+              </p>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+              <h5>My planets all disappear or jump to the top left corner as
+                soon as I start running the program.</h5> 
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse">
+      <div class="panel-body">
+         Check your loop for
+                  computing the pairwise forces between particles. Are you
+                  computing the force exerted by a particle on itself (e.g.
+                  Earth's gravitational pull on itself)? If you are, do the
+                  computation by hand to see exactly what it would give you. That
+                  should help you understand why this is a bad idea, and why the
+                  planets jump the way they do. (Video is slowed for
+                  illustration.)
+      </div>
+    </div>
+  </div>
+    <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+          <h5>My planets go around the sun, then zoom off the lower left
+                corner.</h5> 
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFour" class="panel-collapse collapse">
+      <div class="panel-body">
+        <li class="answer">You are not summing up the pairwise forces
+                  correctly. Run your program with a small value of <tt>T</tt>
+                  (e.g. 51000) so it runs for only two or three time steps. Print
+                  out the value of every variable before and after you change its
+                  value (or right after you first initialize it). Include enough
+                  information in the print statement so you can tell which
+                  variable you are printing out. Make sure to print all loop
+                  variables as well so you can tell from the output exactly when
+                  each print statement occured. Run the program, and examine the
+                  output. Ask yourself each time a variable changes whether its
+                  starting and new values make sense. (You don't need to work out
+                  the exact values of the variables to figure out if they make
+                  sense in this case.) Once you've found the problem, you may want
+                  to move the declarations of some variables farther inside your
+                  loops to the first point you need them. Declaring variables as
+                  late as possible is one strategy to avoid the type of bug you
+                  are encountering. (Video is slowed for illustration.)
+                  <p> <iframe
+                    src="http://www.youtube.com/embed/i26ur1cJRjU?rel=0"
+                    allowfullscreen="" frameborder="0" height="315" width="420"></iframe>
+                  </p>
+                </li>
+      </div>
+    </div>
+  </div>
+    <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+          <h5>My planets are flickering.</h5> 
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFive" class="panel-collapse collapse">
+      <div class="panel-body">
+          <li class="answer">You are not calling <tt>frameRate()</tt>.</li>
+
+      </div>
+    </div>
+  </div>
+   <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix">
+          <h5>My planets are flickering, and I only see one of them at a
+                  time.</h5> 
+        </a>
+      </h4>
+    </div>
+    <div id="collapseSix" class="panel-collapse collapse">
+      <div class="panel-body">
+                  <li class="answer">
+                    You are redrawing the background before drawing each
+                    planet, instead of redrawing it once per timestep. As a result,
+                    you keep covering up each planet as soon as you draw it.</li>
+                    <li class="question"><h5>My planets "smear" accross the screen.</h5> 
+      </div>
+    </div>
+  </div>
+     <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">
+          <h5>My planets "smear" accross the screen.</h5> 
+        </a>
+      </h4>
+    </div>
+    <div id="collapseSeven" class="panel-collapse collapse">
+      <div class="panel-body">
+         <li class="answer"> 
+                        You are drawing
+                        the background once at the beginning of the programming instead
+                        of once each time step. Processing does not erase the window
+                        automatically. In this program, we're never erasing it at all.
+                        Instead, we keep covering the old planet positions up with the
+                        starfield image, which happens to be exactly the same size as
+                        the window. If you don't keep redrawing the background before
+                        drawing the planets at their new positions, the old planets are
+                        still there, causing the smearing effect.</li>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+      <!--<ul class="QA">
         <li class="question"><h5>Standard Libraries Missing</h5> 
           <li class="answer">For this assignment, you
             need to use the booksite's standard libraries. If you ran the
@@ -888,7 +1054,7 @@
                         the window. If you don't keep redrawing the background before
                         drawing the planets at their new positions, the old planets are
                         still there, causing the smearing effect.</li></li>
-                      </ul>
+                      </ul>-->
                     </section>
                     <section class="slide" id="More Precise Testing">
                       <h3>More Precise Testing</h3>
@@ -1139,6 +1305,7 @@
 <script src="extensions/scale/deck.scale.js"></script>
 <script src="js/script.js"></script>
   <script src="extensions/includedeck/load.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 
 
 <!-- Initialize the deck. You can put this in an external file if desired. -->
