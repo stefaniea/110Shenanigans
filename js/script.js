@@ -26,7 +26,7 @@ catch(e) {
 
 createSubmenu(submenu, active_homework);
 
-(active_homework).click(function() {
+/*(active_homework).click(function() {
   //remove the submenu
   if(open) {
     console.log("hiding");
@@ -42,8 +42,10 @@ createSubmenu(submenu, active_homework);
   top.$(".hw-menu .active #submenu").show();
   }
 
-  }); //active hw clicked
+  }); //active hw clicked*/
   }); //parent.ready
+
+
 
       function createSubmenu(submenu, active_homework) {
             open = true;
@@ -64,6 +66,7 @@ createSubmenu(submenu, active_homework);
         //create link for section using the id of the section
         var slide_a = document.createElement("a");
         var slide_li = document.createElement("li");
+        slide_li.setAttribute("class", "submenu-li");
         slide_li.style.height = "10px";
         slide_a.style.height="10px";
         var slide_header = document.createElement("h6");
