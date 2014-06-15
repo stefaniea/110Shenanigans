@@ -1,9 +1,9 @@
 .navbar {
 
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #FA6900), color-stop(1, #F38630 ) );
-	background:-moz-linear-gradient( center top, #F38630 5%, #FA6900 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FA6900', endColorstr='#F38630');
-	background-color:#FA6900;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #6D6E70 ) );
+	background:-moz-linear-gradient( center top, #6D6E70 5%, #ffffff 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FA6900', endColorstr='#6D6E70');
+	background-color:#ffffff;
 	-webkit-border-top-left-radius:4px;
 	-moz-border-radius-topleft:4px;
 	border-top-left-radius:4px;
@@ -215,6 +215,7 @@ margin: 100px;
 	text-decoration: none;
 	color: orange
 }
+
 
 
 
