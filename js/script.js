@@ -1,5 +1,5 @@
   $(function() {
-    $.deck('.slide');    
+    //$.deck('.slide');    
     $(parent.top).ready(function() {
   //homework 2 active:
   // top.$("#hw2").style.color = "orange";
