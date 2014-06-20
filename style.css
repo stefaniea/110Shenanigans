@@ -1,7 +1,7 @@
 .navbar {
 
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #6D6E70 ) );
-	background:-moz-linear-gradient( center top, #6D6E70 5%, #ffffff 100%);
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #3b3b3b), color-stop(1, #6D6E70 ) );
+	background:-moz-linear-gradient( center top, #6D6E70 5%, #3b3b3b; 100%);
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FA6900', endColorstr='#6D6E70');
 	background-color:#ffffff;
 	-webkit-border-top-left-radius:4px;
@@ -155,7 +155,7 @@ body {
 	text-indent:0;
 	border:1px solid #dcdcdc;
 	display:inline-block;
-	color:#777777;
+	color: #3b3b3b;
 	font-family:arial;
 	font-size:15px;
 	font-weight:bold;
@@ -223,7 +223,78 @@ body {
 	color: orange
 }
 
+#footer {
+	position: fixed;
+	bottom:0px;
+	width: 100%;
+	height: 80px;
+	padding-bottom: 25px;
+	/*background-color: rgb(240, 240, 255);*/
+}
 
+.container {
+	margin-left: 60px;
+	width: 100%;
+	height: 100%;
+}
+
+.quick {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+	background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+	background-color:#ededed;
+	-webkit-border-top-left-radius:6px;
+	-moz-border-radius-topleft:6px;
+	border-top-left-radius:6px;
+	-webkit-border-top-right-radius:6px;
+	-moz-border-radius-topright:6px;
+	border-top-right-radius:6px;
+	-webkit-border-bottom-right-radius:6px;
+	-moz-border-radius-bottomright:6px;
+	border-bottom-right-radius:6px;
+	-webkit-border-bottom-left-radius:6px;
+	-moz-border-radius-bottomleft:6px;
+	border-bottom-left-radius:6px;
+	text-indent:0;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color: #3b3b3b;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	height:100px;
+	line-height:15px;
+	width:120px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #ffffff;
+
+}
+
+.quick p {
+	line-height:10px;
+	font-size: 10px;
+	color: gray;
+
+}
+
+/*arrow icon*/
+#arrow {
+	position: absolute;
+	top:-35px;
+	left: 10px;
+		color: #3b3b3b;
+	font-family:arial;
+	font-size:30px;
+	font-weight:bold;
+	font-style:normal;
+
+
+}
 
 
 

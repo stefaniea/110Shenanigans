@@ -89,7 +89,28 @@ var homework_title = "Homework " + hw;
 
   console.log("about to make onclick");
 
+  //hide footer buttons
+  $("#footer").css("height", "0");
 
+  //show them when hover
+  $("#footer").mouseleave(function(){
+   $( "#footer" ).animate({
+    height: "0"
+  }, 400, function() {
+    // Animation complete.
+  });
+
+  });
+
+//show them when hover
+  $("#footer").mouseenter(function(){
+   $( "#footer" ).animate({
+    height: "70"
+  }, 400, function() {
+    // Animation complete.
+  });
+
+  });
 
 
   });

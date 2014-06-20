@@ -46,14 +46,14 @@ createSubmenu(submenu, active_homework);
   top.$(".hw-menu .active #submenu").show();
   }
 
-  }); //active hw clicked*/
+}); //active hw clicked*/
   }); //parent.ready
 
 
 
-      function createSubmenu(submenu, active_homework) {
-            open = true;
-            console.log("creating submen");
+    function createSubmenu(submenu, active_homework) {
+      open = true;
+      console.log("creating submen");
 
         /*submenu.css({
         "background-color": "blue",
@@ -83,12 +83,12 @@ createSubmenu(submenu, active_homework);
         //clicked.appendChild(slide_a);
       submenu.appendChild(slide_a);
       return;
-      }
-      }
-
-      });
-
-        active_homework.append(submenu);
+    }
   }
 
 });
+
+        active_homework.append(submenu);
+      }
+
+    });
