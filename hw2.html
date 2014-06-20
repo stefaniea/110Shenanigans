@@ -88,7 +88,7 @@
     <p>In 1687 Sir Isaac Newton formulated the principles governing the the motion of two particles under the influence of their mutual gravitational attraction in his famous <strong>Principia</strong>. However, Newton was unable to solve the problem for three particles. Indeed, in general, systems of three or more particles can only be solved numerically.</p><p> <img src="http://newtontime.weebly.com/uploads/1/4/9/9/14990736/7172854_orig.jpg" alt=" AND YOU THOUGHT YOU KNEW KNEWTON"></p>
   </li>
 </section>
-<section class="slide" id="Background">
+<section class="slide">
   <li >
    ... and there is more ...
  </li>
@@ -173,7 +173,7 @@
     </ul>
   </section>
 
-  <section class="slide" id="Command Line Arguments part 2">
+  <section class="slide">
     <h2>A Review of Command-Line Arguments: 
       Take 2</h2>
       <p class = "slide">Yes. read it.  </p>
@@ -225,7 +225,7 @@
   </pre>
 </section>
 
-<section class="slide" id="shrek">
+<section class="slide">
   <img src="http://ih1.redbubble.net/image.15259013.6688/flat,550x550,075,f.u1.jpg"/>
 </section>
 
@@ -290,7 +290,7 @@
 </section>
 
 
-<section class="slide" id="Part I: Reading Input 2">
+<section class="slide">
   <h3> Reading command line arguments </h3>  
   <ul class="slide">
     <li >The first step is to declare a class-level variable for the
@@ -308,7 +308,7 @@
   </ul>
 </section>
 
-<section class="slide" id="Part I: Reading Input 3">
+<section class="slide">
   <ul>
     <li>Add code to the beginning of<code> main()</code> that will
       initialize <code>filename</code> using the 3rd command line
@@ -335,7 +335,7 @@
         </ul>
 
       </section>
-      <section class="slide" id="Part I: Reading Input 4">
+      <section class="slide">
         <ul>
           <h3>Reading from a file:&nbsp;</h3> 
           <li>The next step is to read in
@@ -358,7 +358,7 @@
               can use to read from the file</code></li>
             </section>
 
-            <section class="slide" id ="Part I: Reading Input 5">
+            <section class="slide" >
               <li>Once the input stream is initialized, you can read from it
                 using the following commands, just as with <code>StdIn</code>
                 (see Section 1.5 of the textbook):</li>
@@ -387,7 +387,7 @@
                           </ul>
                         </section>
 
-                        <section class="slide" id="Part I: Reading Input 6">
+                        <section class="slide">
                           <li>
                             The next step is to actually read in the file.&nbsp; To do
                             this, we'll need to understand the format of the file's
@@ -416,7 +416,7 @@
                                   an example, <tt>planets.txt</tt> contains data for our
                                   solar system (in SI units). </li></ol>
                                 </section>
-                                <section class="slide" id="Part I: Reading Input 7">
+                                <section class="slide">
                                   <h3>Here's what the input file, planets.txt, looks like:</h3>
                                   <li class="slide"> <blockquote>
                                     <pre>  % <b>more planets.txt</b>
@@ -438,7 +438,7 @@
     </ol>
   </li>
 </section>
-<section class="slide" id="Part I: Reading Input 8">
+<section class="slide">
   <li> Read in the data file <tt>planets.txt</tt> as described
     above using the methods from <code>StdIn</code>. Declare your
     fields as class-level variables, and initialize them in <code>main()</code>,
@@ -459,7 +459,7 @@
       </pre>
     </blockquote></li>
   </section>
-  <section class="slide" id="Part I: Reading Input 9">
+  <section class="slide">
     <ul>
       <li> Run your program:
         <p> <b><tt>% java NBody 15778000.0 25000.0 planets.txt</tt></b>
@@ -496,7 +496,7 @@
                 test it.</li>
               </section>
 
-              <section class="slide" id="Part II: Draw the Planets 2">
+              <section class="slide">
                 <li>Add a class-level array of <code>PImage</code> variables to
                   hold the images for the planets via the following code:  <code>PImage[] images;</code>&nbsp; <br>
                 </li>
@@ -514,7 +514,7 @@
                     <li class="slide">Write a loop to display images of the <tt>N</tt> bodies. <br>
                     </li>
                   </section>
-                  <section class="slide" id="Part II: Draw the Planets 3">
+                  <section class="slide">
                     <ul>
                       <li>The universe is represented in a much larger coordinate system than we can display, so we must transform 
                         all universe coordinates (e.g., <code>px[i]</code>, <code>py[i]</code>) to coordinates that we can display 
@@ -534,7 +534,7 @@
                               <li class="slide">Be sure to use <code>imageMode(CENTER)</code> so that your bodies are centered at the correct coordinates.
                               </ul>
                             </section>
-                            <section class="slide" id="Four Stationary">
+                            <section class="slide" >
                               <p>If all goes correctly, you should see the four stationary
                                 planets and the sun.
                                 <center> <img src="http://www.cis.upenn.edu/~cis110/14sp/hw/hw02/nbody-stationary.jpg" alt="N-body
@@ -577,7 +577,7 @@
                                             simulations of gravitational systems. </p></ul>
                                           </section>
 
-                                          <section class="slide" id="Planet Party"> 
+                                          <section class="slide"> 
                                             <h3>Let's get this party started!</h3>
                                             <p><img src="http://cafewitteveen.files.wordpress.com/2012/03/tumblr_m0ni29eugr1qewacoo1_500.png"/></p>
                                           </section>
@@ -608,7 +608,7 @@
                                                     </li>
                                                   </ul>
                                                 </section>
-                                                <section class="slide" id ="Part III: The Time Loop 2">
+                                                <section class="slide">
                                                   <li> Create a class-level variable <code>t</code>. In <code>draw()</code>,
                                                     increment this variable after checking it for whether the
                                                     universe should be stopped; if it is time for the universe
@@ -678,7 +678,7 @@
                                                               for all planets. </li>
 
                                                             </section>
-                                                            <section class="slide" id="Part III: Gravitation Forces 2">
+                                                            <section class="slide" >
                                                               <li> <h5>Gravitational Forces (Scaffolding Code):</h5> For now,
                                                                 assume the force that any planet exerts on any other planet
                                                                 is 0. (You will update this in the following steps.) Write
@@ -690,7 +690,7 @@
                                                                 this and every step.</b></font> </li>
                                                               </section>
 
-                                                              <section class="slide" id="Part II: Gravitational Forces 3">
+                                                              <section class="slide">
                                                                 <li> <h5>Pairwise Gravitational Forces:</h5> The formula for
                                                                   the pairwise force <b>F</b> that one particle exerts on
                                                                   another is known as <i>Newton's law of universal

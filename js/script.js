@@ -1,3 +1,7 @@
+  /**
+  Creates submenu under the currently active homework using deck.js top level, labeled, slides
+  **/
+
   $(function() {
     $.deck('.slide');    
     $(parent.top).ready(function() {

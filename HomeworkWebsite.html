@@ -6,17 +6,16 @@
     <meta name="viewport" content="width=1024, user-scalable=no">
 
     <title>The Body of N</title>
-
     
-
-    <!--our own stylesheet-->
-    <link rel="stylesheet" media="screen" href="style.css">
+     <link rel="stylesheet" media="screen" href="style.css"> <!--our own stylesheet--> 
   </head>
   <body>
 
     <header class="navbar">
       <h2 id="homework_title">Homework 2</h2>
-      <div class="menu-trigger" id="hw_button">HW</div>
+      <div class="menu-trigger">
+      <button type="button" class="button" id="hw_button">HW</button>
+    </div>
     </header>
     <div id="menu">
       <ul class="hw-menu">
@@ -47,6 +46,8 @@
     <!-- Required JS files. -->
     <script src="jquery.min.js"></script>
     <script src="core/deck.core.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+     <script src="js/homeworkwebsite.js"></script>
 
     <!-- Extension JS files. Add or remove as needed. -->
     <script src="extensions/menu/deck.menu.js"></script>
@@ -58,7 +59,8 @@
     <!--navbar-->
     <script src="jquery.jpanelmenu.min.js"></script>
     <script src="js/navbar.js"></script>
-    <script src="js/homeworkwebsite.js"></script>
+    
+    <script src="js/bootstrap.min.js"></script>
 
   <!-- Initialize the deck. You can put this in an external file if desired. -->
   <!--<script>
@@ -144,5 +146,15 @@ active.innerHTML = text + "  &#10095;";
 });
 
   </script>-->
+
+  <script>
+    //var sublink = document.getElementsByClassName("submenu-li");
+    $(".hw-menu .active li .submenu-li").click(function(){ //not getting clicked whyyy
+      console.log("submenu li was clicked");
+      var slide = $(this).getFirstChild().innerHTML; //<li><h6>title of slide</h6><li> 
+      goToSlide(slide);
+
+    });
+  </script>
 </body>
 </html>
