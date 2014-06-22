@@ -47,13 +47,13 @@
        <p id="arrow"><img src="http://www.clipartbest.com/cliparts/ecM/A4a/ecMA4abcn.svg" style="height: 30px"/></p>
       <div class="container">
 
-        <button class="quick">Next<p>right arrow</p></button>
-        <button class="quick">Previous<p>left arrow</p></button>
-        <button class="quick">Next Slide<p>down arrow</p></button>
-        <button class="quick">Previous Slide<p>up arrow</p></button>
-        <button class="quick">Go-To<p>g</p></button>
-        <button class="quick">Show All<p>m</p></button>
-        <button class="quick">Scale<p>s</p></button>
+        <button class="quick" value="prev" >Previous<p>left arrow</p></button>
+        <button class="quick" value="next">Next<p>right arrow</p></button>
+        <button class="quick" value="TODO">Next Slide<p>down arrow</p></button>
+        <button class="quick" value="TODO">Previous Slide<p>up arrow</p></button>
+        <button class="quick" value="toggleGoTo">Go-To<p>g</p></button>
+        <button class="quick" value="showMenu">Show All<p>m</p></button>
+        <button class="quick" value="toggleScale">Scale<p>s</p></button>
 
       </div>
 
@@ -78,94 +78,9 @@
     
     <script src="js/bootstrap.min.js"></script>
 
-  <!-- Initialize the deck. You can put this in an external file if desired. -->
-  <!--<script>
-  $(function() {
- // $.deck('.slide');
- var iframe = document.getElementsByClassName("deck-frame")[0];
-
-
- function resizeIFrame() {
-   //size iframe:
-   var width = (.7*$(window).width());
-   iframe.style.width =  (width)+'px';
-   iframe.style.height =  (width*.75)+'px';
-
-   if(width < 400) {
-    width = 400;
-    iframe.style.width =  (width)+'px';
-    iframe.style.height =  (width*.75)+'px';
-  }
-}
-
- resizeIFrame();
-
-
-  var iframeid = iframe.id;
-  var current = $(".hw-menu #current");
-
-  console.log(iframeid) + "";
-
-
-//make the current page active
-if(iframeid === "hw1-frame") {
-  $(".hw-menu #hw1").addClass("active");
-  current.text("Homework 1")
-}
-
-else if(iframeid === "hw2-frame") {
-  $(".hw-menu #hw2").addClass("active");
-  console.log("hw2 active")
-  current.text("Homework 2")
-}
-
-else if(iframeid === "hw3-frame") {
-  $("/hw-menu #hw3").addClass("active");
-  current.text("Homework 3")
-}
-
-else if(iframeid === "hw4-frame") {
-  $("/hw-menu #hw4").addClass("active");
-  current.text("Homework 4")
-}
-
-else if(iframeid === "hw5-frame") {
-  $(".hw-menu #hw5").addClass("active");
-  current.text("Homework 5")
-}
-
-else if(iframeid === "hw6-frame") {
-  $(".hw-menu #hw6").addClass("active");
-  current.text("Homework 6")
-}
-
-else if(iframeid === "hw7-frame") {
-  $(".hw-menu #hw7").addClass("active");
-  current.text("Homework 7")
-}
-
-else if(iframeid === "hw8-frame") {
-  $(".hw-menu #hw8").addClass("active");
-  current.text("Homework 8")
-}
-
-else if(iframeid === "hw9-frame") {
-  $(".hw-menu #hw9").addClass("active");
-  current.text("Homework 9")
-}
-
-//adds an arrow to active--this isn't working now idk why
-var active = document.getElementsByClassName("active")[0].firstChild.firstChild;
-var text = active.innerHTML;
-active.innerHTML = text + "  &#10095;"; 
-
-});
-
-  </script>-->
-
   <script>
     //var sublink = document.getElementsByClassName("submenu-li");
-    $(".hw-menu .active li .submenu-li").click(function(){ //not getting clicked whyyy
+    $(".hw-menu .active li .submenu-li").click(function(){ 
       console.log("submenu li was clicked");
       var slide = $(this).getFirstChild().innerHTML; //<li><h6>title of slide</h6><li> 
       goToSlide(slide);

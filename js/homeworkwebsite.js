@@ -6,14 +6,18 @@ jQuery(document).ready(function(){
 
 
   //after iframe has loaded
-    
-    $('iframe').load(function () { 
+
+  $('iframe').load(function () { 
+
+   
+
     //var sublink = document.getElementsByClassName("submenu-li");
     $(".submenu-li").click(function(){ //not getting clicked whyyy
       console.log("submenu li was clicked");
       console.log("this is:" + $(this));
       var slide = $(this).children(":first").text(); //<li><h6>title of slide</h6><li> 
       goToSlide(slide);
+      
 
     });
 
@@ -22,12 +26,16 @@ jQuery(document).ready(function(){
 
   });
 
- resizeIFrame();
+  resizeIFrame();
 
- var active = document.getElementsByClassName("active")[0];
+  function setClicks(){
 
- $(".hw-menu a").click(function(){
-  var id = $(this).attr("id");
+  }
+
+  var active = document.getElementsByClassName("active")[0];
+
+  $(".hw-menu a").click(function(){
+    var id = $(this).attr("id");
   if($(this).hasClass("active")) return; //already on this hw 
   console.log("id is" + id);
   var hwnum = id.substring(2, id.length); 
@@ -38,7 +46,7 @@ jQuery(document).ready(function(){
 });
 
 
- function resizeIFrame() {
+  function resizeIFrame() {
    //size iframe:
    var width = (.7*$(window).width());
    iframe.style.width =  (width)+'px';
@@ -100,20 +108,20 @@ var homework_title = "Homework " + hw;
     // Animation complete.
   });
 
-  });
+ });
 
 //show them when hover
-  $("#footer").mouseenter(function(){
-   $( "#footer" ).animate({
-    height: "70"
-  }, 400, function() {
+$("#footer").mouseenter(function(){
+ $( "#footer" ).animate({
+  height: "70"
+}, 400, function() {
     // Animation complete.
   });
 
-  });
+});
 
 
-  });
+});
 
 
 

@@ -1,5 +1,6 @@
   /**
   Creates submenu under the currently active homework using deck.js top level, labeled, slides
+  Also sets on click functions for the "quick key" buttons
   **/
 
   $(function() {
@@ -15,6 +16,17 @@
   submenu.setAttribute("id", "submenu");
   var open = true; //submenu open/closed
   var active_homework = top.$(".hw-menu .active li");
+
+  //var buttons = parent.document.getElementsByClassName("quick");
+  var button = top.$(".quick");
+
+  button.click(function(){
+    
+    var action = $(this).val();   
+    console.log("button press" + action);
+    $.deck(action);
+
+  });
 
 
 
@@ -51,9 +63,9 @@ createSubmenu(submenu, active_homework);
 
 
 
-    function createSubmenu(submenu, active_homework) {
-      open = true;
-      console.log("creating submen");
+  function createSubmenu(submenu, active_homework) {
+    open = true;
+    console.log("creating submen");
 
         /*submenu.css({
         "background-color": "blue",

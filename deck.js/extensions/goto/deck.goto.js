@@ -11,6 +11,7 @@ for jumping to any slide number/id in the deck (and processes that form
 accordingly). The form-showing state is indicated by the presence of a class on
 the deck container.
 */
+
 (function($, undefined) {
   var $document = $(document);
   var rootCounter;
