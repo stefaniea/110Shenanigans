@@ -12,13 +12,12 @@ jQuery(document).ready(function(){
    
 
     //var sublink = document.getElementsByClassName("submenu-li");
-    $(".submenu-li").click(function(){ //not getting clicked whyyy
+    $(".submenu-li").click(function() { 
       console.log("submenu li was clicked");
       console.log("this is:" + $(this));
       var slide = $(this).children(":first").text(); //<li><h6>title of slide</h6><li> 
       goToSlide(slide);
       
-
     });
 
     //console.log("about to call onclick");
@@ -28,21 +27,22 @@ jQuery(document).ready(function(){
 
   resizeIFrame();
 
-  function setClicks(){
-
-  }
-
+/*$(".submenu-li h6").mouseenter(function(){
+  $(this).hide();
+});
+*/
   var active = document.getElementsByClassName("active")[0];
 
-  $(".hw-menu a").click(function(){
+  $(".hw-menu a").click(function() { //not getting clicked??? 
+    console.log("homework clicked");
     var id = $(this).attr("id");
-  if($(this).hasClass("active")) return; //already on this hw 
-  console.log("id is" + id);
-  var hwnum = id.substring(2, id.length); 
-  console.log("hw num is " + hwnum);
-  console.log("length is" + id.length);
-  setCurrentHomework(hwnum);
-  resizeIFrame();
+    if($(this).hasClass("active")) return; //already on this hw 
+    console.log("id is" + id);
+    var hwnum = id.substring(2, id.length); 
+    console.log("hw num is " + hwnum);
+    console.log("length is" + id.length);
+    setCurrentHomework(hwnum);
+    resizeIFrame();
 });
 
 

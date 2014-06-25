@@ -19,16 +19,22 @@
 
   //var buttons = parent.document.getElementsByClassName("quick");
   var button = top.$(".quick");
+  var iframe = top.document.getElementsByClassName("deck-frame")[0];
 
   button.click(function(){
     
-    var action = $(this).val();   
+    var action = parseInt($(this).val());  
     console.log("button press" + action);
-    $.deck(action);
+   iframe.contentWindow.focus();
+    //$.deck(action);
+    var e = jQuery.Event("keydown");
+    //e.which = action; // # Some key code value
+    //e.keyCode = action;
+    e.which = action; //but only works for arrows for some reason..
+    e.keyCode = action;
+    $(document).trigger(e);
 
   });
-
-
 
 
   try {
@@ -42,20 +48,26 @@ catch(e) {
 
 createSubmenu(submenu, active_homework);
 
-/*(active_homework).click(function() {
+(active_homework).click(function() {
   //remove the submenu
   if(open) {
     console.log("hiding");
     //submenu.css("display", "none");
-    //submenu.hide();
-    top.$(".hw-menu .active #submenu").hide();
+    top.$(".hw-menu .active #submenu a li h6").hide("slide", { direction: "down" }, 1000, function(){
+       top.$(".hw-menu .active #submenu").css("display", "none");
+     // submenu.hide();
+    });
     open = false;
   } 
   else {
   //  submenu.show();
   console.log("showing");
   open = true;
-  top.$(".hw-menu .active #submenu").show();
+   top.$(".hw-menu .active #submenu").show(function(){
+    
+    top.$(".hw-menu .active #submenu a li h6").show("slide", { direction: "down" }, 1000);
+    //submenu.show();
+  });
   }
 
 }); //active hw clicked*/

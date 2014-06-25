@@ -31,6 +31,9 @@
 	z-index: 20;
 	zoom: 1;
 	text-align: center;
+	-webkit-box-shadow: 0px 3px 3px 0px rgba(25, 25, 25, 0.3);
+	-moz-box-shadow:    0px 3px 3px 0px rgba(25, 25, 25, 0.3);
+	box-shadow:         0px 3px 3px 0px rgba(25, 25, 25, 0.3);
 
 }
 
@@ -214,13 +217,41 @@ body {
 
 #submenu {
 	margin-top: -40px;
-	margin-left: -10px;
+	margin-left: -100px;
 	text-decoration: none;
+	text-align: right;
 }
 
 #submenu:hover {
 	text-decoration: none;
 	color: orange
+}
+
+.submenu-li h6 {
+	background-color: rgb(70,70,70); 
+	padding-left: 10px;
+	padding-right: 20px;
+	padding-top: -2px;
+	padding-bottom: -2px;
+	-webkit-border-top-left-radius:6px;
+	-moz-border-radius-topleft:6px;
+	border-top-left-radius:6px;
+	-webkit-border-top-right-radius:6px;
+	-moz-border-radius-topright:6px;
+	border-top-right-radius:6px;
+	-webkit-border-bottom-right-radius:6px;
+	-moz-border-radius-bottomright:6px;
+	border-bottom-right-radius:6px;
+	-webkit-border-bottom-left-radius:6px;
+	-moz-border-radius-bottomleft:6px;
+	border-bottom-left-radius:6px;
+	text-indent:0;
+}
+
+
+.submenu-li h6:hover {
+	text-decoration: none;
+	color: orange;
 }
 
 #footer {
