@@ -2,7 +2,48 @@ jQuery(document).ready(function(){
 
  console.log("homework website js");
 
+ //navbar hide
+  var navbar = $(document.getElementById("header"));
+  
+//hide navbar
+  navbar.css("top", "-70px");
+
+//show navbar on hover
+  navbar.mouseenter(function(){
+    //navbar.css("top", "0px");
+    navbar.animate({
+    top: "0px"
+  }, {
+    duration: 500,
+    specialEasing: {
+      top: "easeInOutBack"
+    },
+    complete: function() {
+     // $( this ).after( "<div>Animation complete.</div>" );
+    }
+  });
+
+  });
+
+//hide navbar when person clicks
+var panel = $(document.getElementById("frame-wrap"));
+  panel.click(function(){
+    navbar.animate({
+      top: "-70px"
+    }, {
+      duration: 500,
+      specialEasing: {
+        top: "linear"
+      },
+      complete: function() {
+       // $( this ).after( "<div>Animation complete.</div>" );
+     }
+   });
+  });
+
  var iframe = document.getElementsByClassName("deck-frame")[0];
+
+
 
 
   //after iframe has loaded
