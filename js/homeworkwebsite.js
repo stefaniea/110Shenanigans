@@ -61,12 +61,11 @@ var panel = $(document.getElementById("frame-wrap"));
       
     });
 
-    //console.log("about to call onclick");
-    //$(".hw-menu .submenu-li").click();
+      resizeIFrame();
 
   });
 
-  resizeIFrame();
+
 
 /*$(".submenu-li h6").mouseenter(function(){
   $(this).hide();
@@ -86,13 +85,17 @@ var panel = $(document.getElementById("frame-wrap"));
     resizeIFrame();
 });
 
+$( window ).resize(function() {
+  resizeIFrame();
+});
 
   function resizeIFrame() {
    //size iframe:
-   var width = (.7*$(window).width());
+   var width = (.6*$(window).width());
    iframe.style.width =  (width)+'px';
    iframe.style.height =  (width*.75)+'px';
 
+//minimum
    if(width < 400) {
     width = 400;
     iframe.style.width =  (width)+'px';

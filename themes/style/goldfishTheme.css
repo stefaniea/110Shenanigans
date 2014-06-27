@@ -170,13 +170,16 @@ select, input, textarea {
 }
 
 a {
-  color: #607890;
+ /* color: #607890;*/
+ color: rgb(70, 70, 70);
 }
 a:hover, a:focus {
-  color: #036;
+  /*color: #036;*/
+  color: rgb(70, 70, 70);
 }
 a:link {
-  -webkit-tap-highlight-color: #fff;
+ /* -webkit-tap-highlight-color: #fff;*/
+ color: rgb(70, 70, 70);
 }
 
 /* End HTML5 Boilerplate adaptations */
@@ -296,7 +299,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  color: #08455f;
+  color: #CC6600;
 }
 
 h2 {
@@ -310,7 +313,8 @@ h2 {
 }
 
 h3 {
-  color: #000;
+ /* color: #000; */
+  color: rgb(70, 70, 70);
 }
 
 pre {
@@ -422,10 +426,12 @@ blockquote:before {
 }
 
 a, a:hover, a:focus, a:active, a:visited {
-  color: #599;
+ /* color: #599;*/
+ color: rgb(70, 70, 70);
   text-decoration: none;
 }
 a:hover, a:focus {
+  color: orange;
   text-decoration: underline;
 }
 

@@ -1,4 +1,3 @@
-
 /*!
  * Includedeck.
  *
@@ -60,20 +59,25 @@ function includedeck(m, c) {
         "deck-core-dependencies": [
             prefix + "/jquery.min.js",
             prefix + "/modernizr.custom.js"
-	    //prefix + "/extensions/includedeck/___after___core___.js"
+        //prefix + "/extensions/includedeck/___after___core___.js"
         ],
         "deck": [
             "@_deck-core-dependencies",
-	    prefix + "/core/deck.core.css",
+        prefix + "/core/deck.core.css",
             prefix + "/core/deck.core.js"
         ],
         "newdeck": [
             "@_deck-core-dependencies",
-	    prefix + "/extensions/style-chunks/core.css",
+        prefix + "/extensions/style-chunks/core.css",
             prefix + "/core/deck.core.js"
         ],
         //
         // extensions
+        "fit": [ prefix + "/extensions/fit/deck.fit.js" ],
+        "fit-fs": [
+            prefix + "/extensions/fit/deck.fit-fs.css",
+            "@_fit"
+        ],
         "simplemath": [
             prefix + "/libs/display-latex2.user.js",
             prefix + "/extensions/simplemath/deck.simplemath.js"
@@ -87,13 +91,22 @@ function includedeck(m, c) {
             prefix + "/extensions/timekeeper/deck.timekeeper.css",
             prefix + "/extensions/timekeeper/deck.timekeeper.js"
         ],
-       "progress": [
+
+        "status": [
+            prefix + "/extensions/status/deck.status.css",
+            prefix + "/extensions/status/deck.status.js"
+        ],
+        "progress": [
             prefix + "/extensions/progress/deck.progress.css",
             prefix + "/extensions/progress/deck.progress.js"
         ],
         "navigation": [
             prefix + "/extensions/navigation/deck.navigation.css",
             prefix + "/extensions/navigation/deck.navigation.js"
+        ],
+        "menu": [
+            prefix + "/extensions/menu/deck.menu.css",
+            prefix + "/extensions/menu/deck.menu.js"
         ],
         "step": [ prefix + "/extensions/step/deck.step.js" ],
         "events": [ prefix + "/extensions/events/deck.events.js" ],
@@ -234,4 +247,3 @@ function includedeck(m, c) {
         });
     }));
 }
-
