@@ -132,10 +132,7 @@ body {
 
 }
 
-#hw_button {
-	display: inline-block;
-	/*position:relative;*/
-	z-index: 100000;
+.button{
 	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
 	box-shadow:inset 0px 1px 0px 0px #ffffff;
@@ -163,6 +160,10 @@ body {
 	font-size:15px;
 	font-weight:bold;
 	font-style:normal;
+}
+
+#hw_button {
+	z-index: 100000;
 	height:50px;
 	line-height:50px;
 	width:100px;
@@ -170,11 +171,11 @@ body {
 	text-align:center;
 	text-shadow:1px 1px 0px #ffffff;
 	position: absolute;
-	top: 20px;
+	top: 10px;
 	left: 30px;
 
 }
-#hw_button:hover {
+.button:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
 	background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
@@ -184,7 +185,11 @@ body {
 } 
 
 #hw_button:active {
-	top:22px;
+	top:12px;
+}
+
+#toolkit:active {
+	top:12px;
 }
 
 #menu {
@@ -194,7 +199,6 @@ body {
 	position: absolute;
 	padding-right: 100px;
 	width: 100%;
-	
 }
 
 .deck-wrapper {
@@ -318,15 +322,25 @@ body {
 	position: absolute;
 	top:-35px;
 	left: 10px;
-		color: #3b3b3b;
+	color: #3b3b3b;
 	font-family:arial;
 	font-size:30px;
 	font-weight:bold;
 	font-style:normal;
 
-
 }
 
+#toolkit {
+	position: absolute;
+	height: 40;
+	right: 80px;
+	top: 10px;
+}
+
+#current {
+	margin-top: 50px;
+	display:none;
+}
 
 
 

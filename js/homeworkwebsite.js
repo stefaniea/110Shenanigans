@@ -6,7 +6,7 @@ jQuery(document).ready(function(){
   var navbar = $(document.getElementById("header"));
   
 //hide navbar
-  navbar.css("top", "-70px");
+  navbar.css("top", "-60px");
 
 //show navbar on hover
   navbar.mouseenter(function(){
@@ -29,7 +29,7 @@ jQuery(document).ready(function(){
 var panel = $(document.getElementById("frame-wrap"));
   panel.click(function(){
     navbar.animate({
-      top: "-70px"
+      top: "-60px"
     }, {
       duration: 500,
       specialEasing: {
@@ -50,7 +50,7 @@ var panel = $(document.getElementById("frame-wrap"));
 
   $('iframe').load(function () { 
 
-   
+    
 
     //var sublink = document.getElementsByClassName("submenu-li");
     $(".submenu-li").click(function() { 
