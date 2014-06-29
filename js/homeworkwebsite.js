@@ -1,6 +1,7 @@
 jQuery(document).ready(function(){
 
  console.log("homework website js");
+ var bookmark = "#"; //will keep track of page left off on (perhaps store this locally?)
 
  //navbar hide
   var navbar = $(document.getElementById("header"));
@@ -130,6 +131,24 @@ var homework_title = "Homework " + hw;
 
   }
 
+  function setFrameAs(file){
+    bookmark = iframe.getAttribute(file); //save current frame source (TODO: local storage maybe)
+    var loc = window.location.href + "";
+    var dir = loc.substring(0, Math.max(loc.lastIndexOf("/"), loc.lastIndexOf("\\\\"))); 
+    console.log("dir"+dir);
+    iframe.setAttribute("src", dir+"/"+file+"#"); 
+  }
+
+  function goToBookmark() {
+    iframe.setAttribute("src", bookmark);
+  }
+
+  $(".toolbox-link").click(function(){
+    console.log("click toolbox");
+    var src = $(this).val();
+    setFrameAs(src);
+  });
+
   function goToSlide(id) {
     var src = iframe.getAttribute("src");
     var ind = src.indexOf(".html");
@@ -162,9 +181,7 @@ $("#footer").mouseenter(function(){
     // Animation complete.
   });
 
-});
-
-
+  });
 });
 
 

@@ -91,7 +91,6 @@ function includedeck(m, c) {
             prefix + "/extensions/timekeeper/deck.timekeeper.css",
             prefix + "/extensions/timekeeper/deck.timekeeper.js"
         ],
-
         "status": [
             prefix + "/extensions/status/deck.status.css",
             prefix + "/extensions/status/deck.status.js"
@@ -103,10 +102,6 @@ function includedeck(m, c) {
         "navigation": [
             prefix + "/extensions/navigation/deck.navigation.css",
             prefix + "/extensions/navigation/deck.navigation.js"
-        ],
-        "menu": [
-            prefix + "/extensions/menu/deck.menu.css",
-            prefix + "/extensions/menu/deck.menu.js"
         ],
         "step": [ prefix + "/extensions/step/deck.step.js" ],
         "events": [ prefix + "/extensions/events/deck.events.js" ],

@@ -40,7 +40,7 @@
 			}
 		},
 		hint: {
-			show: true,
+			show: false,
 			id: 'ds_hint',
 			text: "(Hint: Press 'F' to search)",
 			style: {
@@ -55,6 +55,8 @@
 			id: 'ds_input',
 			styleInactive: {
 				outline: 'none',
+				border: 'none',
+				boxShadow: '1px 1px .2em gray',
 				width: '3.3em'
 			},
 			styleActive: {
