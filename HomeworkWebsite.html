@@ -1,6 +1,8 @@
   <!DOCTYPE html>
   <html>
   <head>
+    <base target="_blank">
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=1024, user-scalable=no">
@@ -26,14 +28,12 @@
           <img style="height: 35px" src="images/toolbox_icon.png"/>
         </button>
       </a>
-      <ul class="dropdown-menu" role="menu">
+      <ul class="dropdown-menu" role="menu" style="left: -150px">
         <!--Toolbox stuff-->
-        <li><a href="#" class="toolbox-link" value="command_line_review.html">Command Line Arguments</a></li>
-        <li>wow</li>
+        <li><a href="#command_line_review.html" class="toolbox-link">Command Line Arguments</a></li>
+          <li><a href="#enrichment_hw2.html"" class="toolbox-link">Enrichment and Background</a></li>
       </ul>
     </div><!--/btn group-->
-
-
   </header>
 
 
@@ -41,16 +41,17 @@
     <div id="menu">
       <ul class="hw-menu">
         <h5 id="current">Homework 2</h5>
-        <a href="#" id="hw1"><li><h4>Homework 1</h4></li></a>
-        <a href="#" id="hw2" class="active"><li><h4>Homework 2</h4></li></a>
-        <a href="#" id="hw3"><li><h4>Homework 3</h4></li></a>
-        <a href="#" id="hw4"><li><h4>Homework 4</h4></li></a>
-        <a href="#" id="hw5"><li><h4>Homework 5</h4></li></a>
-        <a href="#" id="hw6"><li><h4>Homework 6</h4></li></a>
-        <a href="#" id="hw7"><li><h4>Homework 7</h4></li></a>
-        <a href="#" id="hw8"><li><h4>Homework 8</h4></li></a>
-        <a href="#" id="hw9"><li><h4>Homework 9</h4></li></a>
-        <a href="#" id="hw10"><li><h4>Homework 10</h4></li></a>
+        <a href="#hw0.html" id="hw0"><li><h4>Homework 0</h4></li></a>
+        <a href="#hw1.html" id="hw1"><li><h4>Homework 1</h4></li></a>
+        <a href="#hw2.html" id="hw2" class="active"><li><h4>Homework 2</h4></li></a>
+        <a href="#hw3.html" id="hw3"><li><h4>Homework 3</h4></li></a>
+        <a href="#hw4.html" id="hw4"><li><h4>Homework 4</h4></li></a>
+        <a href="#hw5.html" id="hw5"><li><h4>Homework 5</h4></li></a>
+        <a href="#hw6.html" id="hw6"><li><h4>Homework 6</h4></li></a>
+        <a href="#hw7.html" id="hw7"><li><h4>Homework 7</h4></li></a>
+        <a href="#hw8.html" id="hw8"><li><h4>Homework 8</h4></li></a>
+        <a href="#hw9.html" id="hw9"><li><h4>Homework 9</h4></li></a>
+        <a href="#hw10.html" id="hw10"><li><h4>Homework 10</h4></li></a>
         <p>_________________</p>
         <p>_________________</p>
       </ul>
@@ -111,6 +112,7 @@
       goToSlide(slide);
 
       $('.dropdown-toggle').dropdown();
+      $('.popover-dismiss').popover()
 
     });
   </script>

@@ -73,11 +73,11 @@ function includedeck(m, c) {
         ],
         //
         // extensions
-        "fit": [ prefix + "/extensions/fit/deck.fit.js" ],
+        /*"fit": [ prefix + "/extensions/fit/deck.fit.js" ],
         "fit-fs": [
             prefix + "/extensions/fit/deck.fit-fs.css",
             "@_fit"
-        ],
+        ],*/
         "simplemath": [
             prefix + "/libs/display-latex2.user.js",
             prefix + "/extensions/simplemath/deck.simplemath.js"

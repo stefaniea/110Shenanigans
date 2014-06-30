@@ -1,5 +1,6 @@
 jQuery(document).ready(function(){
 
+
  console.log("homework website js");
  var bookmark = "#"; //will keep track of page left off on (perhaps store this locally?)
 
@@ -44,7 +45,16 @@ var panel = $(document.getElementById("frame-wrap"));
 
  var iframe = document.getElementsByClassName("deck-frame")[0];
 
+        /**
+  Looks at the # in the url, and sets the iframe of this page as that tag
+  **/
+  function loadIframeFromTag() {
+    var html = getTextAfterTag();
+    if(html == null) return;
+    setFrameAs(html);
+  }
 
+  loadIframeFromTag();
 
 
   //after iframe has loaded
@@ -132,22 +142,25 @@ var homework_title = "Homework " + hw;
   }
 
   function setFrameAs(file){
-    bookmark = iframe.getAttribute(file); //save current frame source (TODO: local storage maybe)
-    var loc = window.location.href + "";
-    var dir = loc.substring(0, Math.max(loc.lastIndexOf("/"), loc.lastIndexOf("\\\\"))); 
-    console.log("dir"+dir);
-    iframe.setAttribute("src", dir+"/"+file+"#"); 
+    var loc = document.location.href;
+    bookmark = iframe.getAttribute("src"); //save current frame source (TODO: local storage maybe)
+    //var loc = window.location.href; //**why is file system opening**????
+    var dir = loc.substring(0, loc.lastIndexOf("/"));
+    console.log("loc"+loc); 
+    console.log("dir" + dir);
+    console.log("file" + file);
+    iframe.setAttribute("src", dir+"/"+file); 
   }
 
   function goToBookmark() {
     iframe.setAttribute("src", bookmark);
   }
 
-  $(".toolbox-link").click(function(){
+  /*$(".toolbox-link").click(function(){
     console.log("click toolbox");
     var src = $(this).val();
     setFrameAs(src);
-  });
+  });*/
 
   function goToSlide(id) {
     var src = iframe.getAttribute("src");
@@ -156,6 +169,16 @@ var homework_title = "Homework " + hw;
     src = src.substring(0, ind + length);
     iframe.setAttribute("src", src + "#"+id);
     console.log("go to slide:" + id);
+  }
+
+  function getTextAfterTag() {
+     var src = document.location.href;
+     console.log("src"+src);
+    var ind = src.indexOf("#");
+    if(ind < 0) return null;
+    src = src.substring(ind+1, src.length);
+    console.log("new src" + src);
+    return src;
   }
 
   console.log("about to make onclick");
