@@ -340,5 +340,14 @@ body {
 	display:none;
 }
 
+#iframe.fullScreen{
+    width: 100% !important;
+    height: 100% !important;
+    margin: auto;
+    font-size: 30px;
+}
+
+
+
 
 

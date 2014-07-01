@@ -50,7 +50,7 @@ var panel = $(document.getElementById("frame-wrap"));
   **/
   function loadIframeFromTag() {
     var html = getTextAfterTag();
-    if(html == null) return;
+    if(html == null || html == "") return;
     setFrameAs(html);
   }
 
