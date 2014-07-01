@@ -16,7 +16,6 @@
   <link rel="stylesheet" media="screen" href="extensions/navigation/deck.navigation.css">
   <link rel="stylesheet" media="screen" href="extensions/status/deck.status.css">
   <link rel="stylesheet" media="screen" href="extensions/scale/deck.scale.css">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
   
 
   <!-- Style theme. More available in /themes/style/ or create your own. -->
@@ -354,8 +353,8 @@
         <ul class="slide">
           <li>Declare and initialize a variable in <code>main()</code>
             (we'll call it
-            <code> inStream</code> in this example) to read from the file:<br>
-            <code>&nbsp;&nbsp;&nbsp;&nbsp;In inStream = new
+            <code> inStream</code> in this example) to read from the file:<br></li>
+           <li> <code>&nbsp;&nbsp;&nbsp;&nbsp;In inStream = new
               In(filename);&nbsp; // creates a variable inStream that we
               can use to read from the file</code></li>
             </section>
@@ -365,28 +364,18 @@
                 using the following commands, just as with <code>StdIn</code>
                 (see Section 1.5 of the textbook):</li>
                 <ul class="slide">
-                  <li><code>boolean b =
-                    inStream.isEmpty();&nbsp;&nbsp;&nbsp;&nbsp; // boolean
-                    value that is true if there are no more values, false
-                    otherwise</code></li>
-                    <li><code>int i&nbsp;&nbsp;&nbsp;&nbsp; =
-                      inStream.readInt();&nbsp;&nbsp;&nbsp;&nbsp; // reads in an
-                      int from inStream</code><code><br>
-                    </code></li>
-                    <li><code>double d&nbsp; = inStream.readDouble();&nbsp; //
-                      reads in a double</code><code> from inStream</code></li>
-                      <li><code>boolean b = inStream.readBoolean(); // reads in a
-                        boolean </code><code>from inStream</code></li>
-                        <li><code>String s&nbsp; = inStream.readString();&nbsp; //
-                          reads in a string from inStream</code></li>
-                          <li><code>String s&nbsp; =
-                            inStream.readLine();&nbsp;&nbsp;&nbsp; // reads in an
-                            entire line from inStream</code></li>
-                            <li><code>String s&nbsp; =
-                              inStream.readAll();&nbsp;&nbsp;&nbsp;&nbsp; // reads in
-                              the entire file from inStream</code></li>
-                            </ul>
-                          </ul>
+                  <blockquote>
+                    <pre>Section 1.5
+                  boolean b = inStream.isEmpty();     // boolean value that is true if there are no more values, false otherwise
+                  int i     = inStream.readInt();     // reads in an int from inStream
+                  double d  = inStream.readDouble();  // reads in a double from inStream
+                  boolean b = inStream.readBoolean(); // reads in a boolean from inStream
+                  String s  = inStream.readString();  // reads in a string from inStream
+                  String s  = inStream.readLine();    // reads in an entire line from inStream
+                  String s  = inStream.readAll();     // reads in the entire file from inStream
+                          </pre>
+                        </blockquote>
+                        </ul>
                         </section>
 
                         <section class="slide">
@@ -486,14 +475,16 @@
             <li class="slide"> Write code to declare a class-level variable of type <code>PImage</code>
               called <tt>backdrop</tt> for the background and initialize it
               to <code>starfield.jpg</code> included in the zip:<br>
-              <code>&nbsp;&nbsp;&nbsp;&nbsp;backdrop =
+              <blockquote>
+                <pre></pre>
+                &nbsp;&nbsp;&nbsp;&nbsp;backdrop =
                 loadImage(sketchPath("starfield.jpg")); //
                 sketchPath("starfield.jpg") gets the file path to
                 starfield.jpg<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;backdrop = backdrop.get(0, 0, width,
                 height); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// get() crops the
                 background image to be the same size as the canvas<br>
-              </code> </li>
+              </blockquote> </li>
               <li class="slide"> Write code to draw the background.&nbsp; Run your program to
                 test it.</li>
               </section>
@@ -1334,16 +1325,17 @@
 <script src="extensions/status/deck.status.js"></script>
 <script src="extensions/navigation/deck.navigation.js"></script>
 <script src="extensions/scale/deck.scale.js"></script>
-<script src="js/script.js"></script>
 <script src="extensions/includedeck/load.js"></script>
  <script src="extensions/search/deck.search.js"></script>
-
+ <script src="extensions/step/deck.step.js"></script>
+ <script src="js/script.js"></script>
+ 
 
   
 
 
 <!-- Initialize the deck. You can put this in an external file if desired. -->
-<script>
+<!--<script>
             includedeck("profile-3 theme:x:goldfishTheme", {
                PREFIX: "", // deck.js is in the parent folder for this presentation
                AFTERINIT: function() {
@@ -1358,7 +1350,7 @@
             });
 
             $.deck('search');
-</script>
+</script>-->
 
 
 

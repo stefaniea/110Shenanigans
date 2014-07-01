@@ -6,33 +6,42 @@
   $(function() {
     $.deck('.slide');    
     $(parent.top).ready(function() {
-  //homework 2 active:
-  // top.$("#hw2").style.color = "orange";
 
-  //var menu_ul;
-  //var menu_children;
-  var clicked;
-  var submenu = document.createElement("div"); //wrapper for table of contents in sidebar
-  submenu.setAttribute("id", "submenu");
-  var open = true; //submenu open/closed
-  var active_homework = top.$(".hw-menu .active li");
+    var clicked;
+    var submenu = document.createElement("div"); //wrapper for table of contents in sidebar
+    submenu.setAttribute("id", "submenu");
+    var open = true; //submenu open/closed
+    var active_homework = top.$(".hw-menu .active li");
 
-  //var buttons = parent.document.getElementsByClassName("quick");
   var button = top.$(".quick");
   var iframe = top.document.getElementsByClassName("deck-frame")[0];
 
   button.click(function(){
-    
+    //if ($(this).getAttribute(id).equals("fullScreen")) { iframe.fullScreen(); return; }
     var action = parseInt($(this).val());  
     console.log("button press" + action);
    iframe.contentWindow.focus();
-    //$.deck(action);
-    var e = jQuery.Event("keydown");
+
+    if(action == 71){
+      console.log("goto");
+      $.deck("toggleGoTo");
+    }
+    else if(action == 77){
+      $.deck("toggleMenu");
+    }
+    else if(action == 84){
+      $.deck("toggleScale");
+    }
+    else {
+          var e = jQuery.Event("keydown");
     //e.which = action; // # Some key code value
     //e.keyCode = action;
     e.which = action; //but only works for arrows for some reason..
     e.keyCode = action;
     $(document).trigger(e);
+
+    }
+    
 
   });
 

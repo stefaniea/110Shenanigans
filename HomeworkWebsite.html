@@ -59,22 +59,22 @@
       <div class = "frame" align = "middle">
         
         <iframe id="iframe" src="hw2.html" frameborder="0" class="deck-frame" align = "middle" width="800" height="600" webkitAllowFullScreen mozAllowFullScreen allowFullScreen></iframe>
-        <button id="fullScreen" class="button">full screen</button>
 
 
       </div> <!--//deck wrapper-->
 
     <div id="footer">
-       <p id="arrow"><img src="http://www.clipartbest.com/cliparts/ecM/A4a/ecMA4abcn.svg" style="height: 30px"/></p>
+       <p id="arrow"><img src="images/110logo.png" style="height: 30px"/></p>
       <div class="container">
 
         <button class="quick" value="37" >Previous<p>left arrow</p></button>
         <button class="quick" value="39">Next<p>right arrow</p></button>
-        <button class="quick" value="40">Next Slide<p>down arrow</p></button>
+        <button class="quick" value="90">Next Slide<p>down arrow or z</p></button>
         <button class="quick" value="38">Previous Slide<p>up arrow</p></button>
         <button class="quick" value="71">Go-To<p>g</p></button>
         <button class="quick" value="77">Show All<p>m</p></button>
         <button class="quick" value="83">Scale<p>s</p></button>
+        <button id="fullScreen" class="quick" value="70">Fullscreen<p>f</p></button>
 
       </div>
 
@@ -117,21 +117,32 @@
 
       //$('.popover-dismiss').popover()
 
-    if($.support.fullscreen){
+if($.support.fullscreen){
 
-     
+  function getChar(event) {
+    if (event.which == null) {
+      return String.fromCharCode(event.keyCode) // IE
+    } else if (event.which!=0 && event.charCode!=0) {
+      return String.fromCharCode(event.which)   // the rest
+    } else {
+      return null // special key
+    }
+  }
 
 
-    // ...
-    // Show your full screen button here
-    // ...
 
-    $('#fullScreen').click(function(e){
-      var iframe = $('#iframe');
+    var iframe = $('#iframe');
+
+    $('#fullScreen').click(function(e){   
       iframe.fullScreen();
-      
-
     });
+
+    document.onkeypress = function(event) {
+    var char = getChar(event || window.event);
+    console.log("char was" + char);
+    if(char == 'f') iframe.fullScreen();
+  }
+
 }
   </script>
 </body>

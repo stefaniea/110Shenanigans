@@ -358,6 +358,8 @@ pre {
 
 code {
   color: #789;
+  background-color: rgb(250, 250, 250);
+  border-radius: 5px;
 }
 
 blockquote {
