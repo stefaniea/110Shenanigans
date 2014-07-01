@@ -16,6 +16,7 @@
   <link rel="stylesheet" media="screen" href="extensions/navigation/deck.navigation.css">
   <link rel="stylesheet" media="screen" href="extensions/status/deck.status.css">
   <link rel="stylesheet" media="screen" href="extensions/scale/deck.scale.css">
+  <link rel="stylesheet" media="screen" href="css/bootstrap.min.css">
   
 
   <!-- Style theme. More available in /themes/style/ or create your own. -->
@@ -354,9 +355,9 @@
           <li>Declare and initialize a variable in <code>main()</code>
             (we'll call it
             <code> inStream</code> in this example) to read from the file:<br></li>
-           <li> <code>&nbsp;&nbsp;&nbsp;&nbsp;In inStream = new
+           <li> <blockquote><pre>&nbsp;&nbsp;&nbsp;&nbsp;In inStream = new
               In(filename);&nbsp; // creates a variable inStream that we
-              can use to read from the file</code></li>
+              can use to read from the file</pre></blockquote></li>
             </section>
 
             <section class="slide" >
@@ -518,10 +519,12 @@
                           because Processing's canvas has positive coordinates. You will
                           also have to cast these values into floats and negate the y
                           values to make the planets go counterclockwise.<br>
-                          <code>&nbsp;&nbsp;&nbsp;&nbsp;(px[i] + R) * width / (2.0 * R)
+                        </section>
+                        <section class="slide">
+                          <blockquote><pre>&nbsp;&nbsp;&nbsp;&nbsp;(px[i] + R) * width / (2.0 * R)
                             // computes the display x coordinate for the universe px coordinate<br>
                             &nbsp;&nbsp;&nbsp;&nbsp;(-py[i] + R) * height / (2.0 * R) //
-                            computes the display y coordinate for the universe py coordinate </code></li>
+                            computes the display y coordinate for the universe py coordinate <pre></blockquote></li>
                             <li class="slide">Note that you should use these formulas ONLY for computing the display coordinates of the images from <code>px[i]</code>, <code>py[i]</code>.  
                               All calculations to update the body positions should use <code>px[i]</code>, <code>py[i]</code> -- never these formulas.
                               <li class="slide">Be sure to use <code>imageMode(CENTER)</code> so that your bodies are centered at the correct coordinates.
@@ -553,6 +556,8 @@
                                           changes the speed or direction. In our simulations, the only force
                                           will be gravity. First, however, we suggest implementing a
                                           universe without gravity and testing to make sure this works. </p></p>
+                                         </section>
+                                         <section class="slide">
                                           <p > Although we think of time as advancing continuously and of
                                             objects as moving continuously, computers are not good at
                                             simulating constant change. Instead, we settle for letting time
@@ -935,7 +940,7 @@
                     You are redrawing the background before drawing each
                     planet, instead of redrawing it once per timestep. As a result,
                     you keep covering up each planet as soon as you draw it.</li>
-                    <li class="question"><h5>My planets "smear" accross the screen.</h5> 
+                    <li class="question">
       </div>
     </div>
   </div>
@@ -1158,9 +1163,9 @@
                         </section>
 
 
-                        <section class="slide" id="Enrichment" style="overflow: scroll">
-                         <h3>Enrichment</h3>
-                         <h4>Check the toolbox for further enrichment and background information on this assignment</h4>
+                        <section class="slide" id="Enrichment and Background" style="overflow: scroll">
+                         <h2>Enrichment and Background</h2>
+                         <h4>Check the toolbox for further <a target="_blank" href="HomeworkWebsite.html#command_line_review.html">enrichment and background </a> information on this assignment</h4>
                          <p><i>hint:</i> many brownie points goes to students who read these slides</p>
                          <!--
                           <div class="panel-group" id="accordion2">
@@ -1325,7 +1330,7 @@
 <script src="extensions/status/deck.status.js"></script>
 <script src="extensions/navigation/deck.navigation.js"></script>
 <script src="extensions/scale/deck.scale.js"></script>
-<script src="extensions/includedeck/load.js"></script>
+<!--<script src="extensions/includedeck/load.js"></script>-->
  <script src="extensions/search/deck.search.js"></script>
  <script src="extensions/step/deck.step.js"></script>
  <script src="js/script.js"></script>
