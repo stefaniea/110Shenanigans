@@ -52,6 +52,9 @@ var panel = $(document.getElementById("frame-wrap"));
     var html = getTextAfterTag();
     if(html == null || html == "") return;
     setFrameAs(html);
+    var hwnum = parseInt(html.substring(2, html.length-5));
+    console.log("hwnum" + hwnum);
+    setCurrentHomework(hwnum);
   }
 
   loadIframeFromTag();
@@ -84,15 +87,16 @@ var panel = $(document.getElementById("frame-wrap"));
 */
   var active = document.getElementsByClassName("active")[0];
 
-  $(".hw-menu a").click(function() { //not getting clicked??? 
+  $(".menu .hw-menu a li").click(function() { //not getting clicked??? 
     console.log("homework clicked");
-    var id = $(this).attr("id");
+    //var id = $(this).attr("id");
     if($(this).hasClass("active")) return; //already on this hw 
-    console.log("id is" + id);
-    var hwnum = id.substring(2, id.length); 
-    console.log("hw num is " + hwnum);
-    console.log("length is" + id.length);
-    setCurrentHomework(hwnum);
+  //  console.log("id is" + id);
+  //  var hwnum = id.substring(2, id.length); 
+   // console.log("hw num is " + hwnum);
+    //console.log("length is" + id.length);
+   // setCurrentHomework(hwnum);
+    loadIframeFromTag();
     resizeIFrame();
 });
 
@@ -116,7 +120,7 @@ $( window ).resize(function() {
 
 //where hw is a number between 0 and 10
 function setCurrentHomework(hw) {
-
+console.log("set current homework"+hw);
   if(hw < 0 || hw > 10) {
     console.log("invalid hw");
     alert("something went wrong  :/");
@@ -135,9 +139,13 @@ var homework_title = "Homework " + hw;
     var current = $(".hw-menu #current");
     current.text(homework_title);
 
+    var title = $("#homework_title");
+    title.text(homework_title);
+
     //change the active class
     $(".hw-menu .active").removeClass("active");
     $("#" + hw_id).addClass("active");
+    $("#" + hw_id).removeAttr('target');
 
   }
 
