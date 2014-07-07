@@ -52,10 +52,17 @@ var panel = $(document.getElementById("frame-wrap"));
     var html = getTextAfterTag();
     if(html == null || html == "") return;
     setFrameAs(html);
-    var hwnum = parseInt(html.substring(2, html.length-5));
-    console.log("hwnum" + hwnum);
-    setCurrentHomework(hwnum);
+    if(html.length > 9) { //very hacky but it'll do for now **
+      console.log("")
+      var hwnum = parseInt(html.substring(2, html.length-5));
+      console.log("hwnum" + hwnum);
+      setCurrentHomework(hwnum);
   }
+  //not a homework - toolbox link or something else
+  else {
+    //setCurrentHomework(hwnum, false);
+  }
+}
 
   loadIframeFromTag();
 
@@ -188,8 +195,6 @@ var homework_title = "Homework " + hw;
     console.log("new src" + src);
     return src;
   }
-
-  console.log("about to make onclick");
 
   //hide footer buttons
   $("#footer").css("height", "0");

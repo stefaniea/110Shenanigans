@@ -8,8 +8,7 @@
     $(parent.top).ready(function() {
 
     var clicked;
-    var submenu = document.createElement("div"); //wrapper for table of contents in sidebar
-    submenu.setAttribute("id", "submenu");
+    var submenu = top.document.getElementById("submenu"); //should be null unless page is reloaded
     var open = true; //submenu open/closed
     var active_homework = top.$(".hw-menu .active li");
 
@@ -54,8 +53,8 @@ catch(e) {
   alert("error :/ " + e);
 }
 
+  createSubmenu(submenu, active_homework);
 
-createSubmenu(submenu, active_homework);
 
 (active_homework).click(function() {
   //remove the submenu
@@ -86,7 +85,14 @@ createSubmenu(submenu, active_homework);
 
   function createSubmenu(submenu, active_homework) {
     open = true;
-    console.log("creating submen");
+    console.log("creating submenu");
+    if(submenu != null) { 
+      console.log("was submenu" + submenu + submenu.length);
+      return;
+    }
+    submenu = document.createElement("div"); //wrapper for table of contents in sidebar
+    submenu.setAttribute("id", "submenu");
+    submenu.setAttribute("class", "submenu");
 
         /*submenu.css({
         "background-color": "blue",
