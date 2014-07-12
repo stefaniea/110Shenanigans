@@ -1,4 +1,0 @@
-110Shenanigans
-==============
-
-HomeworkWebsite.html
