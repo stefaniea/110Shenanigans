@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<script type="text/javascript" src="libs/dat.gui.min.js"></script>
+<script src="libs/processing.js"></script>
+	<head>
+		<title>for_loop_visualizer : Built with Processing and Processing.js</title>
+		<style type="text/css">
+	body {
+	  background-color: #333; color: #bbb; line-height: normal;
+	  font-family: Lucida Grande, Lucida Sans, Arial, Helvetica Neue, Verdana, Geneva, sans-serif;
+	  font-size: 11px; font-weight: normal; text-decoration: none;
+		  line-height: 1.5em;
+	}
+	a img { 
+		border: 0px solid transparent;
+	}
+	a, a:link, a:visited, a:active, a:hover { 
+		color: #cdcdcd; text-decoration: underline;
+	}
+	h1 {
+	    font-family: Arial, Helvetica Neue, Verdana, Geneva, sans-serif;
+		width: 100%; letter-spacing: 0.1em;
+		margin-bottom: 1em; font-size: 1.65em;
+	}
+	canvas { 
+		display: block; 
+		outline: 0px; 
+		margin-bottom: 1.5em; 
+	}
+	#content { 
+		margin: 50px auto 0px auto; padding: 25px 25px 15px 25px;
+		width: 700px; min-width: 300px; overflow: auto;
+		border-left: 1px solid #444; border-top: 1px solid #444; 
+		border-right: 1px solid #333; border-bottom: 1px solid #333;
+		background-color: #3d3d3d;
+	}
+		</style>
+
+	</head>
+
+	<body>
+		<div id="content">
+			<div>
+				<canvas id="pjs">
+					<p>Your browser does not support the canvas tag.</p>
+					<!-- Note: you can put any alternative content here. -->
+				</canvas>
+		<script type="application/processing" data-processing-target="pjs">
+
+				int myColor = color(0,0,0);
+
+				boolean circColor = false; //boolean that turns the color of the circle white (maybe?)
+				PFont f;
+				Background b;
+
+				void setup() {
+				  size(700,400);
+				  noStroke();
+				  f = createFont("Arial",16,true); // STEP 3 Create Font
+				  b = new Background();
+				  
+				  window.pause = false;
+
+	}
+String getCodeString(){
+  String code = "for (int i = 0; i < "+window.outer+"; i++) {\n"+"  drawCircle()\n"+  "for (int j = 0; j < "+window.inner+"; j++) {\n"+
+              "  drawCircle()\n"+"  }\n"+
+             "}";
+return code;
+
+}
+void draw() {
+if(!window.pause) {
+  b.draw(this);
+ 
+if(window.timer == 0) {
+
+ 
+  if(window.innercount > window.inner) {
+   window.outercount++;
+   window.innercount = 0;
+  }
+  
+  int spacey = 30;
+  int spacex = 50;
+  
+  for(int i = 0; i < window.outer; i++) {
+    if(i > window.outercount) break;
+    fill(i*40, 150 , 200);
+    ellipse(i*spacex + 50, 20, 20, 20);
+    textFont(f,15);               
+    fill(255);                        
+    text("i="+i,i*spacex+50,20);
+   for(int j = 0; j < window.inner; j++) {
+    if(j >= window.innercount) break;
+     fill(i*40, j, 100);
+     int ypos = (j+1)*spacey+20;
+     ellipse(i*spacex + 50, ypos, 20, 20);
+     textFont(f,15);               
+     fill(255);                        
+     text("j="+j,i*spacex+50,ypos);
+  }
+}
+window.innercount++;
+window.timer = 20;
+}
+
+window.timer--;
+}
+}
+
+
+/*void outer(float val) {
+  resetAnimation();
+  outer = (int) val;
+}
+
+void inner(float val) {
+  resetAnimation();
+  inner = (int) val;
+}
+
+void resetAnimation() {
+  timer = 0;
+  innercount = 0;
+  outercount = 0;
+  pause = false;
+}
+
+void reset(int val){
+  resetAnimation();
+}
+
+void pause(int val) {
+ pause = !pause; 
+}*/
+
+class Background {
+  
+ void draw(PApplet parent) {
+   
+ if(timer == 0 && outercount == 0 && innercount == 0) {  
+   parent.fill(200);
+   parent.rect(0, 0, width, height);
+    
+   parent.fill(100);
+   parent.rect(0,350,width,50);
+   
+   parent.fill(240);
+   parent.rect(475, 25, 200, 300);
+   
+   parent.textFont(f,15);               
+   parent.fill(10);  
+   parent.text(getCodeString(), 490, 50); 
+ }
+  }
+}
+
+				</script>
+
+
+<script type="text/javascript">
+	window.inner = 5;
+	window.outer = 5;
+	window.pause = false;
+	window.timer = 20;
+	window.innercount = 0;
+	window.outercount = 0;
+	window.reset = function(){
+	  window.timer = 0;
+	  window.innercount = 0;
+	  window.outercount = 0;
+	  window.pause = false;
+	};
+
+	window.pause= function(){
+		window.pause = !window.pause;
+	};
+
+	window.onload = function() {
+	  var gui = new dat.GUI();
+
+	  //sliders
+	 var innerLoop = gui.add(window, 'inner', 0, 7).step(1);
+	 var outerLoop = gui.add(window, 'outer', 0, 7).step(1);
+	 innerLoop.onChange(function(value) {
+  	  window.inner = value;
+  	  window.timer = 0;
+	  window.innercount = 0;
+	  window.outercount = 0;
+
+	});
+
+	 outerLoop.onChange(function(value) {
+  	  window.outer = value;
+  	  window.timer = 0;
+	  window.innercount = 0;
+	  window.outercount = 0;
+
+	});
+
+	  //buttons
+	  gui.add(window, 'reset');
+	  gui.add(window, 'pause');
+};
+
+</script>
+	    	</div>
+			<h1>for_loop_visualizer</h1>
+    		<p id="description"></p>
+			<p id="sources">Source code: <a href="for_loop_visualizer.pde">for_loop_visualizer</a> </p>
+			<p>
+			Built with <a href="http://processing.org" title="Processing">Processing</a>
+			and <a href="http://processingjs.org" title="Processing.js">Processing.js</a>
+			</p>
+		</div>
+	</body>
+</html>
