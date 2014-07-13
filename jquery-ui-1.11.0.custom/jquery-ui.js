@@ -5514,7 +5514,7 @@ var sortable = $.widget("ui.sortable", $.ui.mouse, {
 var accordion = $.widget( "ui.accordion", {
 	version: "1.11.0",
 	options: {
-		active: false,
+		active: false, 
 		animate: {},
 		collapsible: true,
 		event: "click",
