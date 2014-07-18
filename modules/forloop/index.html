@@ -62,12 +62,13 @@
 
 	}
 String getCodeString(){
-  String code = "for (int i = 0; i < "+window.outer+"; i++) {\n"+"  drawCircle()\n"+  "for (int j = 0; j < "+window.inner+"; j++) {\n"+
+  String code = "for (int i = 0; i < "+outer+"; i++) {\n"+"for (int j = 0; j < "+inner+"; j++) {\n"+
               "  drawCircle()\n"+"  }\n"+
              "}";
 return code;
 
 }
+
 void draw() {
 if(!window.pause) {
   b.draw(this);
@@ -83,21 +84,21 @@ if(window.timer == 0) {
   int spacey = 30;
   int spacex = 50;
   
-  for(int i = 0; i < window.outer; i++) {
-    if(i > window.outercount) break;
+ for(int i = 0; i < window.outer; i++) {
+    if(i > outercount) break;
     fill(i*40, 150 , 200);
-    ellipse(i*spacex + 50, 20, 20, 20);
+   // ellipse(i*spacex + 50, 20, 20, 20);
     textFont(f,15);               
     fill(255);                        
     text("i="+i,i*spacex+50,20);
    for(int j = 0; j < window.inner; j++) {
-    if(j >= window.innercount) break;
+    if(j >= innercount) break;
      fill(i*40, j, 100);
      int ypos = (j+1)*spacey+20;
-     ellipse(i*spacex + 50, ypos, 20, 20);
+     ellipse(i*spacex + 60, ypos, 20, 20);
      textFont(f,15);               
      fill(255);                        
-     text("j="+j,i*spacex+50,ypos);
+     text("j="+j,20,ypos);
   }
 }
 window.innercount++;
