@@ -57,6 +57,11 @@ window.onload = function() {
 	  var gui = new dat.GUI();
 	  window.depth = 4;
 	  window.example = 0; //0 is tree, 1 is circles
+	  window.slowDown = true;
+	  window.frameRate = 1;
+	  window.speed = 10;
+	  var seeAnimation;
+	  var speed;
 	  window.tree = function(){
 	 // 	document.getElementById("recursive").setAttribute("data-processing-sources", "recursive_circles");
 	  	var circle = document.getElementById("recursivecircles");
@@ -64,7 +69,12 @@ window.onload = function() {
 	  	tree.style.display = 'block';
 	  	circle.style.display = 'none';
 	  	console.log("tree clicked");
+	  	if(seeAnimation == null) {
+	  	 seeAnimation = gui.add(window, 'restartAnimation');
+	 	 speed = gui.add(window, 'speed', 0, 100);
+	  	}
 	  };
+	 
 	  window.circles = function(){
 	  		//document.getElementById("recursive").setAttribute("data-processing-sources", "recursive_circles.pde");
 	  	console.log("circle clicked");
@@ -72,12 +82,22 @@ window.onload = function() {
 	  	var tree = document.getElementById("recursivetree");
 	  	tree.style.display = 'none';
 	  	circle.style.display = 'block';
+	  	if(seeAnimation != null) {
+	  	gui.remove(seeAnimation);
+	  	gui.remove(speed);
+	  	seeAnimation = null;
+	  }
 	  };
+	  window.restartAnimation = function() {
+	  	window.slowDown = !window.slowDown;
+	  }
 
 	  //sliders
 	 var depth = gui.add(window, 'depth', 0, 9).step(1);
 	 var tree = gui.add(window, "tree");
 	 var circles = gui.add(window, "circles");
+	 seeAnimation = gui.add(window, 'restartAnimation');
+	 speed = gui.add(window, 'speed', 0, 100);
 }
 	 </script>
 
