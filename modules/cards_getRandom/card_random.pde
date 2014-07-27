@@ -33,7 +33,9 @@ void drawButton(){
   popMatrix();
 }
 
-void drawCard(String suit, String rank, boolean red, int xpos, int ypos){
+void drawCard(String suit, String rank, int xpos, int ypos){
+  boolean red = false;
+  if(suit.equals("diamond") || suit.equals("heart")) red = true;
   pushMatrix();
   fill(255);
   stroke(255);
@@ -46,11 +48,12 @@ void drawCard(String suit, String rank, boolean red, int xpos, int ypos){
   textSize(18);
   text(rank, xpos+28, ypos+68); 
   popMatrix();
- 
 }
 
-void drawCardLarge(String suit, String rank, boolean red, int xpos, int ypos){
+void drawCardLarge(String suit, String rank, int xpos, int ypos){
   pushMatrix();
+  boolean red = false;
+  if(suit.equals("diamond") || suit.equals("heart")) red = true;
   fill(255);
   stroke(255);
   rect(xpos, ypos, 100, 125);
@@ -118,7 +121,7 @@ void drawRandomCardCode() {
   textSize(11);
   text(code, 400, 475);
   if(timer == 2) {
-  drawCardLarge(suit[suit_ind], rank[rank_ind], false, 300, 200);
+  drawCardLarge(suit[suit_ind], rank[rank_ind], 300, 200);
   }
   popMatrix();  
 }

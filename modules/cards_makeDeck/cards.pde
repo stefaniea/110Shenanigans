@@ -26,7 +26,7 @@ void draw(){
   //draw card
   if(timer == 2) {
     drawForLoop();
-    drawCard(suit[currentSuit], rank[currentRank], false, currentXPos, currentYPos);
+    drawCard(suit[currentSuit], rank[currentRank], currentXPos, currentYPos);
     currentXPos+=55;
 
   }
@@ -55,7 +55,9 @@ void draw(){
     }
 }
 
-void drawCard(String suit, String rank, boolean red, int xpos, int ypos){
+void drawCard(String suit, String rank, int xpos, int ypos){
+  boolean red = false;
+  if(suit.equals("diamond") || suit.equals("heart")) red = true;
   pushMatrix();
   fill(255);
   stroke(255);
@@ -128,12 +130,12 @@ void drawForLoop() {
   String loop = "String[] suit = { \"club\", \"diamond\", \"heart\", \"spade\" };\n"+
                 "String[] rank = {\"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"9\", \"10\",\n"+
                       "\"J\", \"Q\", \"K\", \"A\"};\n"+
-               "String[] rank = new String[ranks.length*suits.length]\n\n"+
+               "String[] deck = new String[rank.length*suit.length]\n\n"+
                 "for(int i = 0; i < suit.length; i++) {\n" +
                 "  for(int j = 0; j < rank.length; j++) {\n" +
                 "    //This card has the suit at index i of the suit array\n"+
                 "    //And the rank at index j of the rank array\n"+
-                "    deck[suits.length*j + i] = rank[j] + \"of\" + suit[i]\n"+
+                "    deck[suit.length*j + i] = rank[j] + \"of\" + suit[i]\n"+
                 "  }\n"+
                 "}";
   int rank_ind = currentRank;
